@@ -1,0 +1,19 @@
+.item-pickup-section
+  %h2 ピックアップカテゴリー
+  - 4.times do
+    .items-container.clearfix
+      .pickup-title
+        = link_to "レディース 新着アイテム", "#"
+      .items.clearfix
+        - 4.times do
+          .item
+            = link_to "#" do
+              = image_tag("panda001.jpg", class: "item__img lazyloaded")
+              .item__name.font-2 ラルフローレン ロングワンピース
+              .item__info.clearfix
+                .item__info--price.font-5 ¥2,500
+                .item__info--like.font-2
+                  = fa_icon "heart regular"
+                  %span 7
+              %p.item__tax (税込)
+      = link_to "すべての商品を見る", "#", class: "view-all"

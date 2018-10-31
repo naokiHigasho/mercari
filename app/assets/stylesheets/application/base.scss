@@ -1,0 +1,43 @@
+body {
+  position: relative;
+  min-height: 100%;
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+  font-size: 14px;
+  color: rgb(51, 51, 51);
+  line-height: 1;
+  background: rgb(245, 245, 245);
+}
+.container{
+  width: 100vw;
+}
+.contents-wrapper{
+  box-sizing: border-box;
+  margin: auto;
+  padding-top: 45px;
+  width: 932px;
+}
+.clearfix {
+  &::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+.bg-gray{
+  background-color: $gray-bg;
+}
+.font-2 {
+  font-size: 16px;
+  font-weight: 400;
+  color: $gray-dark;
+}
+.font-5 {
+  font-size: 20px;
+  font-weight: 600;
+  color: $gray-dark;
+}
+.lazyloaded {
+  opacity: 1;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}

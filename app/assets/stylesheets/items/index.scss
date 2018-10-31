@@ -1,0 +1,66 @@
+.item-pickup-section{
+  h2{
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  a{
+    text-decoration: none;
+  }
+  .pickup-title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    a{
+      color: $blue;
+    }
+  }
+  .items-container{
+    margin-bottom: 60px;
+  }
+  .items{
+    width: 932px;
+  }
+  .item{
+    background: $white;
+    float: left;
+    height: 333px;
+    margin: 0 10px;
+    width: 213px;
+    &__img{
+      width:213px;
+      height:213px;
+      object-fit: cover;
+    }
+    &__name{
+      line-height: 1.5;
+      overflow: hidden;
+      padding: 10px 15px 10px 15px;
+    }
+    &__info{
+      padding: 0 15px;
+      &--price{
+        float: left;
+      }
+      &--like{
+        float: right;
+        .fa{
+          color: $gray-light;
+        }
+      }
+    }
+    &__tax{
+      color:$gray-dark;
+      font-size: 10px;
+      padding-left: 15px;
+    }
+  }
+  .view-all{
+    color: $blue;
+    float: right;
+    margin: 20px 10px 0 0;
+  }
+}
+

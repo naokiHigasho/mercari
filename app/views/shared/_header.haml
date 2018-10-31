@@ -1,0 +1,95 @@
+%header.pc-header.visible-pc
+  .pc-header-inner
+    .clearfix
+      .l-left
+        = link_to image_tag("logo2.png", alt: "mercari", width: "139px", height: "43px"), root_path
+      %form{class: "pc-header-form l-right"}
+        %input{class: "input-default", type: "search", name: "keyword", placeholder: "キーワードから探す"}
+        %i.material-icons search
+
+    %div.pc-header-nav-box.clearfix
+      %nav.l-left
+        %ul.pc-header-nav
+          %li.first-child
+            %h2
+              = link_to "カテゴリーから探す", "#", class: "pc-header-nav-root"
+          /   %ul.pc-header-nav-parent-wrap
+          /     %li.pc-header-nav-parent
+          /       %h3
+          /         = link_to "トップス", "", class: "pc-header-nav-parent-list"
+          /     %li.pc-header-nav-parent
+          /       %h3
+          /         = link_to "パンツ", "", class: "pc-header-nav-parent-list"
+          /     %li.pc-header-nav-parent
+          /       %h3
+          /         = link_to "靴下", "", class: "pc-header-nav-parent-list"
+          / %li
+          /   %h2
+          /     = link_to "ジャンルから探す", "", class: "pc-header-nav-root"
+          /   %ul.pc-header-nav-parent-wrap
+          /     %li.pc-header-nav-parent
+          /       %h3
+          /         = link_to "服", "", class: "pc-header-nav-parent-list"
+          /     %li.pc-header-nav-parent
+          /       %h3
+          /         = link_to "鞄", "", class: "pc-header-nav-parent-list"
+          /     %li.pc-header-nav-parent
+          /       %h3
+          /         = link_to "おもちゃ", "", class: "pc-header-nav-parent-list"
+
+      .l-right
+        %ul.pc-header-user-nav
+          %li
+            = link_to "", class: "sp-header-user-icon pc-header-nav-root" do
+              %figure
+                %div
+                  = image_tag("noimage.png", alt: "noimage", width: "32px")
+              %div{class: "header-mypage"}
+                マイページ
+            / .pc-header-user-box.pc-header-mypage-box
+            /   .pc-header-mypage-state.text-center
+            /     %figure
+            /       %div
+            /         = image_tag("noimage.png", alt: "noimage", width: "60px")
+            /       %figcaption
+            /         yuri
+            /     %ul.pc-header-mypage-review-listing
+            /       %li
+            /         = link_to "評価：０", "", class: "link"
+            /       %li
+            /         = link_to "出品数：０", "", class: "link"
+            /     %ul.pc-header-mypage-sales-point
+            /       %li
+            /         = link_to "", class: "link clearfix" do
+            /           .l-left
+            /             売上金
+            /           .l-right
+            /             ￥０
+            /             %i.material-icons keyboard_arrow_right
+            /       %li
+            /         = link_to "", class: "link clearfix" do
+            /           .l-left
+            /             ポイント
+            /           .l-right
+            /             P０
+            /             %i.material-icons keyboard_arrow_right
+            /   %ul.mypage-nav-list
+            /     %li
+            /       = link_to "", class: "mypage-nav-list-item" do
+            /         いいね!一覧
+            /         %i.material-icons.l-right keyboard_arrow_right
+            /     %li
+            /       = link_to "", class: "mypage-nav-list-item" do
+            /         出品した商品-出品中
+            /         %i.material-icons.l-right keyboard_arrow_right
+
+          %li{"data-id": "pc-header-user-nav", "data-key": "notification_list", "data_url": ""}
+            = link_to "", class: "pc-header-nav-root" do
+              %i.material-icons.list notifications_none
+              %span
+                お知らせ
+          %li{"data-id": "pc-header-user-nav", "data-key": "todo_list", "data_url": ""}
+            = link_to "", class: "pc-header-nav-root" do
+              %i.material-icons.list check
+              %span
+                やることリスト
