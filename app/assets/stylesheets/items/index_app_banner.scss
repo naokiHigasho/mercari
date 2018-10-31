@@ -1,0 +1,55 @@
+.app-banner {
+  background-image: image-url("app_bannar.jpg");
+  height: 260px;
+  width: 100vw;
+  .app-banner-pc {
+    height: 260px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    width: 750px;
+  }
+  .app-banner-pc-inner {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    color: $white;
+    width:420px;
+    height:166px;
+    h2 {
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+    p {
+      margin: 10px 0px 0px;
+      font-size: 35px;
+    }
+  }
+  .app-banner-icon.clearfix {
+    margin: 20px 0 0;
+    line-height: 68px;
+    width: 500px;
+  }
+  .mercari-new {
+    float:left;
+    height: 68px;
+    margin-right: 10px;
+  }
+  .app-image{
+    float: left;
+    height: 40px;
+    margin:14px 10px 0 0;
+    width: 133px;
+  }
+  .app_bannar_tel {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+

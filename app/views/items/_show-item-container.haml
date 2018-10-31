@@ -1,0 +1,78 @@
+.item-container
+  .item-name
+    キャスケット帽
+  %p.item-sumally 『アメリカンホリック ボーダーワンピース』は、185回の取引実績を持つmk618(プロフィール必読)さんから出品されました。アメリカンホリック（ひざ丈ワンピース/レディース）の商品で、神奈川県から4~7日で発送されます。
+  .item-main-box.clearfix
+    .item-photo
+      = image_tag("panda002.jpg",class: "show-main-image")
+    %table.item-detail-table
+      %tbody
+        %tr
+          %th 出品者
+          %td
+            = link_to "lala", "#"
+            / 評価アイコン
+            /
+              <div>
+              <div class="item-user-ratings">
+              <i class="icon-good"></i>
+              <span>112</span>
+              </div>
+              <div class="item-user-ratings">
+              <i class="icon-normal"></i>
+              <span>5</span>
+              </div>
+              <div class="item-user-ratings">
+              <i class="icon-bad"></i>
+              <span>0</span>
+              </div>
+              </div>
+        %tr
+          %th カテゴリー
+          %td
+            = link_to "第一カテゴリ", "#"
+            %br
+            = link_to "#" do
+              = fa_icon "angle-right"
+              第二カテゴリ
+            %br
+            = link_to "#" do
+              = fa_icon "angle-right"
+              第三カテゴリ
+        %tr
+          %th ブランド
+          %td
+        %tr
+          %th 商品の状態
+          %td 未使用に近い
+        %tr
+          %th 配送の方法
+          %td 送料込み(出品者負担)
+        %tr
+          %th 配送の方法
+          %td 未定
+        %tr
+          %th 配送元地域
+          %td
+            = link_to "東京都", "#"
+        %tr
+          %th 発送日の目安
+          %td 4~7日で発送
+  .item-price
+    %p.item-price__price ¥2,000
+    %p.item-price__tax（税込）
+    %p.item-price__option 送料込み
+  = link_to "購入画面に進む", "#", class: "buy-btn"
+  .item-text
+    綺麗な状態です三点セットブローチつき綺麗な状態です三点セットブローチつき綺麗な状態です三点セットブローチつき綺麗な状態です三点セットブローチつき綺麗な状態です三点セットブローチつき
+  .item-footer.clearfix
+    .btn-box
+      = link_to "#", class: "item-footer-btn" do
+        = fa_icon "heart"
+        いいね
+      = link_to "#", class: "item-footer-btn" do
+        = fa_icon "flag"
+        不適切な商品を報告
+    = link_to "#", class: "item-footer__link" do
+      = fa_icon "lock"
+      あんしん・あんぜんへの取り組み

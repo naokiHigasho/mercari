@@ -55,7 +55,7 @@
       font-weight: 400;
     }
     &-box {
-      margin: 8px 0;
+      margin: 8px 0 0;
       height: 62px;
     }
     &-root {
@@ -272,10 +272,4 @@
 .link {
   text-decoration: none;
   color: black;
-}
-
-.clearfix {
-  content: '';
-  display: block;
-  clear: both;
 }

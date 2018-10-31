@@ -1,0 +1,17 @@
+.social-icon{
+  background-color: $white;
+  height: 130px;
+  margin-bottom: 40px;
+  text-align: center;
+  &__btn{
+    @include link-btn;
+    border-radius: 2px;
+    color: $white;
+    font-size: 24px;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    margin: 45px 5px 0;
+    width: 40px;
+  }
+}

@@ -1,0 +1,16 @@
+.other-items-container{
+  a{
+    text-decoration: none;
+  }
+  .title{
+    color: $blue;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .items{
+    margin: 20px 0 40px;
+    width: 700px;
+    @include item-card;
+  }
+}
