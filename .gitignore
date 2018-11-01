@@ -19,4 +19,4 @@
 .byebug_history
 public/uploads/*
 tmp/cache/assets/*
-config/secrets.yml
+# config/secrets.yml
