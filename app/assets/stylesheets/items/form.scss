@@ -141,6 +141,13 @@ body {
           color: #00cce8;
         }
       }
+      .btn-red {
+        margin: 40px 0 0;
+      }
+      .btn-gray {
+        width: 45%;
+        margin: 24px auto 0;
+      }
     }
   }
 }
@@ -234,6 +241,9 @@ body {
   li:first-child {
     margin: 0;
   }
+  img {
+    margin-top: 30px;
+  }
 }
 ul {
   list-style: none;
@@ -272,6 +282,29 @@ ul {
   font-size: 16px;
   line-height: 1.5;
   cursor: pointer;
+}
+
+.btn-default {
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-red {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+
+.btn-gray {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  text-decoration: none;
 }
 
 input {
