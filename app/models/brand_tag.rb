@@ -1,0 +1,2 @@
+class BrandTag < ApplicationRecord
+end
