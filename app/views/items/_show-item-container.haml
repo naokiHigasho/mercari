@@ -1,10 +1,10 @@
 .item-container
   .item-name
-    キャスケット帽
+    = @item.name
   %p.item-sumally 『アメリカンホリック ボーダーワンピース』は、185回の取引実績を持つmk618(プロフィール必読)さんから出品されました。アメリカンホリック（ひざ丈ワンピース/レディース）の商品で、神奈川県から4~7日で発送されます。
   .item-main-box.clearfix
     .item-photo
-      = image_tag("panda002.jpg",class: "show-main-image")
+      = image_tag(@item.image,class: "show-main-image")
     %table.item-detail-table
       %tbody
         %tr
@@ -30,7 +30,7 @@
         %tr
           %th カテゴリー
           %td
-            = link_to "第一カテゴリ", "#"
+            = link_to @item.category_id, "#"
             %br
             = link_to "#" do
               = fa_icon "angle-right"
@@ -42,9 +42,11 @@
         %tr
           %th ブランド
           %td
+            = @item.brand_id
         %tr
           %th 商品の状態
-          %td 未使用に近い
+          %td
+            = @item.quality_status
         %tr
           %th 配送の方法
           %td 送料込み(出品者負担)
@@ -57,14 +59,17 @@
             = link_to "東京都", "#"
         %tr
           %th 発送日の目安
-          %td 4~7日で発送
+          %td
+            = @item.days
   .item-price
-    %p.item-price__price ¥2,000
+    %p.item-price__price
+      ¥
+      = @item.price
     %p.item-price__tax（税込）
     %p.item-price__option 送料込み
   = link_to "購入画面に進む", "#", class: "buy-btn"
   .item-text
-    綺麗な状態です三点セットブローチつき綺麗な状態です三点セットブローチつき綺麗な状態です三点セットブローチつき綺麗な状態です三点セットブローチつき綺麗な状態です三点セットブローチつき
+    = @item.text
   .item-footer.clearfix
     .btn-box
       = link_to "#", class: "item-footer-btn" do

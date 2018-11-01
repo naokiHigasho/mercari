@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_target_item, only: %i[show edit update destroy]
 
   def index
+    @items = Item.order("id DESC").limit(4)
   end
 
   def new
@@ -12,6 +13,9 @@ class ItemsController < ApplicationController
     item = Item.new(item_params)
     item.save
     redirect_to item
+  end
+
+  def show
   end
 
   def edit
