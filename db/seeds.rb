@@ -17,7 +17,7 @@ CategoryTag.create([
   { name: "その他" },
   ])
 
-BrandTag.create([
+Brand.create([
   { name: "ルイヴィトン" },
   { name: "グッチ" },
   { name: "ナイキ" },
@@ -28,6 +28,7 @@ BrandTag.create([
   { name: "その他" },
   ])
 
+
 (1..50).each do |i|
   if (i % 10) == 0
     Item.create(
@@ -35,7 +36,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/10.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 1,
-      brand_tag_id: 1,
+      brand_id: 1,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 1)
@@ -45,7 +46,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/9.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 2,
-      brand_tag_id: 2,
+      brand_id: 2,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0)
@@ -55,7 +56,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/8.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 3,
-      brand_tag_id: 3,
+      brand_id: 3,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 2)
@@ -65,7 +66,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/7.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 4,
-      brand_tag_id: 4,
+      brand_id: 4,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0)
@@ -75,7 +76,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/6.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 5,
-      brand_tag_id: 5,
+      brand_id: 5,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0)
@@ -85,7 +86,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/5.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 1,
-      brand_tag_id: 1,
+      brand_id: 1,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0)
@@ -95,7 +96,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/4.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 2,
-      brand_tag_id: 2,
+      brand_id: 2,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0)
@@ -105,7 +106,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/3.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 3,
-      brand_tag_id: 3,
+      brand_id: 3,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0)
@@ -115,7 +116,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/2.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 4,
-      brand_tag_id: 4,
+      brand_id: 4,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0)
@@ -125,7 +126,7 @@ BrandTag.create([
       image: File.open("./app/assets/images/sirokuma.jpg"),
       text: "商品説明#{i}",
       category_tag_id: 5,
-      brand_tag_id: 5,
+      brand_id: 5,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0)
