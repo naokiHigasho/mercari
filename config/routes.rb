@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root 'items#index'
+  root 'home#index'
+  resources :addresses
   resources :items
+  resources :categories
 end

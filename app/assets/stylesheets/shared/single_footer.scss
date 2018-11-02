@@ -1,0 +1,42 @@
+.logo-gray-image {
+	padding-top: 40px;
+	height: 65px;
+	width: 80px;
+}
+
+.small {
+	font-size:  75%;
+	margin: 8px 0 0;
+}
+
+.single-footer {
+  width: 456px;
+  height: 220px;
+  margin: 0 auto;
+  padding: 40px 0;
+  z-index: 1;
+  text-align: center;
+  a{
+    color: $gray-dark;
+    text-decoration: none;
+  }
+  ul {
+    :hover {
+      color: gray;
+    }
+  }
+  li {
+    display: inline-block;
+    margin: 0 0 0 16px;
+    font-size: 12px;
+  }
+  li:first-child {
+    margin: 0;
+  }
+  img {
+    margin-top: 30px;
+  }
+}
+ul {
+  list-style: none;
+}

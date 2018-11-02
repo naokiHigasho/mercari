@@ -1,0 +1,43 @@
+.adress-form
+  = form_for @address do |f|
+    - if @address.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@address.errors.count, "error")} prohibited this address from being saved:"
+        %ul
+          - @address.errors.full_messages.each do |message|
+            %li= message
+
+    .form-field.margin40
+      = f.label :name01, "お名前", class: "label"
+      %span.form-require 必須
+      = f.text_field :name01, class: "text-field", placeholder: '例）高知'
+    .form-field
+      = f.text_field :name02, class: "text-field", placeholder: '太郎'
+    .form-field.margin40
+      = f.label :name03, "お名前カナ", class: "label"
+      %span.form-require 必須
+      = f.text_field :name03, class: "text-field", placeholder: 'コウチ'
+    .form-field
+      = f.text_field :name04, class: "text-field", placeholder: 'タロウ'
+    .form-field.margin40
+      = f.label :zip, "郵便番号", class: "label"
+      %span.form-require 必須
+      = f.text_field :zip, class: "text-field", placeholder: '780-8515'
+    .form-field.margin40
+      = f.label :state, "都道府県", class: "label"
+      %span.form-require 必須
+      = f.text_field :state, class: "text-field", placeholder: '高知県'
+    .form-field.margin40
+      = f.label :city, "市区町村", class: "label"
+      %span.form-require 必須
+      = f.text_field :city, class: "text-field", placeholder: '高知市永国寺町'
+    .form-field.margin40
+      = f.label :address_line, "番地", class: "label"
+      %span.form-require 必須
+      = f.text_field :address_line, class: "text-field", placeholder: '2番22号'
+    .form-field.margin40
+      = f.label :tel, "電話番号", class: "label"
+      %span.form-require 必須
+      = f.text_field :tel, class: "text-field", placeholder: '09000000000'
+    .actions.margin40
+      = f.submit '次へ進む', class: "submit-btn"

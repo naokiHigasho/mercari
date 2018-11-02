@@ -4,3 +4,37 @@
     transition:0.3s;
   }
 }
+.form-require {
+  background: $red;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: $white;
+  font-size: 12px;
+  vertical-align: top;
+}
+.btn-default {
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
+}
+.btn-red {
+  background: #ea352d;
+  border: 1px solid #ea352d;
+  color: #fff;
+}
+.btn-gray {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  text-decoration: none;
+}
+input {
+  border: 0;
+  outline: 0;
+  font-family: inherit;
+}

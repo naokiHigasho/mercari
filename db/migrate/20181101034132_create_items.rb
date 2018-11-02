@@ -9,7 +9,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string        :quality_status
       t.string        :days
       t.integer       :price
-      t.integer       :sale_status, default: 0
+      t.integer       :sale_status, default: false
       t.timestamps
     end
   end
