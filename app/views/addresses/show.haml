@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Name01:
+  = @address.name01
+%p
+  %b Name02:
+  = @address.name02
+%p
+  %b Name03:
+  = @address.name03
+%p
+  %b Name04:
+  = @address.name04
+%p
+  %b Zip:
+  = @address.zip
+%p
+  %b State:
+  = @address.state
+%p
+  %b City:
+  = @address.city
+%p
+  %b Address line:
+  = @address.address_line
+%p
+  %b Tel:
+  = @address.tel
+
+= link_to 'Edit', edit_address_path(@address)
+\|
+= link_to 'Back', addresses_path

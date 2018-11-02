@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_target_item, only: %i[show edit update destroy]
 
   def index
-    @items = Item.order("id DESC").limit(4)
+    @items = Item.page(params[:page]).per(30).order("id DESC")
   end
 
   def new

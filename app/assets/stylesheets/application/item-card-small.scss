@@ -1,0 +1,36 @@
+.item-card-small{
+  background: $white;
+  float: left;
+  height: 300px;
+  margin: 0 10px 20px;
+  position: relative;
+  width: 180px;
+  .item-img{
+    width:180px;
+    height:180px;
+    object-fit: cover;
+  }
+  .item-name{
+    height: 55px;
+    line-height: 1.5;
+    overflow: hidden;
+    padding: 10px 15px 10px 15px;
+  }
+  .item-info{
+    padding: 0 15px;
+    &__price{
+      float: left;
+    }
+    &__like{
+      float: right;
+      .fa{
+        color: $gray-light;
+      }
+    }
+  }
+  .item-tax{
+    color:$gray-dark;
+    font-size: 10px;
+    padding-left: 15px;
+  }
+}
