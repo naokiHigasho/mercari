@@ -1,7 +1,7 @@
 .item-container
   .item-name
     = @item.name
-  %p.item-sumally 『アメリカンホリック ボーダーワンピース』は、185回の取引実績を持つmk618(プロフィール必読)さんから出品されました。アメリカンホリック（ひざ丈ワンピース/レディース）の商品で、神奈川県から4~7日で発送されます。
+  %p.item-sumally
   .item-main-box.clearfix
     .item-photo
       = image_tag(@item.image,class: "show-main-image")
@@ -30,7 +30,7 @@
         %tr
           %th カテゴリー
           %td
-            = link_to @item.category_id, "#"
+            = link_to @item.category_tag.name, "#"
             %br
             = link_to "#" do
               = fa_icon "angle-right"
@@ -42,7 +42,7 @@
         %tr
           %th ブランド
           %td
-            = @item.brand_id
+            = @item.brand_tag.name
         %tr
           %th 商品の状態
           %td
@@ -81,3 +81,6 @@
     = link_to "#", class: "item-footer__link" do
       = fa_icon "lock"
       あんしん・あんぜんへの取り組み
+  .sell-btn-box
+    = link_to "商品情報を編集する", edit_item_path(@item), method: :get, class: "btn-default btn-gray btn-edit"
+    = link_to "商品を削除する", item_path(@item), method: :delete, class: "btn-default btn-gray btn-delete"

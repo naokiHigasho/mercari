@@ -1,123 +1,117 @@
-%main.single-main
-  %section.l-single-container.buy-item-container
-    %div{id: "sell-container"}
-      .sell-container-inner
-        %h2.l-single-head
-          商品の情報を入力
-        .sell-form
-          = form_for @item do |f|
-            .sell-upload-box
-              %h3.sell-upload-head
-                出品画像
+.sell-form
+  = form_for @item do |f|
+    .sell-upload-box
+      %h3.sell-upload-head
+        出品画像
+        %span.form-require
+          必須
+      %p
+        最大1枚までアップロードできます
+      .sell-dropbox-container.clearfix
+        / .sell-upload-items
+        / .sell-upload-drop-box
+      = f.file_field :image, class: "sell-upload-drop-file"
+    .sell-content
+      .form-group
+        %label
+          商品名
+          %span.form-require
+            必須
+        %div
+          = f.text_field :name, class: "input-default", placeholder: "商品名 (必須 40文字まで)"
+      .form-group
+        %label
+          商品の説明
+          %span.form-require
+            必須
+        = f.text_area :text, class: "textarea-default", row: "5", placeholder: "商品の説明 (必須 1,000文字以上) (色、素材、重さ、定価、注意点など) 例）2018年頃に3万円で購入したジャケットです。ライトグレーで傷はありません。合わせ易いのでオススメです。"
+
+    .sell-content.clearfix
+      %h3.sell-sub-head
+        商品の詳細
+      .sell-form-box
+        .form-group
+          %label
+            カテゴリー
+            %span.form-require
+              必須
+          %div
+            .select-wrap
+              = f.collection_select :category_tag_id, CategoryTag.all, :id, :name, prompt: "---", class: "select-default"
+              %i.material-icons.icon-bottom expand_more
+        .form-group
+          %label
+            ブランド
+            %span.form-require
+              必須
+          %div
+            .select-wrap
+              = f.collection_select :brand_tag_id, BrandTag.all, :id, :name, prompt: "---", class: "select-default"
+              %i.material-icons.icon-bottom expand_more
+
+        .form-group
+          %label
+            商品の状態
+            %span.form-require
+              必須
+          .select-wrap
+            = f.select :quality_status, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---", class: "select-default"
+            %i.material-icons.icon-bottom expand_more
+    .sell-content.clearfix
+      %h3.sell-sub-head
+        配送について
+        = link_to "?", "https://www.mercari.com/jp/help_center/article/68/", target: "_blank", class: "form-question"
+      .sell-form-box
+        .form-group
+          %label
+            発送までの日数
+            %span.form-require
+              必須
+          .select-wrap
+            = f.select :days, ["１〜２日で発送", "２〜３日で発送", "４〜７日で発送"], prompt: "---", class: "select-default"
+            %i.material-icons.icon-bottom expand_more
+    .sell-content.clearfix
+      %h3.sell-sub-head
+        販売価格
+        = link_to "?", "https://www.mercari.com/jp/help_center/article/64/", target: "_blank", class: "form-question"
+      .sell-form-box
+        %ul.sell-price
+          %li.form-group
+            .clearfix
+              %label.l-left
+                価格
                 %span.form-require
                   必須
-              %p
-                最大1枚までアップロードできます
-              .sell-dropbox-container.clearfix
-                / .sell-upload-items
-                / .sell-upload-drop-box
-              = f.file_field :image, class: "sell-upload-drop-file"
-            .sell-content
-              .form-group
-                %label
-                  商品名
-                  %span.form-require
-                    必須
+              .l-right.sell-price-input
+                ￥
                 %div
-                  = f.text_field :name, class: "input-default", placeholder: "商品名 (必須 40文字まで)"
-              .form-group
-                %label
-                  商品の説明
-                  %span.form-require
-                    必須
-                = f.text_area :text, class: "textarea-default", row: "5", placeholder: "商品の説明 (必須 1,000文字以上) (色、素材、重さ、定価、注意点など) 例）2018年頃に3万円で購入したジャケットです。ライトグレーで傷はありません。合わせ易いのでオススメです。"
-
-            .sell-content.clearfix
-              %h3.sell-sub-head
-                商品の詳細
-              .sell-form-box
-                .form-group
-                  %label
-                    カテゴリー
-                    %span.form-require
-                      必須
-                  %div
-                    .select-wrap
-                      = f.collection_select :category_tag_id, CategoryTag.all, :id, :name, prompt: "---", class: "select-default"
-                      %i.material-icons.icon-bottom expand_more
-                .form-group
-                  %label
-                    ブランド
-                    %span.form-require
-                      必須
-                  %div
-                    .select-wrap
-                      = f.collection_select :brand_tag_id, BrandTag.all, :id, :name, prompt: "---", class: "select-default"
-                      %i.material-icons.icon-bottom expand_more
-
-                .form-group
-                  %label
-                    商品の状態
-                    %span.form-require
-                      必須
-                  .select-wrap
-                    = f.select :quality_status, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---", class: "select-default"
-                    %i.material-icons.icon-bottom expand_more
-            .sell-content.clearfix
-              %h3.sell-sub-head
-                配送について
-                = link_to "?", "https://www.mercari.com/jp/help_center/article/68/", target: "_blank", class: "form-question"
-              .sell-form-box
-                .form-group
-                  %label
-                    発送までの日数
-                    %span.form-require
-                      必須
-                  .select-wrap
-                    = f.select :days, ["１〜２日で発送", "２〜３日で発送", "４〜７日で発送"], prompt: "---", class: "select-default"
-                    %i.material-icons.icon-bottom expand_more
-            .sell-content.clearfix
-              %h3.sell-sub-head
-                販売価格
-                = link_to "?", "https://www.mercari.com/jp/help_center/article/64/", target: "_blank", class: "form-question"
-              .sell-form-box
-                %ul.sell-price
-                  %li.form-group
-                    .clearfix
-                      %label.l-left
-                        価格
-                        %span.form-require
-                          必須
-                      .l-right.sell-price-input
-                        ￥
-                        %div
-                          = f.text_field :price, class: "input-default", placeholder: "例）300"
-                  %li.clearfix.hidden
-                    .l-left
-                      販売手数料 (10%)
-                    .l-right
-                      ー
-                  %li.clearfix.hidden.bold
-                    .l-left
-                      販売利益
-                    .l-right
-                      ー
-            .mode
-            .sell-content.sell-btn-box
-              %div
-                %p
-                  = link_to "禁止されている出品", "", target: "_blank", class: "link"
-                  、
-                  = link_to "行為", "", target: "_blank", class: "link"
-                  を必ずご確認ください。
-                %p
-                  またブランド品でシリアルナンバー等がある場合はご記載ください。
-                  = link_to "偽ブランドの販売", "", target: "_blank", class: "link"
-                  は犯罪であり処罰される可能性があります。
-                %p
-                  また、出品をもちまして
-                  = link_to "加盟店規約", "", target: "_blank", class: "link"
-                  に同意したことになります。
-              %button{type: "submit", class: "btn-default btn-red"}
-                出品する
-              = link_to "もどる", :back, class: "btn-default btn-gray"
+                  = f.text_field :price, class: "input-default", placeholder: "例）300"
+          %li.clearfix.hidden
+            .l-left
+              販売手数料 (10%)
+            .l-right
+              ー
+          %li.clearfix.hidden.bold
+            .l-left
+              販売利益
+            .l-right
+              ー
+    .mode
+    .sell-content.sell-btn-box
+      %div
+        %p
+          = link_to "禁止されている出品", "", target: "_blank", class: "link"
+          、
+          = link_to "行為", "", target: "_blank", class: "link"
+          を必ずご確認ください。
+        %p
+          またブランド品でシリアルナンバー等がある場合はご記載ください。
+          = link_to "偽ブランドの販売", "", target: "_blank", class: "link"
+          は犯罪であり処罰される可能性があります。
+        %p
+          また、出品をもちまして
+          = link_to "加盟店規約", "", target: "_blank", class: "link"
+          に同意したことになります。
+      %button{type: "submit", class: "btn-default btn-red"}
+        出品する
+      = link_to "もどる", :back, class: "btn-default btn-gray"
