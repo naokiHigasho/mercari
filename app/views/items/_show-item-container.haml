@@ -4,6 +4,13 @@
   %p.item-sumally
   .item-main-box.clearfix
     .item-photo
+      -case @item.sale_status
+      - when 1
+        .mark.sold
+        %p.status-text SOLD
+      - when 2
+        .mark.reserved
+        %p.status-text 予約済
       = image_tag(@item.image,class: "show-main-image")
     %table.item-detail-table
       %tbody

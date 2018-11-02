@@ -1,0 +1,15 @@
+.clearfix {
+  &::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+.lazyloaded {
+  opacity: 1;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
+}
+.hidden {
+  overflow: hidden;
+}

@@ -18,13 +18,13 @@
           %span.form-require
             必須
         %div
-          = f.text_field :name, class: "input-default", placeholder: "商品名 (必須 40文字まで)"
+          = f.text_field :name, class: "input-field text-field-height", placeholder: "商品名 (必須 40文字まで)"
       .form-group
         %label
           商品の説明
           %span.form-require
             必須
-        = f.text_area :text, class: "textarea-default", row: "5", placeholder: "商品の説明 (必須 1,000文字以上) (色、素材、重さ、定価、注意点など) 例）2018年頃に3万円で購入したジャケットです。ライトグレーで傷はありません。合わせ易いのでオススメです。"
+        = f.text_area :text, class: "input-field text-area-height", row: "5", placeholder: "商品の説明 (必須 1,000文字以上) (色、素材、重さ、定価、注意点など) 例）2018年頃に3万円で購入したジャケットです。ライトグレーで傷はありません。合わせ易いのでオススメです。"
 
     .sell-content.clearfix
       %h3.sell-sub-head
@@ -56,6 +56,11 @@
               必須
           .select-wrap
             = f.select :quality_status, ["新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"], prompt: "---", class: "select-default"
+        .form-group
+          %label
+            商品の売買状況
+          .select-wrap
+            = f.select :sale_status, [["購買可能", 0], ["売約済み", 1], ["予約済み", 2]], class: "select-default"
             %i.material-icons.icon-bottom expand_more
     .sell-content.clearfix
       %h3.sell-sub-head

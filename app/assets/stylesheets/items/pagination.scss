@@ -1,0 +1,50 @@
+.paginate-box{
+  box-sizing:border-box;
+  padding: 0 10px;
+  margin-top: 30px;
+  .pagination{
+    text-align: center;
+    a{
+      color: $gray;
+      display: block;
+      text-decoration: none;
+    }
+    .page{
+      background-color:$white;
+      border: 1px solid $gray-dark;
+      border-radius: 4px;
+      box-sizing:border-box;
+      color: $gray-dark;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      width: 40px;
+    }
+    .first, .prev, .next, .last{
+      background-color:$white;
+      border: 1px solid $gray-dark;
+      border-radius: 4px;
+      box-sizing:border-box;
+      color: $gray-dark;
+      display: inline-block;
+      font-size: 30px;
+      height: 40px;
+      line-height: 35px;
+      text-align: center;
+      width: 40px;
+    }
+    .first, .prev,{
+      float: left;
+      margin-right: 3px;
+    }
+    .next, .last{
+      float: right;
+      margin-left: 3px;
+    }
+    .current{
+      background-color: $red;
+      color: $white;
+    }
+  }
+}
