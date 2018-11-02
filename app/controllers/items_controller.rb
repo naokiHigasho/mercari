@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_target_item, only: %i[show edit update destroy]
 
   def index
+    @items = Item.order("id DESC").limit(4)
   end
 
   def new
@@ -12,6 +13,9 @@ class ItemsController < ApplicationController
     item = Item.new(item_params)
     item.save
     redirect_to item
+  end
+
+  def show
   end
 
   def edit
@@ -31,7 +35,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit( )
+    params.require(:item).permit(:image, :name, :text, :category_tag_id, :brand_tag_id, :quality_status, :days, :price, :sale_status)
   end
 
   def set_target_item
