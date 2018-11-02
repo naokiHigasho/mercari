@@ -11,8 +11,9 @@
       %nav.l-left
         %ul.pc-header-nav
           %li.first-child
-            %h2
-              = link_to "カテゴリーから探す", items_path, class: "pc-header-nav-root"
+            %h2= link_to "カテゴリーから探す", items_path, class: "pc-header-nav-root"
+          %li.first-child
+            %h2= link_to "ブランドから探す", brands_path, class: "pc-header-nav-root"
           /   %ul.pc-header-nav-parent-wrap
           /     %li.pc-header-nav-parent
           /       %h3

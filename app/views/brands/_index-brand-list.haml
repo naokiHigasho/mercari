@@ -1,0 +1,12 @@
+.brand-tag-box
+  .title-1st
+    レディース
+  .tag-lists
+    = link_to "すべて", "#", class: "link-all"
+    .tag-3rd-box
+      .title-2nd
+        トップス
+      %ul.tag-3rd-lists.clearfix
+        - @brands.each do |brand|
+          %li.tag-3rd-lists__list
+            = link_to brand.name, brand

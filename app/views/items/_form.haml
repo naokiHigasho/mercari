@@ -46,7 +46,7 @@
               必須
           %div
             .select-wrap
-              = f.collection_select :brand_tag_id, BrandTag.all, :id, :name, prompt: "---", class: "select-default"
+              = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "---", class: "select-default"
               %i.material-icons.icon-bottom expand_more
 
         .form-group
