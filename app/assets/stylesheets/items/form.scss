@@ -1,9 +1,8 @@
-
 .l-single {
   &-container {
     width: 700px;
     margin: 0 auto;
-    background: #fff;
+    background: $white;
   }
   &-head {
     padding: 32px 16px;
@@ -46,11 +45,10 @@
       width: 620px;
       margin: 0;
       min-height: 184px;
-      // padding: 40px;
       flex: 1;
       position: relative;
-      background: #f5f5f5;
-      border: 1px dashed #ccc;
+      background: $gray-bg;
+      border: 1px dashed $gray-light;
       font-size: 0;
       text-align: center;
       pre {
@@ -76,7 +74,6 @@
   &-content {
     padding: 40px;
     border-top: 1px solid $gray-line;
-    overflow: hidden;
   }
   &-sub-head {
     float: left;
@@ -88,7 +85,7 @@
     padding: 0;
     li {
       padding: 24px 0;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid $gray-light;
     }
     li:first-child {
       padding: 0 0 24px;
@@ -119,7 +116,7 @@
       p {
         line-height: 1.5;
         .link {
-          color: #0099e8;
+          color: $blue;
         }
         .link:hover {
           color: #00cce8;
@@ -149,13 +146,13 @@
       &-wrap {
         margin: 8px 0 0;
         position: relative;
-        background: #fff;
+        background: $white;
         .icon-bottom {
           position: absolute;
           right: 16px;
           top: 50%;
           z-index: 2;
-          color: #888;
+          color: $gray;
           font-size: 8px;
           transform: translate(0, -50%);
         }
@@ -164,8 +161,15 @@
     select {
       width: 100%;
       -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+      position: relative;
+      z-index: 2;
+      height: 48px;
+      padding: 0 16px;
+      border-radius: 4px;
+      border: 1px solid $gray-light;
+      background: 0;
+      font-size: 16px;
+      cursor: pointer;
     }
   }
   &-question {
@@ -174,15 +178,12 @@
     width: 15px;
     height: 15px;
     border-radius: 50%;
-    background: #0099e8;
-    color: #fff;
+    background: $blue;
+    color: $white;
     line-height: 16px;
     font-size: 12px;
     text-align: center;
   }
-}
-.form-question:hover {
-  background: #00cce8;
 }
 .form-group:first-child {
   margin: 0;
@@ -191,7 +192,7 @@
 .input-field{
   background: $white;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid $gray-light;
   font-size: 16px;
   line-height: 1.5;
   padding: 10px 16px 8px;
@@ -205,17 +206,4 @@
 
 .text-area-height{
   min-height: 104px;
-}
-
-.select-default {
-  position: relative;
-  z-index: 2;
-  height: 48px;
-  padding: 0 16px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: 0;
-  font-size: 16px;
-  line-height: 1.5;
-  cursor: pointer;
 }
