@@ -19,14 +19,158 @@ CategoryTag.create([
 
 Brand.create([
   { name: "ルイヴィトン" },
-  { name: "グッチ" },
-  { name: "ナイキ" },
-  { name: "シュプリーム" },
+  { name: "シャネル" },
+  { name: "アーバンリサーチ" },
   { name: "フェンディ" },
-  { name: "ユニクロ" },
+  { name: "メゾンキツネ" },
+  { name: "メゾンフルール" },
+  { name: "ヴゼット" },
+  { name: "Y3" },
+  { name: "ロキト" },
+  { name: "ブラックバイマウジー" },
+  { name: "ピンキー＆ダイアン" },
+  { name: "ナラカミーチェ" },
+  { name: "セタイチロウ" },
+  { name: "aquagirl" },
+  { name: "メンズビギ" },
+  { name: "ガラージュ" },
+  { name: "ポロ ラルフ ローレン" },
+  { name: "ランバン" },
+  { name: "オロビアンコ" },
+  { name: "ケープハイツ" },
+  { name: "セイブザダック" },
+  { name: "サニーボイス" },
+  { name: "ダニエル＆ボブ" },
+  { name: "ソシアル" },
+  { name: "ポーター" },
   { name: "しまむら" },
+  { name: "ZARA" },
+  { name: "H&M" },
+  { name: "GAP" },
+  { name: "GU" },
+  { name: "SHIPS KIDS" },
+  { name: "フィス" },
+  { name: "プチバトー" },
+  { name: "パンパンチュチュ" },
+  { name: "ボボショセス" },
+  { name: "ボンポワン" },
+  { name: "ミナペルホネン" },
+  { name: "ククゥマノン" },
+  { name: "イケア" },
+  { name: "ニトリ" },
+  { name: "秋田木工" },
+  { name: "アセミコ" },
+  { name: "ハーマンミラー" },
+  { name: "フリッツ・ハンセン" },
+  { name: "フランネルソファ" },
+  { name: "マニュモビールズ" },
+  { name: "島田屋" },
+  { name: "ホームカミング" },
+  { name: "ネム" },
+  { name: "ノット" },
+  { name: "スランプ" },
+  { name: "サータ" },
+  { name: "カリモク家具" },
+  { name: "エルゴヒューマン" },
+  { name: "角川書店" },
+  { name: "集英社" },
+  { name: "小学館" },
+  { name: "秋田書店" },
+  { name: "少年画報社" },
+  { name: "徳間書店" },
+  { name: "主婦の友社" },
+  { name: "一迅社" },
+  { name: "太田出版" },
+  { name: "講談社" },
+  { name: "新書館" },
+  { name: "平凡社" },
+  { name: "PHP研究所" },
+  { name: "白泉社" },
+  { name: "富士見書房" },
+  { name: "ダイヤモンド社" },
+  { name: "スクウェア・エニックス" },
+  { name: "幻冬社" },
+  { name: "エンターブレイン" },
+  { name: "岩波書店" },
+  { name: "竹書房" },
+  { name: "ぶんか社" },
+  { name: "宝島社" },
+  { name: "旺文社" },
+  { name: "学研プラス" },
+  { name: "資生堂" },
+  { name: "カネボウ" },
+  { name: "アナスイコスメティックス" },
+  { name: "アトリエ・コロン" },
+  { name: "エスティローダー" },
+  { name: "ヴェルサーチ" },
+  { name: "ガーメント" },
+  { name: "キールズ" },
+  { name: "クリスチャンルブタン" },
+  { name: "グッチ" },
+  { name: "クロエ" },
+  { name: "コーチ" },
+  { name: "毛穴撫子" },
+  { name: "サルヴァトーレフェラガモ" },
+  { name: "ジバンシイ" },
+  { name: "ディオール" },
+  { name: "ティファニー" },
+  { name: "ドクターシーラボ" },
+  { name: "ニナリッチ" },
+  { name: "バーバリー" },
+  { name: "ブルガリ" },
+  { name: "無印良品" },
+  { name: "BUCK-TICK" },
+  { name: "D'ERLANGER" },
+  { name: "DEAD END" },
+  { name: "44MAGNUM" },
+  { name: "LOUDNESS" },
+  { name: "THE YELLOW MONKEY" },
+  { name: "GLAY" },
+  { name: "LUNA SEA" },
+  { name: "UNISON SQUARE GARDEN" },
+  { name: "人間椅子" },
+  { name: "back number" },
+  { name: "エドシーラン" },
+  ])
+
+Genre.create([
+  { name: "レディース" },
+  { name: "メンズ" },
+  { name: "キッズ" },
+  { name: "インテリア" },
+  { name: "本" },
+  { name: "コスメ" },
+  { name: "音楽" },
   { name: "その他" },
   ])
+
+1.upto(38) do |i|
+  BrandGenreRelation.create( genre_id: 1, brand_id: i)
+end
+
+1.upto(25) do |i|
+  BrandGenreRelation.create( genre_id: 2, brand_id: i)
+end
+
+6.upto(38) do |i|
+  BrandGenreRelation.create( genre_id: 3, brand_id: i)
+end
+
+39.upto(54) do |i|
+  BrandGenreRelation.create( genre_id: 4, brand_id: i)
+end
+
+55.upto(79) do |i|
+  BrandGenreRelation.create( genre_id: 5, brand_id: i)
+end
+
+80.upto(101) do |i|
+  BrandGenreRelation.create( genre_id: 6, brand_id: i)
+end
+
+102.upto(113) do |i|
+  BrandGenreRelation.create( genre_id: 7, brand_id: i)
+end
 
 
 (1..50).each do |i|

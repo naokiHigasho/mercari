@@ -1,6 +1,7 @@
 .brands-index-contents-wrapper{
   box-sizing: border-box;
   margin: auto;
+  min-height: 1000px;
   padding: 45px 0;
   width: 700px;
 }
@@ -47,22 +48,39 @@
   background-color: $white;
   border-radius: 3px;
   margin-bottom: 40px;
+  min-height: 800px;
   width: 700px;
-  .title-1st{
+  .title-box{
     background-color: $red;
     border-radius: 3px;
-    color: $white;
-    font-size: 24px;
-    font-weight: bold;
-    height:55px;
-    line-height: 55px;
+    box-sizing: border-box;
+    height: 55px;
     text-align: center;
+    position: relative;
+    width: 700px;
+    .title-1st{
+      color: $white;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 55px;
+    }
+    .brands-genre-select-box{
+      position: absolute;
+      top:12px;
+      right: 10px;
+      select{
+        border-style: none;
+        font-size: 14px;
+        height: 30px;
+        width: 180px;
+      }
+    }
   }
   .tag-lists{
     background-color: #white;
     box-sizing:border-box;
     color: $gray-dark;
-    font-size: 16px;
+    font-size: 18px;
     padding: 40px;
     a{
       color: $blue;
@@ -88,3 +106,4 @@
     }
   }
 }
+

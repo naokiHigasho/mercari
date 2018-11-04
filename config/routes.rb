@@ -4,4 +4,9 @@ Rails.application.routes.draw do
   resources :addresses
   resources :items
   resources :categories
+  resources :creditcards do
+    collection do
+    get 'signup'
+    end
+  end
 end

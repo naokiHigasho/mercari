@@ -1,11 +1,11 @@
 .brand-tag-box
-  .title-1st
-    レディース
+  .title-box
+    %P.title-1st ブランド一覧
+    .brands-genre-select-box
+      = form_tag brands_path, method: :get do
+        = select_tag :genre_id, options_from_collection_for_select(Genre.all, :id, :name, params[:genre_id]),{ prompt: 'ジャンルで絞り込む',onchange: 'submit(this.form)'}
   .tag-lists
-    = link_to "すべて", "#", class: "link-all"
     .tag-3rd-box
-      .title-2nd
-        トップス
       %ul.tag-3rd-lists.clearfix
         - @brands.each do |brand|
           %li.tag-3rd-lists__list

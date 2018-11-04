@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181102192447) do
+ActiveRecord::Schema.define(version: 20181103031012) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name01"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20181102192447) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "brand_genre_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "brand_id"
+    t.integer  "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_genre_relations_on_brand_id", using: :btree
+    t.index ["genre_id"], name: "index_brand_genre_relations_on_genre_id", using: :btree
+  end
+
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -34,6 +43,21 @@ ActiveRecord::Schema.define(version: 20181102192447) do
 
   create_table "category_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "card_number"
+    t.string   "expiration_month"
+    t.string   "expiration_day"
+    t.string   "security_code"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  create_table "genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,4 +78,6 @@ ActiveRecord::Schema.define(version: 20181102192447) do
     t.index ["category_tag_id"], name: "index_items_on_category_tag_id", using: :btree
   end
 
+  add_foreign_key "brand_genre_relations", "brands"
+  add_foreign_key "brand_genre_relations", "genres"
 end
