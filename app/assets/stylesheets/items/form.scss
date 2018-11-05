@@ -142,20 +142,18 @@
         margin: 8px 0 0;
       }
     }
-    .select {
-      &-wrap {
-        margin: 8px 0 0;
-        position: relative;
-        background: $white;
-        .icon-bottom {
-          position: absolute;
-          right: 16px;
-          top: 50%;
-          z-index: 2;
-          color: $gray;
-          font-size: 8px;
-          transform: translate(0, -50%);
-        }
+    .select-wrap {
+      margin: 8px 0 0;
+      position: relative;
+      background: $white;
+      .icon-bottom {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        z-index: 2;
+        color: $gray;
+        font-size: 8px;
+        transform: translate(0, -50%);
       }
     }
     select {
