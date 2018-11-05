@@ -37,19 +37,15 @@
         %tr
           %th カテゴリー
           %td
-            = link_to @item.category_tag.name, "#"
+            = link_to @item.category_genre.name, categories_path(category_genre_id: @item.category_genre.id)
             %br
-            = link_to "#" do
+            = link_to category_path(@item.category) do
               = fa_icon "angle-right"
-              第二カテゴリ
-            %br
-            = link_to "#" do
-              = fa_icon "angle-right"
-              第三カテゴリ
+              = @item.category.name
         %tr
           %th ブランド
           %td
-            = @item.brand.name
+            = link_to @item.brand.name, brand_path(@item.brand)
         %tr
           %th 商品の状態
           %td

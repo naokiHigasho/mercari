@@ -1,0 +1,35 @@
+.creditcard-form
+  = form_for @creditcard do |f|
+    - if @creditcard.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@creditcard.errors.count, "error")} prohibited this creditcard from being saved:"
+        %ul
+          - @creditcard.errors.full_messages.each do |message|
+            %li= message
+
+    .form-field
+      = f.label :card_number, "カード番号", class: "label"
+      %span.form-require 必須
+      = f.text_field :card_number, class: "text-field", placeholder: 'カード番号のみ'
+      = image_tag("card-logo.png", class: "card-logo")
+
+    .form-field
+      = f.label :expiration_month, "有効期限 月", class: "label"
+      %span.form-require 必須
+    .form-field.select-form.month
+      = f.select :expiration_month, ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"], prompt: "01"
+    .form-field
+      = f.label :expiration_year, "有効期限 年", class: "label"
+      %span.form-require 必須
+    .form-field.select-form.years
+      = f.select :expiration_year, ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028"], prompt: "2018"
+
+    .form-field.clearfix
+      = f.label :security_code, "セキュリティコード", class: "label"
+      %span.form-require 必須
+      = f.text_field :security_code, class: "text-field", placeholder: 'カード背面の3桁もしくは4桁の番号'
+      %span.card-number カード裏面の番号とは？
+      = fa_icon "question-circle"
+
+    .actions
+      = f.submit '次へ進む', class: "submit-btn"

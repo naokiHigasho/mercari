@@ -1,7 +1,8 @@
 = render 'shared/header'
 .container.bg-gray
-  .brands-index-contents-wrapper
-    = render 'brands/index-tags'
-    = render 'brands/index-brand-list'
+  .brands-index-contents-wrapper.clearfix
+    = render 'brands/index-left'
+    .brands-index-right
+      = render 'brands/index-brand-list'
 = render 'shared/app-banner'
 = render 'shared/footer'

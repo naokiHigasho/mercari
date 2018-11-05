@@ -1,0 +1,24 @@
+%h1 Listing creditcards
+
+%table
+  %thead
+    %tr
+      %th Card_number
+      %th Expiration_month
+      %th Expiration_year
+      %th Security_code
+
+  %tbody
+    - @creditcards.each do |creditcard|
+      %tr
+        %td= creditcard.card_number
+        %td= creditcard.expiration_month
+        %td= creditcard.expiration_year
+        %td= creditcard.security_code
+        %td= link_to 'Show', creditcard
+        %td= link_to 'Edit', edit_creditcard_path(creditcard)
+        %td= link_to 'Destroy', creditcard, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Creditcard', new_creditcard_path

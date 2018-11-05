@@ -1,0 +1,7 @@
+.brands-index-left
+  %ul.tag-1st-lists.clearfix
+    %li.tag-1st-lists__list
+      = link_to "すべて", brands_path
+    - @brand_genres.each.with_index(1)  do |brand_genre, i|
+      %li.tag-1st-lists__list
+        = link_to brand_genre.name, brands_path(brand_genre_id: i)

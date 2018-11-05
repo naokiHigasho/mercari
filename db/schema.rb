@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181103075030) do
+
+ActiveRecord::Schema.define(version: 20181104204508) do
+
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name01"
@@ -26,32 +28,81 @@ ActiveRecord::Schema.define(version: 20181103075030) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
+  create_table "brand_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "category_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
+    t.integer  "brand_genre_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["brand_genre_id"], name: "index_brands_on_brand_genre_id", using: :btree
+  end
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name"
+    t.integer  "category_genre_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["category_genre_id"], name: "index_categories_on_category_genre_id", using: :btree
+  end
+
+  create_table "category_genres", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "card_number"
+    t.string   "expiration_month"
+    t.string   "expiration_day"
+    t.string   "security_code"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
     t.string   "name"
-    t.text     "text",            limit: 65535
-    t.integer  "category_tag_id"
+    t.text     "text",              limit: 65535
+    t.integer  "category_genre_id"
+    t.integer  "category_id"
+    t.integer  "brand_genre_id"
     t.integer  "brand_id"
     t.string   "quality_status"
     t.string   "days"
     t.integer  "price"
-    t.integer  "sale_status",                   default: 0
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.integer  "sale_status",                     default: 0
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
+    t.index ["brand_genre_id"], name: "index_items_on_brand_genre_id", using: :btree
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
-    t.index ["category_tag_id"], name: "index_items_on_category_tag_id", using: :btree
+    t.index ["category_genre_id"], name: "index_items_on_category_genre_id", using: :btree
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
+  end
+
+  create_table "select_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "status01",   default: 0
+    t.integer  "status02",   default: 0
+    t.integer  "status03",   default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

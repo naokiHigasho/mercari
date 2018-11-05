@@ -25,11 +25,19 @@
           %span.form-require
             必須
         = f.text_area :text, class: "input-field text-area-height", row: "5", placeholder: "商品の説明 (必須 1,000文字以上) (色、素材、重さ、定価、注意点など) 例）2018年頃に3万円で購入したジャケットです。ライトグレーで傷はありません。合わせ易いのでオススメです。"
-
     .sell-content.hidden.clearfix
       %h3.sell-sub-head.bold
-        商品の詳細
+        商品カテゴリー
       .sell-form-box
+        .form-group
+          %label
+            カテゴリー・ジャンル
+            %span.form-require
+              必須
+          %div
+            .select-wrap
+              = f.collection_select :category_genre_id, CategoryGenre.all, :id, :name, prompt: "---", class: "select-default"
+              %i.material-icons.icon-bottom expand_more
         .form-group
           %label
             カテゴリー
@@ -37,18 +45,32 @@
               必須
           %div
             .select-wrap
-              = f.collection_select :category_tag_id, CategoryTag.all, :id, :name, prompt: "---", class: "select-default"
+              = f.collection_select :category_id, Category.all, :id, :name, prompt: "---", class: "select-default"
               %i.material-icons.icon-bottom expand_more
+    .sell-content.hidden.clearfix
+      %h3.sell-sub-head.bold
+        ブランド
+      .sell-form-box
+        .form-group
+          %label
+            ブランド・ジャンル
+            %span.form-require
+              必須
+          .select-wrap
+            = f.collection_select :brand_genre_id, BrandGenre.all, :id, :name, prompt: "---"
+            %i.material-icons.icon-bottom expand_more
         .form-group
           %label
             ブランド
             %span.form-require
               必須
-          %div
-            .select-wrap
-              = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "---"
-              %i.material-icons.icon-bottom expand_more
-
+          .select-wrap
+            = f.collection_select :brand_id, Brand.all, :id, :name, prompt: "---"
+            %i.material-icons.icon-bottom expand_more
+    .sell-content.hidden.clearfix
+      %h3.sell-sub-head.bold
+        商品の詳細
+      .sell-form-box
         .form-group
           %label
             商品の状態
@@ -59,7 +81,7 @@
             %i.material-icons.icon-bottom expand_more
         .form-group
           %label
-            商品の売買状況
+            売買状況
           .select-wrap
             = f.select :sale_status, [["購買可能", 0], ["売約済み", 1], ["予約済み", 2]]
             %i.material-icons.icon-bottom expand_more

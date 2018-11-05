@@ -1,10 +1,11 @@
 class BrandsController < ApplicationController
   before_action :set_brand, only: [:show, :edit, :update, :destroy]
 
-  # GET /brands
-  # GET /brands.json
   def index
-    @brands = Brand.all
+    @brand_genres = BrandGenre.all
+    @brands = params[:brand_genre_id].present? ? BrandGenre.find(params[:brand_genre_id]).brands : Brand.all
+    items = params[:brand_genre_id].present? ? BrandGenre.find(params[:brand_genre_id]).items.limit(4) : Item.all.limit(4)
+    @items = items.order("id DESC")
   end
 
   # GET /brands/1
