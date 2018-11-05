@@ -1,0 +1,35 @@
+.categories-index-items{
+  margin-top: 30px;
+  .item-card-simple{
+    background: $white;
+    float: left;
+    height: 200px;
+    position: relative;
+    width: 200px;
+    .item-img{
+      width:200px;
+      height:200px;
+      object-fit: cover;
+    }
+    .item-info{
+      background-color: rgba($gray,0.7);
+      box-sizing:border-box;
+      color: $white;
+      height: 30px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 200px;
+      &__price{
+        color:$white;
+        float: left;
+        line-height: 30px;
+        margin-left: 10px;
+      }
+      span{
+        font-size: 10px;
+        padding-left: 15px;
+      }
+    }
+  }
+}

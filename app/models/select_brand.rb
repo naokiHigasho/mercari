@@ -1,0 +1,2 @@
+class SelectBrand < ApplicationRecord
+end

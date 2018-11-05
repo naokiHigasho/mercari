@@ -6,6 +6,10 @@ body {
   color: rgb(51, 51, 51);
   line-height: 1;
   background: rgb(245, 245, 245);
+  h1,h2,h3,p,div,a,li {
+    letter-spacing: 0.05em;
+    font-feature-settings: "palt";
+  }
 }
 .container{
   width: 100vw;

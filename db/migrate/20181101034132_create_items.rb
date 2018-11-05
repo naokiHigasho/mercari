@@ -4,12 +4,14 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string        :image
       t.string        :name
       t.text          :text
-      t.references    :category_tag
+      t.references    :category_genre
+      t.references    :category
+      t.references    :brand_genre
       t.references    :brand
       t.string        :quality_status
       t.string        :days
       t.integer       :price
-      t.integer       :sale_status, default: false
+      t.integer       :sale_status, default: 0
       t.timestamps
     end
   end

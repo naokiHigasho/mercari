@@ -18,27 +18,3 @@
     width: 1000px;
   }
 }
-.items-index-sub{
-  background-color: $white;
-  border-radius: 3px;
-  height: 180px;
-  margin: 80px 10px;
-  width: 980px;
-  .title{
-    background-color: $red;
-    border-radius: 3px;
-    color: $white;
-    font-size: 24px;
-    font-weight: bold;
-    height:55px;
-    line-height: 55px;
-    text-align: center;
-  }
-  .body{
-    box-sizing:border-box;
-    color: $gray-dark;
-    line-height: 1.5;
-    padding: 30px;
-    text-align: justify;
-  }
-}

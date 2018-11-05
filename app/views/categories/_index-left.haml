@@ -1,0 +1,7 @@
+.categories-index-left
+  %ul.tag-1st-lists.clearfix
+    %li.tag-1st-lists__list
+      = link_to "すべて", categories_path
+    - @category_genres.each.with_index(1)  do |category_genre, i|
+      %li.tag-1st-lists__list
+        = link_to category_genre.name, categories_path(category_genre_id: i)

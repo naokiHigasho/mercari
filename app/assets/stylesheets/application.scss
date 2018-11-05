@@ -8,6 +8,7 @@
 @import "./application/base";
 @import "./application/item-card";
 @import "./application/item-card-small";
+@import "./application/item-card-simple200";
 @import "./application/sale-status";
 @import "./home/index";
 @import "./home/index_top_main_visual";
@@ -18,8 +19,15 @@
 @import "./items/form";
 @import "./items/pagination";
 @import "./brands/index";
+@import "./brands/index-left";
+@import "./brands/index-items";
+@import "./brands/index-brand-list";
 @import "./brands/show";
 @import "./categories/index";
+@import "./categories/index-left";
+@import "./categories/index-items";
+@import "./categories/index-right";
+@import "./categories/show";
 @import "./addresses/new";
 @import "./shared/footer";
 @import "./shared/header";

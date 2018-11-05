@@ -1,5 +1,7 @@
 class Item < ApplicationRecord
   mount_uploader :image, ImageUploader
+  belongs_to :brand_genre
   belongs_to :brand
-  belongs_to :category_tag
+  belongs_to :category_genre
+  belongs_to :category
 end

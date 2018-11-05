@@ -1,0 +1,19 @@
+= form_for @select_brand do |f|
+  - if @select_brand.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@select_brand.errors.count, "error")} prohibited this select_brand from being saved:"
+      %ul
+        - @select_brand.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :status01
+    = f.number_field :status01
+  .field
+    = f.label :status02
+    = f.number_field :status02
+  .field
+    = f.label :status03
+    = f.number_field :status03
+  .actions
+    = f.submit 'Save'

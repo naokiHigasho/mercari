@@ -1,0 +1,50 @@
+.categories-index-right{
+  background-color: $white;
+  border-radius: 3px;
+  float: right;
+  min-height: 800px;
+  width: 800px;
+  .title-box{
+    background-color: $red;
+    border-radius: 3px;
+    box-sizing: border-box;
+    height: 55px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    .title-1st{
+      color: $white;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 55px;
+    }
+  }
+  .category-box{
+    box-sizing:border-box;
+    margin-top: 30px;
+    padding: 0 40px;
+    width: 800px;
+    &__title{
+      color:$gray-dark;
+      font-size: 16px;
+    }
+    &__lists{
+      box-sizing:border-box;
+      color: $gray-dark;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    &__list{
+      box-sizing: border-box;
+      float: left;
+      padding: 0 0 15px 15px;
+      width: 240px;
+      a{
+        color:$blue;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
