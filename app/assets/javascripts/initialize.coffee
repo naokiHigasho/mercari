@@ -1,4 +1,4 @@
-jQuery(document).on 'turbolinks:load', ->
+jQuery(window).on 'load', ->
   $('.categories-item-slider').slick({
     slidesToShow: 4,
     slidesToScroll: 4,
