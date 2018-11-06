@@ -6,4 +6,7 @@ class HomeController < ApplicationController
     @category03_items = Item.where("category_genre_id = '3'").order("id DESC").limit(4)
     @category04_items = Item.where("category_genre_id = '4'").order("id DESC").limit(4)
   end
+
+  def signup_select
+  end
 end

@@ -1,0 +1,75 @@
+.creditcard-contents-wrapper {
+  background-color: $white;
+  font-size: 14px;
+  margin: auto;
+  width: 700px;
+  .title{
+    border-bottom:1px solid #f5f5f5;
+    font-size: 24px;
+    font-weight: bold;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
+  .creditcard-form{
+    box-sizing:border-box;
+    padding: 40px 0;
+    .form-field{
+      margin: 0 auto 40px;
+      width: 320px;
+    }
+    .label{
+      font-weight: 600;
+    }
+    .text-field{
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      box-sizing:border-box;
+      height: 48px;
+      margin-top: 8px;
+      padding: 10px 16px 8px;
+      width: 320px;
+    }
+    .card-logo {
+      height: 30px;
+      width: 300px;
+      margin-right: 0;
+    }
+    select {
+      background-color: $white;
+      box-shadow: none;
+      height: 48px;
+      margin-top: 8px;
+      width: 320px;
+    }
+    .card-number{
+      color: $blue;
+      padding-top: 8px;
+      text-align: right;
+    }
+    .fa.fa-question-circle {
+      color: $blue;
+      text-align: right;
+    }
+    .actions{
+      margin-top: 40px;
+      text-align: center;
+    }
+    .submit-btn{
+      &:hover{
+        background-color: rgba($red, 1);
+      }
+      background-color: rgba($red, 0.8);
+      border-radius: 4px;
+      color:$white;
+      display: inline-block;
+      height: 48px;
+      line-height: 48px;
+      text-align: center;
+      width: 320px;
+    }
+    .bottom-space{
+      margin-bottom: 8px;
+    }
+  }
+}

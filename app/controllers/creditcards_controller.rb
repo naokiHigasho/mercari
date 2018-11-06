@@ -1,10 +1,9 @@
 class CreditcardsController < ApplicationController
   before_action :set_creditcard, only: [  :edit, :update, :destroy]
 
-  def new
+  def index
     @creditcards = Creditcard.all
   end
-
 
   def new
     @creditcard = Creditcard.new
@@ -14,23 +13,22 @@ class CreditcardsController < ApplicationController
   end
 
   def create
-    @creditcard = Creditcard.new(creditcard_params)
+    @creditcard = Creditcard.create(creditcard_params)
   end
 
   def update
   end
-
 
   def destroy
     @creditcard.destroy
   end
 
   private
-    def set_creditcard
-      @creditcard = Creditcard.find(params[:id])
-    end
+  def set_creditcard
+    @creditcard = Creditcard.find(params[:id])
+  end
 
-    def creditcard_params
-      params.fetch(:creditcard, {})
-    end
+  def creditcard_params
+    params.require(:creditcard).permit(:card_number, :expiration_month, :expiration_year, :security_code).merge(user_id: current_user.id)
+  end
 end

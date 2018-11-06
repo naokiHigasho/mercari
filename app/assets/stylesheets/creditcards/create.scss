@@ -1,0 +1,50 @@
+.create-container-wrapper {
+  background-color: $white;
+  box-sizing:border-box;
+  margin: auto;
+  width: 700px;
+  .title{
+    border-bottom:1px solid #f5f5f5;
+    font-size: 24px;
+    font-weight: bold;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+  }
+  .social-box{
+    padding: 60px 0;
+  }
+  .signup-btn{
+    background-color: pink;
+    border-radius: 3px;
+    display: block;
+    height: 50px;
+    margin: 0 auto 20px;
+    line-height: 50px;
+    text-align: center;
+    width: 320px;
+    position: relative;
+    text-decoration: none;
+    .fa{
+      font-size: 18px;
+      position: absolute;
+      top: 17px;
+      left: 15px;
+    }
+  }
+  .btn-mail {
+    background: #eee;
+    color: #000;
+    .fa{
+      color:gray;
+    }
+  }
+  .facebook-btn {
+    background-color: #385185;
+    color: $white;
+  }
+  .google-plus-btn {
+    background-color: #dc4e41;
+    color: $white;
+  }
+}

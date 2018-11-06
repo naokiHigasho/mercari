@@ -1,5 +1,6 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
     @addresses = Address.all
@@ -18,14 +19,14 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save
-      redirect_to @address, notice: 'Address was successfully created.'
+      redirect_to new_creditcard_path, notice: 'Address was successfully created.'
     else
       render :new
     end
   end
 
   def update
-    if @0-9999999990------------------address.update(address_params)
+    if @address.update(address_params)
       redirect_to @address, notice: 'Address was successfully updated.'
     else
       render :edit
@@ -43,6 +44,6 @@ class AddressesController < ApplicationController
     end
 
     def address_params
-      params.require(:address).permit(:name01, :name02, :name03, :name04, :zip, :state, :city, :address_line, :tel)
+      params.require(:address).permit(:name01, :name02, :name03, :name04, :zip, :state, :city, :address_line, :tel).merge(user_id: current_user.id)
     end
 end
