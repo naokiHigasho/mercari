@@ -6,19 +6,9 @@ class CategoriesController < ApplicationController
     items = params[:category_genre_id].present? ? CategoryGenre.find(params[:category_genre_id]).items.limit(12) : Item.all.limit(12)
     @items = items.order("id DESC")
 
-    @genre01_categories = Category.where("category_genre_id = '1'")
-    @genre02_categories = Category.where("category_genre_id = '2'")
-    @genre03_categories = Category.where("category_genre_id = '3'")
-    @genre04_categories = Category.where("category_genre_id = '4'")
-    @genre05_categories = Category.where("category_genre_id = '5'")
-    @genre06_categories = Category.where("category_genre_id = '6'")
-    @genre07_categories = Category.where("category_genre_id = '7'")
-    @genre08_categories = Category.where("category_genre_id = '8'")
-    @genre09_categories = Category.where("category_genre_id = '9'")
-    @genre10_categories = Category.where("category_genre_id = '10'")
-    @genre11_categories = Category.where("category_genre_id = '11'")
-    @genre12_categories = Category.where("category_genre_id = '12'")
-    @genre13_categories = Category.where("category_genre_id = '13'")
+    1.upto(13) do |i|
+      eval("@genre#{i}_categories = Category.where(category_genre_id: #{i})")
+    end
   end
 
   def show
