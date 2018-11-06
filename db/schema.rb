@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20181104204508) do
     t.string   "city"
     t.string   "address_line"
     t.string   "tel"
+    t.integer  "user_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -57,8 +58,9 @@ ActiveRecord::Schema.define(version: 20181104204508) do
   create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "card_number"
     t.string   "expiration_month"
-    t.string   "expiration_day"
+    t.string   "expiration_year"
     t.string   "security_code"
+    t.integer  "user_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
   end

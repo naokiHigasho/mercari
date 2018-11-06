@@ -1,0 +1,16 @@
+= render 'shared/single_header'
+.container
+  .signup-container-wrapper
+    .title
+      新規会員登録
+    .social-box
+      = link_to new_user_registration_path, class: "signup-btn btn-mail" do
+        = fa_icon "envelope"
+        メールアドレスで登録
+      = link_to "#", class: "signup-btn facebook-btn" do
+        = fa_icon "facebook"
+        Facebookで登録
+      = link_to "#", class: "signup-btn google-plus-btn" do
+        = fa_icon "google-plus"
+        Googleで登録
+= render 'shared/single_footer'

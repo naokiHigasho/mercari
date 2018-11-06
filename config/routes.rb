@@ -6,14 +6,15 @@ Rails.application.routes.draw do
     sessions:      'users/sessions',
   }
   root 'home#index'
+  resources :home, only: %i[index] do
+    collection do
+      get 'signup_select'
+    end
+  end
   resources :addresses
   resources :brands
   resources :categories
-  resources :creditcards do
-    collection do
-    get 'signup'
-    end
-  end
+  resources :creditcards
   resources :items
   resources :select_brands
 end
