@@ -4,95 +4,12 @@
       = params[:category_genre_id].present? ? CategoryGenre.find(params[:category_genre_id]).name : "カテゴリ一覧"
   = render 'categories/index-item-slider'
 
-  - category_genre_id = params[:category_genre_id]
-  - if category_genre_id.nil? || category_genre_id == "1"
-    .category-box
-      %p.category-box__title レディース
-      %ul.category-box__lists.clearfix
-        - @genre01_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "2"
-    .category-box
-      %p.category-box__title メンズ
-      %ul.category-box__lists.clearfix
-        - @genre02_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "3"
-    .category-box
-      %p.category-box__title ベビー・キッズ
-      %ul.category-box__lists.clearfix
-        - @genre03_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "4"
-    .category-box
-      %p.category-box__title インテリア・住まい
-      %ul.category-box__lists.clearfix
-        - @genre04_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "5"
-    .category-box
-      %p.category-box__title 本・音楽・ゲーム
-      %ul.category-box__lists.clearfix
-        - @genre05_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "6"
-    .category-box
-      %p.category-box__title おもちゃ・ホビー
-      %ul.category-box__lists.clearfix
-        - @genre06_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "7"
-    .category-box
-      %p.category-box__title コスメ・香水・美容
-      %ul.category-box__lists.clearfix
-        - @genre07_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "8"
-    .category-box
-      %p.category-box__title 家電・スマホ・カメラ
-      %ul.category-box__lists.clearfix
-        - @genre08_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "9"
-    .category-box
-      %p.category-box__title スポーツ・レジャー
-      %ul.category-box__lists.clearfix
-        - @genre09_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "10"
-    .category-box
-      %p.category-box__title ハンドメイド
-      %ul.category-box__lists.clearfix
-        - @genre10_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "11"
-    .category-box
-      %p.category-box__title チケット
-      %ul.category-box__lists.clearfix
-        - @genre11_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "12"
-    .category-box
-      %p.category-box__title 自動車・オートバイ
-      %ul.category-box__lists.clearfix
-        - @genre12_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
-  - if category_genre_id.nil? || category_genre_id == "13"
-    .category-box
-      %p.category-box__title その他
-      %ul.category-box__lists.clearfix
-        - @genre13_categories.each do |category|
-          %li.category-box__list
-            = link_to category.name, category
+  - 1.upto(13) do |i|
+    - if params[:category_genre_id].nil? || params[:category_genre_id] == "#{i}"
+      .category-box
+        %p.category-box__title
+          = CategoryGenre.find("#{i}").name
+        %ul.category-box__lists.clearfix
+          - eval("@genre#{i}_categories").each do |category|
+            %li.category-box__list
+              = link_to category.name, category
