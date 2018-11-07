@@ -24,6 +24,8 @@
                 %li.header-nav-parent
                   %h3
                     = link_to brand_genre.name, brands_path(brand_genre_id: i), class: "header-nav-parent-list"
+          %li
+            %h2= link_to "検索", search_index_path, class: "header-nav-root"
 
       .l-right
         %ul.header-user-nav

@@ -115,34 +115,11 @@
         padding: 0 0 0 16px;
         vertical-align: middle;
       }
-      .sp-header-user-icon {
-        margin: 0;
-        div {
-          display: inline-block;
-          margin: 0 0 0 8px;
-          font-size: 14px;
-          vertical-align: middle;
-        }
-        figure {
-          line-height: 0;
-          display: inline-block;
-          position: relative;
-          width: 32px;
-          height: 32px;
-          margin: 0 auto;
-          vertical-align: middle;
-          div {
-            overflow: hidden;
-            border-radius: 50%;
-          }
-        }
-      }
     }
     &-box {
       position: absolute;
       top: 38px;
       z-index: 1;
-      // display: none;
       width: 320px;
       background: $white;
       box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
