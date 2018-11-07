@@ -1,0 +1,60 @@
+.comment-container {
+  background-color: $white;
+  padding:24px;
+  margin-bottom: 64px;
+
+  .comment-index{
+    .comment-body {
+      margin-bottom: 20px;
+    }
+    .user-name {
+      padding-left: 70px;
+      margin-bottom: 6px;
+      p{
+        font-size: 14px;
+
+      }
+    }
+    .user-icon {
+      height: 40px;
+      width: 40px;
+      background-color: $yellow;
+      float: left;
+      border-radius: 20px;
+    }
+    .user-comment{
+      padding: 15px;
+      background-color: $gray-bg;
+      width: calc(600px - 50px);
+      min-height: 80px;
+      float: right;
+      border-radius: 20px;
+    }
+  }
+  .comment-form {
+    p{
+      background-color:$yellow;
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+
+  .textarea-default {
+    border: 1px solid $gray-light;
+    min-height: 100px;
+    margin: 8px 0 0;
+    padding:10px;
+    overflow: auto;
+    resize: vertical;
+    width: calc(700px - 68px);
+  }
+
+  .comment-submit{
+    width: calc(700px - 48px);
+    margin: 8px 0 0;
+    font-size: 0;
+    text-align: center;
+    font-size: 14px;
+    vertical-align: middle;
+  }
+}

@@ -1,0 +1,14 @@
+.comment-container
+  .comment-index
+    - @item.comments.each do |comment|
+      .comment-body.clearfix
+        = image_tag("noimage.png", class: "user-icon")
+        .user-name.bold
+          %p 出品者
+        .user-comment
+          = comment.text
+  .comment-form
+    %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  = form_for [@item, @comment ] do |f|
+    = f.text_area :text, class: "textarea-default"
+    = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
