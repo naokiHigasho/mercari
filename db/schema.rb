@@ -77,12 +77,14 @@ ActiveRecord::Schema.define(version: 20181104204508) do
     t.string   "days"
     t.integer  "price"
     t.integer  "sale_status",                     default: 0
+    t.integer  "user_id"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
     t.index ["brand_genre_id"], name: "index_items_on_brand_genre_id", using: :btree
     t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
     t.index ["category_genre_id"], name: "index_items_on_category_genre_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "select_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

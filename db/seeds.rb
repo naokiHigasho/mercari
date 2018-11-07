@@ -190,6 +190,11 @@ end
   Brand.create( name: "食品#{i}", brand_genre_id: 14)
 end
 
+(1..5).each do |i|
+  user = User.new(email: "hogehoge#{i}@hoge.com", password: "hugahuga#{i}")
+  user.save!
+end
+
 
 (1..50).each do |i|
   if (i % 10) == 0
@@ -203,7 +208,9 @@ end
       category_id: 1,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 1)
+      price: 1192,sale_status: 1,
+      user_id: 1,
+      )
   elsif (i % 9) == 0
     Item.create(
       name: "商品#{i}",
@@ -215,7 +222,9 @@ end
       category_id: 21,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 0)
+      price: 1192,sale_status: 0,
+      user_id: 2,
+      )
   elsif (i % 8) == 0
     Item.create(
       name: "商品#{i}",
@@ -227,7 +236,9 @@ end
       category_id: 41,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 2)
+      price: 1192,sale_status: 2,
+      user_id: 3,
+      )
   elsif (i % 7) == 0
     Item.create(
       name: "商品#{i}",
@@ -239,7 +250,9 @@ end
       category_id: 61,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 0)
+      price: 1192,sale_status: 0,
+      user_id: 4,
+      )
   elsif (i % 6) == 0
     Item.create(
       name: "商品#{i}",
@@ -251,7 +264,9 @@ end
       category_id: 81,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 0)
+      price: 1192,sale_status: 0,
+      user_id: 5,
+      )
   elsif (i % 5) == 0
     Item.create(
       name: "商品#{i}",
@@ -263,7 +278,9 @@ end
       category_id: 2,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 0)
+      price: 1192,sale_status: 0,
+      user_id: 1,
+      )
   elsif (i % 4) == 0
     Item.create(
       name: "商品#{i}",
@@ -275,7 +292,9 @@ end
       category_id: 22,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 0)
+      price: 1192,sale_status: 0,
+      user_id: 2,
+      )
   elsif (i % 3) == 0
     Item.create(
       name: "商品#{i}",
@@ -287,7 +306,9 @@ end
       category_id: 42,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 0)
+      price: 1192,sale_status: 0,
+      user_id: 3,
+      )
   elsif (i % 2) == 0
     Item.create(
       name: "商品#{i}",
@@ -299,7 +320,9 @@ end
       category_id: 62,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 0)
+      price: 1192,sale_status: 0,
+      user_id: 4,
+      )
   else
     Item.create(
       name: "商品#{i}",
@@ -311,6 +334,8 @@ end
       category_id: 82,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 1192,sale_status: 0)
+      price: 1192,sale_status: 0,
+      user_id: 5,
+      )
   end
 end

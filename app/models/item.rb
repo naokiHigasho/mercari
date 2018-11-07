@@ -4,4 +4,5 @@ class Item < ApplicationRecord
   belongs_to :brand
   belongs_to :category_genre
   belongs_to :category
+  belongs_to :user
 end
