@@ -4,7 +4,7 @@
       .comment-body.clearfix
         = image_tag("noimage.png", class: "user-icon")
         .user-name.bold
-          %p 出品者
+          = comment.user.nickname
         .user-comment
           = comment.text
   .comment-form
