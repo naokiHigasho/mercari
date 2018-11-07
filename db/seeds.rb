@@ -199,8 +199,8 @@ end
 (1..50).each do |i|
   if (i % 10) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/10.jpg"),
+      name: "ルイヴィトン長財布#{i}",
+      image: File.open("./app/assets/images/010.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 1,
       brand_id: 1,
@@ -213,8 +213,8 @@ end
       )
   elsif (i % 9) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/9.jpg"),
+      name: "ps4#{i}",
+      image: File.open("./app/assets/images/09.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 2,
       brand_id: 21,
@@ -227,7 +227,7 @@ end
       )
   elsif (i % 8) == 0
     Item.create(
-      name: "商品#{i}",
+      name: "パンダ#{i}",
       image: File.open("./app/assets/images/8.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 3,
@@ -241,8 +241,8 @@ end
       )
   elsif (i % 7) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/7.jpg"),
+      name: "シャネルバッグ#{i}",
+      image: File.open("./app/assets/images/07.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 4,
       brand_id: 61,
@@ -255,8 +255,8 @@ end
       )
   elsif (i % 6) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/6.jpg"),
+      name: "NIKEナイキランニングパンツ#{i}",
+      image: File.open("./app/assets/images/06.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 5,
       brand_id: 81,
@@ -269,8 +269,8 @@ end
       )
   elsif (i % 5) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/5.jpg"),
+      name: "NIKE靴スニーカー#{i}",
+      image: File.open("./app/assets/images/05.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 1,
       brand_id: 2,
@@ -283,8 +283,8 @@ end
       )
   elsif (i % 4) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/4.jpg"),
+      name: "supremeシュプリームキャップぼうし#{i}",
+      image: File.open("./app/assets/images/04.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 2,
       brand_id: 22,
@@ -297,8 +297,8 @@ end
       )
   elsif (i % 3) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/3.jpg"),
+      name: "CHANELシャネル香水#{i}",
+      image: File.open("./app/assets/images/03.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 3,
       brand_id: 42,
@@ -311,8 +311,8 @@ end
       )
   elsif (i % 2) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/2.jpg"),
+      name: "supremeシュプリームTシャツ#{i}",
+      image: File.open("./app/assets/images/02.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 4,
       brand_id: 62,
@@ -325,8 +325,8 @@ end
       )
   else
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/sirokuma.jpg"),
+      name: "NIKEナイキTシャツ#{i}",
+      image: File.open("./app/assets/images/01.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 5,
       brand_id: 82,
