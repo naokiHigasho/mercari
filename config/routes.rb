@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions:      'users/sessions',
   }
+
   root 'home#index'
   resources :home, only: %i[index] do
     collection do
