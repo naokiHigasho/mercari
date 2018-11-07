@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   resources :creditcards
   resources :items
   resources :select_brands
+  resources :users, only: %i[show]
 end
