@@ -56,13 +56,13 @@
     }
     &-box {
       margin: 8px 0 0;
-      height: 62px;
+      height: 54px;
     }
     &-root {
       text-decoration: none;
       position: relative;
       height: 38px;
-      line-height: 32px;
+      line-height: 38px;
       display: block;
       color: $gray-dark;
       :hover {
@@ -125,11 +125,18 @@
       box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
       font-size: 14px;
     }
+    &-icon {
+      line-height: 0;
+      display: inline-block;
+      position: relative;
+      margin: 0 auto;
+      vertical-align: middle;
+      overflow: hidden;
+      border-radius: 50%;
+    }
   }
   &-mypage {
-    &-box {
-      left: 0;
-    }
+    display: inline-block;
     &-state {
       figure {
         margin: 0;
@@ -226,6 +233,9 @@
       color: $white;
     }
   }
+}
+.header-nav {
+  margin-right: 20px;
 }
 .mypage {
   &-nav {
