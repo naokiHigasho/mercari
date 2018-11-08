@@ -191,7 +191,7 @@ end
 end
 
 (1..5).each do |i|
-  user = User.new(email: "hogehoge#{i}@hoge.com", password: "hugahuga#{i}")
+  user = User.new(nickname: "パンダ太郎#{i}", email: "hogehoge#{i}@hoge.com", password: "hugahuga#{i}")
   user.save!
 end
 

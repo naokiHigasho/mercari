@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   resources :creditcards
   resources :items
   resources :select_brands
-  resources :search, only: [:index]
+  resources :search, only: %i[index]
+  resources :users, only: %i[show]
 end
