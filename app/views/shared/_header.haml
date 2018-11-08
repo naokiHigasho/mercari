@@ -9,7 +9,7 @@
           %ul.header-user-nav
             - if user_signed_in?
               %li
-                = link_to "", class: "sp-header-user-icon header-nav-root" do
+                = link_to user_dashboards_path(current_user.id), class: "sp-header-user-icon header-nav-root" do
                   .header-user-icon
                     = image_tag("noimage.png", alt: "noimage", width: "32px")
                   .header-mypage

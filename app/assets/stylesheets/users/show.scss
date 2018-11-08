@@ -1,0 +1,109 @@
+.users-show-contents-wrapper{
+  background-color: $white;
+  box-sizing: border-box;
+  margin: auto ;
+  width: 1000px;
+}
+.user-show-header{
+  height: 320px;
+  position: relative;
+  width: 1000px;
+  .background-img{
+    width:1000px;
+    height:320px;
+    object-fit: cover;
+  }
+  .info-box{
+    height: 320px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 1000px;
+    .avatar-img{
+      border-radius: 100px;
+      height:200px;
+      margin-top: 50px;
+      object-fit: cover;
+      width:200px;
+    }
+    &__nickname{
+      color: $gray-dark;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top: 20px;
+    }
+  }
+}
+.users-show-main{
+  margin-top: 40px;
+  width: 1000px;
+  h2{
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  a{
+    text-decoration: none;
+  }
+  .users-show-items{
+    width: 1000px;
+  }
+}
+.users-show-item-card{
+  box-sizing:border-box;
+  float: left;
+  height: 200px;
+  position: relative;
+  width: 200px;
+  &:hover{
+    .item-img{
+      object-fit: none;
+      opacity: 0.8;
+      transition:0.3s;
+      transform: scale(-1, 1);
+    }
+    .item-info-box{
+      visibility:visible;
+    }
+  }
+  .item-img{
+    width:200px;
+    height:200px;
+    object-fit: cover;
+  }
+  .item-info-box{
+    background-color: rgba($white, 0.5);
+    box-sizing:border-box;
+    color:$gray-dark;
+    height: 200px;
+    padding-top: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility:hidden;
+    width: 200px;
+    .item-name{
+      box-sizing:border-box;
+      font-weight: bold;
+      height: 55px;
+      line-height: 1.5;
+      overflow: hidden;
+      padding: 10px 15px 10px 15px;
+      width: 200px;
+    }
+    .item-info{
+      padding: 0 15px;
+      &__price{
+        float: left;
+      }
+      &__like{
+        float: right;
+      }
+    }
+    .item-tax{
+      font-size: 10px;
+      padding-left: 15px;
+    }
+  }
+}
