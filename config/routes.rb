@@ -5,18 +5,19 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions:      'users/sessions',
   }
-
   root 'home#index'
   resources :home, only: %i[index] do
     collection do
       get 'signup_select'
     end
   end
-  resources :addresses
   resources :brands
   resources :categories
   resources :creditcards
   resources :items
   resources :select_brands
-  resources :users, only: %i[show]
+  resources :users, only: %i[show] do
+    resources :addresses
+    resource :dashboards
+  end
 end

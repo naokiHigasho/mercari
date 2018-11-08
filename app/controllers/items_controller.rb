@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_target_item, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[edit, update, destroy, new, create]
+  before_action :authenticate_user!, except: %i[index, show]
 
   def index
     @items = Item.page(params[:page]).per(30).order("id DESC")

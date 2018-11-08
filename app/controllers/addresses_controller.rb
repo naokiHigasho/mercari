@@ -1,6 +1,5 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   def index
     @addresses = Address.all
@@ -10,6 +9,7 @@ class AddressesController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @address = Address.new
   end
 
