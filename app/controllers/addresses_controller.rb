@@ -19,7 +19,7 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
     if @address.save
-      redirect_to new_creditcard_path, notice: 'Address was successfully created.'
+      redirect_to new_user_creditcards_path(params[:user_id]), notice: 'Address was successfully created.'
     else
       render :new
     end

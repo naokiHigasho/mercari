@@ -6,6 +6,7 @@ class CreditcardsController < ApplicationController
   end
 
   def new
+    @user = User.find(params[:user_id])
     @creditcard = Creditcard.new
   end
 

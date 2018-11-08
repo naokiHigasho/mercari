@@ -1,5 +1,5 @@
 .creditcard-form
-  = form_for @creditcard do |f|
+  = form_for [@user, @creditcard] do |f|
     - if @creditcard.errors.any?
       #error_explanation
         %h2= "#{pluralize(@creditcard.errors.count, "error")} prohibited this creditcard from being saved:"
