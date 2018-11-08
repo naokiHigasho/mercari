@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :categories
   resources :items
   resources :select_brands
+  resources :search, only: %i[index]
   resources :users, only: %i[show] do
     resource :addresses
     resource :creditcards

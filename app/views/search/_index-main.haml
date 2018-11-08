@@ -1,0 +1,29 @@
+.items-index-main
+  %form{class: "search-form"}
+    %input{class: "search__query input-default bold", type: "text", name: "keyword", placeholder: "検索したいキーワードを入力してください"}
+    %i.material-icons search
+
+  %h2.search-result-head
+
+  .items.clearfix
+    - @items.each do |item|
+      .item-card-small
+        = link_to item do
+          - case item.sale_status
+          - when 1
+            .mark.sold
+            %p.status-text SOLD
+          - when 2
+            .mark.reserved
+            %p.status-text 予約済
+          = image_tag(item.image, class: "item-img lazyloaded")
+          .item-name.font-2
+            = item.name
+          .item-info.clearfix
+            .item-info__price.font-5
+              ¥
+              = item.price
+            .item-info__like.font-2
+              = fa_icon "heart"
+              %span 7
+          %p.item-tax (税込)
