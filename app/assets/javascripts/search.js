@@ -61,7 +61,7 @@ $(function() {
         items.forEach(function(item){
           appendProduct(item);
         });
-        hitNum = "検索結果 ： " + items.length + " 件見つかりました。";
+        hitNum = "検索結果 ： " + items.length + " 件";
         $(".search-result-head").append(hitNum);
       }
       else {
