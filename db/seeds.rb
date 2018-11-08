@@ -190,10 +190,21 @@ end
   Brand.create( name: "食品#{i}", brand_genre_id: 14)
 end
 
+
 (1..5).each do |i|
-  user = User.new(email: "hogehoge#{i}@hoge.com", password: "hugahuga#{i}")
+  user = User.new(nickname: "パンダ太郎#{i}", email: "hogehoge#{i}@hoge.com", password: "hugahuga#{i}")
   user.save!
 end
+
+(1..5).each do |i|
+  Dashboard.create(
+    user_id: i,
+    avatar: File.open("./app/assets/images/avatar#{i}.jpg"),
+    background: File.open("./app/assets/images/background#{i}.jpg"),
+  )
+end
+
+
 
 
 (1..50).each do |i|

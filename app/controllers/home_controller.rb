@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+
   def index
     @items = Item.order("id DESC").limit(4)
     @category01_items = Item.where("category_genre_id = '1'").order("id DESC").limit(4)

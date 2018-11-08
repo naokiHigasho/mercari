@@ -1,13 +1,16 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
+
   def after_sign_up_path_for(resource)
-    new_address_path
+    new_user_address_path(resource)
   end
 
   def after_inactive_sign_up_path_for(resource)
-    new_address_path
+    new_user_address_path(resource)
   end
+
+
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
