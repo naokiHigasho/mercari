@@ -1,6 +1,7 @@
 class AddressesController < ApplicationController
   before_action :set_address, only: %i[ edit update destroy]
   before_action :set_user, only: %i[ new edit ]
+  before_action :authenticate_user!
 
   def new
     @address = Address.new

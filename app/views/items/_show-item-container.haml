@@ -19,22 +19,6 @@
           %td
             = link_to user_path(@item.user_id) do
               = @item.user.nickname
-            / 評価アイコン
-            /
-              <div>
-              <div class="item-user-ratings">
-              <i class="icon-good"></i>
-              <span>112</span>
-              </div>
-              <div class="item-user-ratings">
-              <i class="icon-normal"></i>
-              <span>5</span>
-              </div>
-              <div class="item-user-ratings">
-              <i class="icon-bad"></i>
-              <span>0</span>
-              </div>
-              </div>
         %tr
           %th カテゴリー
           %td
@@ -71,7 +55,11 @@
       = @item.price
     %p.item-price__tax（税込）
     %p.item-price__option 送料込み
-  = link_to "購入画面に進む", "#", class: "buy-btn"
+  -case @item.sale_status
+  - when 0
+    = link_to "購入画面に進む", item_sell_records_path(@item), class: "buy-btn"
+  - when 1
+    %p.buy-btn Soldout
   .item-text
     = @item.text
   .item-footer.clearfix
@@ -85,6 +73,7 @@
     = link_to "#", class: "item-footer__link" do
       = fa_icon "lock"
       あんしん・あんぜんへの取り組み
-  .sell-btn-box
-    = link_to "商品情報を編集する", edit_item_path(@item), method: :get, class: "btn-default btn-gray btn-edit"
-    = link_to "商品を削除する", item_path(@item), method: :delete, class: "btn-default btn-gray btn-delete"
+  - if user_signed_in? && current_user.id == @item.user_id
+    .sell-btn-box
+      = link_to "商品情報を編集する", edit_item_path(@item), method: :get, class: "btn-default btn-gray btn-edit"
+      = link_to "商品を削除する", item_path(@item), method: :delete, class: "btn-default btn-gray btn-delete"

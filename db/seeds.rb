@@ -191,22 +191,17 @@ end
 end
 
 
+user = User.new(nickname: "admin", email: "admin@admin", password: "password")
+user.save!
+
 user = User.new(nickname: "hoge", email: "hoge@hoge", password: "hogehoge")
 user.save!
 
-
-(2..5).each do |i|
+(3..5).each do |i|
   user = User.new(nickname: "パンダ太郎#{i}", email: "hoge#{i}@com", password: "hogehoge")
   user.save!
 end
 
-(1..5).each do |i|
-  Dashboard.create(
-    user_id: i,
-    avatar: File.open("./app/assets/images/avatar#{i}.jpg"),
-    background: File.open("./app/assets/images/background#{i}.jpg"),
-  )
-end
 
 (1..5).each do |i|
   Address.create(
@@ -247,7 +242,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 1,
-      user_id: 1,
+      user_id: 3,
       )
   elsif (i % 9) == 0
     Item.create(
@@ -261,7 +256,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 2,
+      user_id: 4,
       )
   elsif (i % 8) == 0
     Item.create(
@@ -275,7 +270,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 2,
-      user_id: 3,
+      user_id: 5,
       )
   elsif (i % 7) == 0
     Item.create(
@@ -289,7 +284,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 4,
+      user_id: 3,
       )
   elsif (i % 6) == 0
     Item.create(
@@ -303,7 +298,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 5,
+      user_id: 4,
       )
   elsif (i % 5) == 0
     Item.create(
@@ -317,7 +312,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 1,
+      user_id: 5,
       )
   elsif (i % 4) == 0
     Item.create(
@@ -331,7 +326,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 2,
+      user_id: 3,
       )
   elsif (i % 3) == 0
     Item.create(
@@ -345,7 +340,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 3,
+      user_id: 4,
       )
   elsif (i % 2) == 0
     Item.create(
@@ -359,7 +354,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 4,
+      user_id: 5,
       )
   else
     Item.create(
@@ -373,7 +368,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 5,
+      user_id: 3,
       )
   end
 end
