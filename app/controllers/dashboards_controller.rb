@@ -1,6 +1,7 @@
 class DashboardsController < ApplicationController
   before_action :set_dashboard, only: %i[ show edit update destroy]
   before_action :set_user, only: %i[ new edit ]
+  before_action :authenticate_user!
 
   def show
   end

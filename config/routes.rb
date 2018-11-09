@@ -13,7 +13,13 @@ Rails.application.routes.draw do
   end
   resources :brands
   resources :categories
-  resources :items
+  resources :items do
+    resource :sell_records do
+          member do
+        patch 'sell_agreement'
+      end
+    end
+  end
   resources :select_brands
   resources :search, only: %i[index]
   resources :users, only: %i[show] do

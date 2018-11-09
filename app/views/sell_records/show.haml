@@ -1,0 +1,36 @@
+= render 'shared/single_header'
+.container.bg-gray
+  .sell-records-contents-wrapper
+    .contents
+      .header
+        購入を確定しますか？
+      .item
+        = image_tag(@item.image, class: "item-img")
+        %p.item-name= @item.name
+        .item-price
+          ¥
+          = @item.price
+          %span (税込)
+      = link_to '購入する', sell_agreement_item_sell_records_path(params[:item_id], user_id: current_user.id), method: :patch, class: "btn"
+      / %hr
+      / .address
+      /   %h2
+      /     納品先住所
+      /     %span
+      /       = link_to "変更", "/users/#{current_user.id}/addresses/edit"
+      /   %P
+      /     〒
+      /     = current_user.address.zip
+      /   %P
+      /     = current_user.address.state
+      /     = current_user.address.city
+      /     = current_user.address.address_line
+      /   %P
+      /     = current_user.address.name01
+      /     = current_user.address.name02
+      / %hr
+      / .creditcard
+      /   %h2 支払い方法
+      /   %P クレジットカード
+      /   %P= current_user.creditcard.card_number
+= render 'shared/single_footer'
