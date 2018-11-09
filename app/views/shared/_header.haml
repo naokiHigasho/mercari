@@ -11,7 +11,7 @@
               %li
                 = link_to user_dashboards_path(current_user.id), class: "sp-header-user-icon header-nav-root" do
                   .header-user-icon
-                    = image_tag("noimage.png", alt: "noimage", width: "32px")
+                    = image_tag(current_user.dashboard.avatar, class: "header-avater")
                   .header-mypage
                     マイページ
 

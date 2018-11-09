@@ -1,4 +1,8 @@
-
-= @dashboard.user.nickname
-= image_tag(@dashboard.avatar, class: "item-img")
-= image_tag(@dashboard.background, class: "item-img")
+= render 'shared/header'
+.container.bg-gray.box-shadow
+  .dashboards-show-contents-wrapper.clearfix
+    = render 'dashboards/show-left'
+    .dashboards-show-right
+      = render 'dashboards/show-right'
+= render 'shared/app-banner'
+= render 'shared/footer'

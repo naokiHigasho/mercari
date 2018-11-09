@@ -1,0 +1,74 @@
+.dashboards-show-box{
+  background-color: $white;
+  border-radius: 3px;
+  min-height: 800px;
+  width: 800px;
+}
+.dashboards-header{
+  height: 200px;
+  margin-bottom: 40px;
+  position: relative;
+  width: 800px;
+  .background-img{
+    width:800px;
+    height:200px;
+    object-fit: cover;
+  }
+  .info-box{
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    width: 800px;
+    .avatar-img{
+      border-radius: 100px;
+      height:100px;
+      margin-top: 40px;
+      object-fit: cover;
+      width:100px;
+    }
+    &__nickname{
+      color: $gray-dark;
+      font-size: 18px;
+      font-weight: bold;
+      padding-top: 20px;
+    }
+  }
+}
+.user-items-lists{
+  table{
+    color: $gray-dark;
+    width: 800px;
+    a{
+      color: $gray-dark;
+      text-decoration: none;
+    }
+  }
+  table, th, td {
+    border-collapse: collapse;
+    line-height: 45px;
+  }
+  tr{
+    height: 45px;
+  }
+  th {
+    font-weight: bold;
+    vertical-align: top;
+    background: #3f3f3f;
+    color: $white;
+  }
+  td {
+    border-bottom: 1px solid #ccc;
+    vertical-align: top;
+  }
+  tr:nth-child(even) {
+    background: #d9d9d9;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .w8{
+    width: 8%;
+  }
+}

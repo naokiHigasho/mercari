@@ -1,0 +1,14 @@
+.dashboards-show-left
+  .setting-box
+    %ul.tag-1st-lists
+      %li.tag-1st-lists__list.title 設定
+      %li.tag-1st-lists__list
+        = link_to "プロフィール", "/users/#{current_user.id}/dashboards/edit"
+      %li.tag-1st-lists__list
+        = link_to "住所", "/users/#{current_user.id}/addresses/edit"
+      %li.tag-1st-lists__list
+        = link_to "支払い方法", "/users/#{current_user.id}/creditcards/edit"
+      %li.tag-1st-lists__list
+        = link_to "メール・パスワード", "#"
+      %li.tag-1st-lists__list
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
