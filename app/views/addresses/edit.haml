@@ -1,6 +1,10 @@
 = render 'shared/single_header'
 .container.bg-gray
   .address-contents-wrapper
-    %h1 住所情報変更
-    = render 'form'
+    %h1 住所情報を変更する
+    .adress-form
+      = form_for [@user, @address], :url => { :controller => :addresses, :action => :update },method: :patch do |f|
+        = render partial: 'form', locals: {f: f, msg: flash[:error_messages]}
+        .actions.margin40
+          = f.submit '次へ進む', class: "submit-btn"
 = render 'shared/single_footer'

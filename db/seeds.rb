@@ -191,8 +191,12 @@ end
 end
 
 
-(1..5).each do |i|
-  user = User.new(nickname: "パンダ太郎#{i}", email: "hogehoge#{i}@hoge.com", password: "hugahuga#{i}")
+user = User.new(nickname: "hoge", email: "hoge@hoge", password: "hogehoge")
+user.save!
+
+
+(2..5).each do |i|
+  user = User.new(nickname: "パンダ太郎#{i}", email: "hoge#{i}@com", password: "hogehoge")
   user.save!
 end
 
@@ -204,7 +208,30 @@ end
   )
 end
 
+(1..5).each do |i|
+  Address.create(
+    user_id: i,
+    name01: "高知#{i}",
+    name02: "土佐#{i}郎",
+    name03: "こうち#{i}",
+    name04: "とさ#{i}ろう",
+    zip: "777-7777",
+    state: "高知県",
+    city: "高知市",
+    address_line: "1-1-1",
+    tel: "000-0000-000#{i}",
+  )
+end
 
+(1..5).each do |i|
+  Creditcard.create(
+    user_id: i,
+    card_number: "7777-7777",
+    expiration_month: "04",
+    expiration_year: "2018",
+    security_code: "777",
+  )
+end
 
 
 (1..50).each do |i|

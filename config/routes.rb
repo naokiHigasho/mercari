@@ -13,12 +13,12 @@ Rails.application.routes.draw do
   end
   resources :brands
   resources :categories
-  resources :creditcards
   resources :items
   resources :select_brands
   resources :search, only: %i[index]
   resources :users, only: %i[show] do
-    resources :addresses
+    resource :addresses
+    resource :creditcards
     resource :dashboards
   end
 end

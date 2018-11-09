@@ -1,9 +1,6 @@
 class CreditcardsController < ApplicationController
-  before_action :set_creditcard, only: [  :edit, :update, :destroy]
-
-  def index
-    @creditcards = Creditcard.all
-  end
+  before_action :set_creditcard, only: %i[ edit update destroy]
+  before_action :set_user, only: %i[ new edit ]
 
   def new
     @creditcard = Creditcard.new
@@ -17,6 +14,11 @@ class CreditcardsController < ApplicationController
   end
 
   def update
+    if @creditcard.update(creditcard_params)
+      redirect_to user_dashboards_path(params[:user_id])
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -25,7 +27,11 @@ class CreditcardsController < ApplicationController
 
   private
   def set_creditcard
-    @creditcard = Creditcard.find(params[:id])
+    @creditcard = Creditcard.find_by(user_id: params[:user_id])
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def creditcard_params

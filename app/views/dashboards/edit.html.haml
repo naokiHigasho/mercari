@@ -1,7 +1,10 @@
-%h1 Editing dashboard
-
-= render 'form'
-
-= link_to 'Show', @dashboard
-\|
-= link_to 'Back', dashboards_path
+= render 'shared/single_header'
+.container.bg-gray
+  .dashboards-contents-wrapper
+    %h1 プロフィール変更
+    .dashboards-form
+      = form_for [@user, @dashboard], :url => { :controller => :dashboards, :action => :update },method: :patch do |f|
+        = render partial: 'form', locals: {f: f, msg: flash[:error_messages]}
+        .actions.margin40
+          = f.submit '更新する', class: "submit-btn"
+= render 'shared/single_footer'
