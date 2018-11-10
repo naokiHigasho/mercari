@@ -1,14 +1,34 @@
 .comment-container
   .comment-index
     - @item.comments.each do |comment|
-      .comment-body.clearfix
-        = image_tag("noimage.png", class: "user-icon")
-        .user-name.bold
-          = comment.user.nickname
-        .user-comment
-          = comment.text
-  .comment-form
-    %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-  = form_for [@item, @comment ] do |f|
-    = f.text_area :text, class: "textarea-default"
-    = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
+      - if comment.item.user_id == comment.user_id
+        .comment-body.left.clearfix
+          = image_tag("noimage.png", class: "user-icon")
+          .user-name.bold
+            = comment.user.nickname
+          .user-comment.left
+            = comment.text
+          .sell-user.bold
+            出品者
+          .delete-btn.left.btn-hover-op07
+            = link_to "削除", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+
+      - else
+        .comment-body.right.clearfix
+          = image_tag("noimage.png", class: "user-icon-right")
+          .user-name-right.bold
+            = comment.user.nickname
+          .user-comment.right
+            = comment.text
+          .delete-btn.right.btn-hover-op07
+            = link_to "削除", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+  - if user_signed_in?
+    .comment-form
+    = form_for [@item, @comment ] do |f|
+      = f.text_area :text, class: "textarea-default"
+      = f.label :image, class: 'form__mask__image' do
+        = fa_icon 'picture-o', class: 'icon'
+        = f.file_field :image, class: 'hidden'
+      = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
+  - else
+    = link_to "コメントするにはログインが必要です", new_user_session_path, class: "comment-submit btn-default btn-gray btn-hover-op07"

@@ -6,14 +6,7 @@
   .comment-index{
     .comment-body {
       margin-bottom: 20px;
-    }
-    .user-name {
-      padding-left: 70px;
-      margin-bottom: 6px;
-      p{
-        font-size: 14px;
-
-      }
+      overflow-wrap : break-word;
     }
     .user-icon {
       height: 40px;
@@ -21,14 +14,81 @@
       background-color: $yellow;
       float: left;
       border-radius: 20px;
+      margin-top: 20px;
+      margin-bottom: 5px;
     }
-    .user-comment{
+    .user-name {
+      padding-left: 70px;
+      margin-bottom: 6px;
+      p{
+        font-size: 14px;
+      }
+    }
+    .user-comment {
+      position: relative;
+      display: inline-block;
       padding: 15px;
-      background-color: $gray-bg;
       width: calc(600px - 50px);
       min-height: 80px;
-      float: right;
       border-radius: 20px;
+    }
+    .user-comment.left {
+      background: $blue-c;
+      float: right;
+    }
+    .user-comment.left:before{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 20px;
+      left: -23px;
+      border: 8px solid transparent;
+      border-right: 22px solid $blue-c;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .sell-user {
+      display: inline-block;
+      background-color: $blue-c;
+    }
+    .delete-btn.left {
+      margin-top: 10px;
+    }
+    .user-comment.right {
+      background-color: $yellow;
+      float: left;
+    }
+    .user-name-right {
+      text-align: right;
+      padding-right: 70px;
+      margin-bottom: 6px;
+      p{
+        font-size: 14px;
+      }
+    }
+    .user-icon-right {
+      float: right;
+      height: 40px;
+      width: 40px;
+      background-color: $yellow;
+      border-radius: 20px;
+      margin-top: 20px;
+    }
+    .user-comment.right:before{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 20px;
+      right: -23px;
+      border: 8px solid transparent;
+      border-right: 22px solid $yellow;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(150deg);
+    }
+    .delete-btn.right {
+      float:right;
     }
   }
   .comment-form {
