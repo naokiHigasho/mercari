@@ -15,13 +15,18 @@ Rails.application.routes.draw do
   resources :categories
   resources :items do
     resource :sell_records do
-          member do
+      member do
         patch 'sell_agreement'
       end
     end
+    resource :likes do
+      member do
+        post 'like'
+      end
+    end
   end
-  resources :select_brands
   resources :search, only: %i[index]
+  resources :search_consoles, only: %i[index show]
   resources :users, only: %i[show] do
     resource :addresses
     resource :creditcards
