@@ -1,0 +1,38 @@
+- if @total % 18 == 0
+  - num = @total / 18
+-else
+  - num = (@total / 18) + 1
+.search-item-slider
+  - if num != 0
+    - 1.upto(num) do |m|
+      %div
+        .search-items.clearfix
+          - n = 18 * (m - 1)
+          - n.upto(n + 17) do |i|
+            .item-card-square
+              - if item = @items[i]
+                = link_to "#" do
+                  -case item.sale_status
+                  - when 1
+                    .mark.sold
+                    %p.status-text SOLD
+                  - when 2
+                    .mark.reserved
+                    %p.status-text 予約済
+                  = image_tag(item.image, class: "item-img")
+                  .item-info-box
+                    .item-name
+                      = item.name
+                    .item-info.clearfix
+                      .item-info__price
+                        ¥
+                        = item.price
+                      .item-info__like
+                        - if item.like_count == 0
+                          = fa_icon "heart"
+                        - else
+                          = fa_icon "heart",class: "red"
+                        %span= item.like_count
+                    %p.item-tax (税込)
+              - else
+                .empty-box

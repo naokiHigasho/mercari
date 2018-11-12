@@ -1,19 +1,8 @@
-= form_for @dashboard do |f|
-  - if @dashboard.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@dashboard.errors.count, "error")} prohibited this dashboard from being saved:"
-      %ul
-        - @dashboard.errors.full_messages.each do |message|
-          %li= message
-
-  .field
-    = f.label :user_id
-    = f.number_field :user_id
-  .field
-    = f.label :avatar
-    = f.text_field :avatar
-  .field
-    = f.label :background
-    = f.text_field :background
-  .actions
-    = f.submit 'Save'
+.form-field
+  = f.label :avatar, for: "avatar" do
+    %span.file-field-btn プロフィール画像を設定する
+    = f.file_field :avatar, id: "avatar"
+.form-field.margin40
+  = f.label :background, for: "background" do
+    %span.file-field-btn マイページ背景画像を設定する
+    = f.file_field :background, id: "background"

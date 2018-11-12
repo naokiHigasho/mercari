@@ -1,7 +1,11 @@
-%h1 Editing creditcard
-
-= render 'form'
-
-= link_to 'Show', @creditcard
-\|
-= link_to 'Back', creditcards_path
+= render 'shared/single_header'
+.container
+  .creditcard-contents-wrapper
+    .title
+      支払い方法
+    .creditcard-form
+      = form_for [@user, @creditcard], :url => { :controller => :creditcards, :action => :update },method: :patch do |f|
+        = render partial: 'form', locals: {f: f, msg: flash[:error_messages]}
+        .actions
+          = f.submit '更新', class: "submit-btn"
+= render 'shared/single_footer'

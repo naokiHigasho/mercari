@@ -1,0 +1,38 @@
+.dashboards-show-box
+  .dashboards-header
+    = image_tag(@dashboard.background, class: "background-img")
+    .info-box
+      = image_tag(@dashboard.avatar, class: "avatar-img")
+      %p.info-box__nickname
+        = @dashboard.user.nickname
+  .user-items-lists
+    %table
+      %thead
+        %tr
+          %th.w8
+          %th.text-center 商品名
+          %th.text-center 値段
+          %th.text-center 売買状況
+          %th.text-center{colspan: "3"} 操作
+
+      %tbody
+        - current_user.items.each.with_index(1)  do |item, i|
+          %tr
+            %td.text-center.w8= i
+            %td= item.name
+            %td.text-center= item.price
+            %td.text-center
+              - case item.sale_status
+              - when 0
+                販売中
+              - when 1
+                売買成立
+              - when 2
+                予約済み
+            %td.text-center.w8= link_to '詳細', item
+            %td.text-center.w8= link_to '編集', edit_item_path(item)
+            %td.text-center.w8= link_to '削除', item, method: :delete, data: { confirm: 'Are you sure?' }
+
+
+
+

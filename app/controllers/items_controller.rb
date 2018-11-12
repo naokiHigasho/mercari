@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_target_item, only: %i[show edit update destroy]
-  before_action :authenticate_user!, except: %i[index, show]
+  before_action :authenticate_user!, except: %i[index show]
 
   def index
     @items = Item.page(params[:page]).per(30).order("id DESC")
@@ -17,6 +17,8 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @owner_items = Item.where(user_id: @item.user_id).limit(6).order("id DESC")
+    @category_items = Item.where(category_id: @item.category_id).limit(6).order("id DESC")
   end
 
   def edit
@@ -24,12 +26,12 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
-    redirect_to @item
+    redirect_to user_dashboards_path(current_user.id)
   end
 
   def destroy
     @item.destroy
-    redirect_to root_path
+    redirect_back(fallback_location: root_path)
   end
 
 
