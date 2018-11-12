@@ -14,7 +14,6 @@
       background-color: $yellow;
       float: left;
       border-radius: 20px;
-      margin-top: 20px;
       margin-bottom: 5px;
     }
     .user-name {
@@ -28,19 +27,26 @@
       position: relative;
       display: inline-block;
       padding: 15px;
-      width: calc(600px - 50px);
       min-height: 80px;
+      width:600px;
       border-radius: 20px;
+      box-sizing: border-box;
+      p {
+      margin-bottom: 8px;
+      }
+      .comment_text_bord {
+        text-align: justify;
+      }
     }
     .user-comment.left {
       background: $blue-c;
       float: right;
     }
-    .user-comment.left:before{
+    .user-comment.left:before {
       content: "";
       display: inline-block;
       position: absolute;
-      top: 20px;
+      top: 3px;
       left: -23px;
       border: 8px solid transparent;
       border-right: 22px solid $blue-c;
@@ -51,9 +57,6 @@
     .sell-user {
       display: inline-block;
       background-color: $blue-c;
-    }
-    .delete-btn.left {
-      margin-top: 10px;
     }
     .user-comment.right {
       background-color: $yellow;
@@ -73,13 +76,12 @@
       width: 40px;
       background-color: $yellow;
       border-radius: 20px;
-      margin-top: 20px;
     }
     .user-comment.right:before{
       content: "";
       display: inline-block;
       position: absolute;
-      top: 20px;
+      top: 3px;
       right: -23px;
       border: 8px solid transparent;
       border-right: 22px solid $yellow;
@@ -87,18 +89,20 @@
       -webkit-transform: rotate(35deg);
       transform: rotate(150deg);
     }
-    .delete-btn.right {
-      float:right;
-    }
   }
   .comment-form {
     p{
       background-color:$yellow;
       padding: 8px;
-      font-size: 14px;
+      size: 7x;
     }
   }
-
+  .comment_image_bord {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    float: left;
+  }
   .textarea-default {
     border: 1px solid $gray-light;
     min-height: 100px;
@@ -114,7 +118,7 @@
     margin: 8px 0 0;
     font-size: 0;
     text-align: center;
-    font-size: 14px;
+    font-size: 20px;
     vertical-align: middle;
   }
 }

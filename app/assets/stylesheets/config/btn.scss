@@ -39,19 +39,19 @@ input {
   font-family: inherit;
 }
 .delete-btn {
-  background-color: $blue-d;
-  border-radius: 20px;
+  background-color: $red;
+  border-radius: 9px;
   cursor: pointer;
   display: inline-block;
-  font-size: 14px;
-  height: 40px;
-  line-height: 40px;
-  margin-top: 30px;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
   overflow: hidden;
   text-align: center;
   transition: .4s;
   vertical-align: middle;
-  width: 40px;
+  width: 18px;
+
   a {
   color: $white;
   text-decoration: none;
