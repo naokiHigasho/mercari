@@ -12,4 +12,5 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :user
   has_one    :sell_record
+  has_many   :likes
 end

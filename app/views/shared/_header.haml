@@ -1,44 +1,34 @@
-%header.header.visible
-  .header-inner
-    .clearfix
-      .l-left
-        = link_to image_tag("logo2.png", alt: "mercari", width: "134px", height: "38px"), root_path
-
-      %div.header-nav-box.clearfix
-        .l-right
-          %ul.header-user-nav
-            - if user_signed_in?
-              %li
-                = link_to user_dashboards_path(current_user.id), class: "sp-header-user-icon header-nav-root" do
-                  .header-user-icon
-                    = image_tag(current_user.dashboard.avatar, class: "header-avater")
-                  .header-mypage
-                    マイページ
-
-              %li
-                = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-btn header-sign bold"
-
-            - else
-              %li
-                = link_to "新規会員登録", signup_select_home_index_path, class: "header-btn header-signup"
-                = link_to "ログイン", new_user_session_path, class: "header-btn header-sign bold"
-
-        %nav.l-right
-          %ul.header-nav
-            %li.first-child
-              %h2= link_to "カテゴリーから探す", categories_path, class: "header-nav-root bold"
-              %ul.header-nav-parent-wrap
-                - @category_genres.each.with_index(1)  do |category_genre, i|
-                  %li.header-nav-parent
-                    %h3
-                      = link_to category_genre.name, categories_path(category_genre_id: i), class: "header-nav-parent-list"
-            %li
-              %h2= link_to "ブランドから探す", brands_path, class: "header-nav-root bold"
-              %ul.header-nav-parent-wrap
-                - @brand_genres.each.with_index(1)  do |brand_genre, i|
-                  %li.header-nav-parent
-                    %h3
-                      = link_to brand_genre.name, brands_path(brand_genre_id: i), class: "header-nav-parent-list"
-            %li
-              %h2= link_to "商品を検索する", search_index_path, class: "header-nav-root bold"
+.main-header
+  .main-header-inner.clearfix
+    = link_to root_path, class: "header-logo" do
+      = image_tag("logo2.png", class: "header-logo__img")
+    .header-nav-box.clearfix
+      .header-user-nav
+        - if user_signed_in?
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-signout header-btn header-sign bold"
+          = link_to user_dashboards_path(current_user.id), class: "mypage-link" do
+            .mypage.clearfix
+              = image_tag(current_user.dashboard.avatar, class: "header-avater")
+              %p.title マイページ
+        - else
+          = link_to "新規会員登録", signup_select_home_index_path, class: "header-btn header-signup"
+          = link_to "ログイン", new_user_session_path, class: "header-btn header-sign bold"
+      %ul.header-nav
+        %li.header-nav-root
+          = link_to "カテゴリーから探す", categories_path, class: "header-nav-root__link"
+          %ul.header-nav-parent-wrap
+            - @category_genres.each.with_index(1)  do |category_genre, i|
+              %li.header-nav-parent
+                = link_to category_genre.name, categories_path(category_genre_id: i), class: "header-nav-parent__list"
+        %li.header-nav-root
+          = link_to "ブランドから探す", brands_path, class: "header-nav-root__link"
+          %ul.header-nav-parent-wrap
+            - @brand_genres.each.with_index(1)  do |brand_genre, i|
+              %li.header-nav-parent
+                %h3
+                  = link_to brand_genre.name, brands_path(brand_genre_id: i), class: "header-nav-parent__list"
+        %li.header-nav-root
+          = link_to "商品を検索する", search_index_path, class: "header-nav-root__link"
+        %li.header-nav-root
+          = link_to "Search_console", search_consoles_path, class: "header-nav-root__link"
 

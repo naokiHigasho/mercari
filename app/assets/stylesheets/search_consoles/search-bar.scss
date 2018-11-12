@@ -1,0 +1,31 @@
+.search-bar{
+  background-color: $white;
+  height: 45px;
+  width: 100vw;
+  .search-bar-inner{
+    box-sizing:border-box;
+    height: 45px;
+    margin: 0 auto;
+    padding: 4px 0 9px;
+    width: 1000px;
+  }
+  .search-form {
+    position: relative;
+    .input-default {
+      background-color: $gray-bg;
+      border: none;
+      border-radius: 16px;
+      box-sizing:border-box;
+      font-size: 14px;
+      height: 32px;
+      width: 1000px;
+    }
+    .material-icons {
+      font-size: 28px;
+      line-height: 1;
+      position: absolute;
+      top: 2px;
+      right: 0;
+    }
+  }
+}
