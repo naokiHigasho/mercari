@@ -372,3 +372,20 @@ end
       )
   end
 end
+
+Comment.create(
+  text: "textと画像",
+  item_id: 48,
+  user_id: 3,
+  comment_image: File.open("./app/assets/images/01.jpg")
+)
+Comment.create(
+  text: "テキストだけ",
+  item_id: 48,
+  user_id: 5,
+)
+Comment.create(
+  item_id: 48,
+  user_id: 3,
+  comment_image: File.open("./app/assets/images/02.jpg")
+)
