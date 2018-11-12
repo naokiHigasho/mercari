@@ -1,3 +1,16 @@
+.search {
+  position: relative;
+}
+.search-index-right {
+  border-radius: 3px;
+  float: right;
+  max-height: 700px;
+  width: 800px;
+  overflow-y: scroll;
+  .items {
+    width: 800px;
+  }
+}
 .search-form {
   position: relative;
   .input-default {
@@ -19,4 +32,49 @@
     text-align: center;
   }
 }
+.search-show {
+  border: 1px solid #aaa;
+  position: absolute;
+  margin: 100px 300px;
+}
 
+.item-show-card {
+  height: 500px;
+  width: 500px;
+  background-color: $gray-light;
+}
+
+.item-search-show {
+  cursor: pointer;
+}
+
+.icon-close {
+  cursor: pointer;
+}
+
+
+#scrollbar::-webkit-scrollbar{
+  overflow:hidden;
+  width:7px;
+  background:#eee;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+}
+#scrollbar::-webkit-scrollbar:horizontal{
+  height:0px;
+}
+#scrollbar::-webkit-scrollbar-button{
+  display:none;
+}
+#scrollbar::-webkit-scrollbar-piece{
+  background:#eee;
+}
+#scrollbar::-webkit-scrollbar-piece:start{
+  background:#eee;
+}
+#scrollbar::-webkit-scrollbar-thumb{
+  overflow:hidden;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  background:#333;
+}
