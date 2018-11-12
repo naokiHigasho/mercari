@@ -190,17 +190,50 @@ end
   Brand.create( name: "食品#{i}", brand_genre_id: 14)
 end
 
-(1..5).each do |i|
-  user = User.new(nickname: "パンダ太郎#{i}", email: "hogehoge#{i}@hoge.com", password: "hugahuga#{i}")
+
+user = User.new(nickname: "admin", email: "admin@admin", password: "password")
+user.save!
+
+user = User.new(nickname: "hoge", email: "hoge@hoge", password: "hogehoge")
+user.save!
+
+(3..10).each do |i|
+  user = User.new(nickname: "高知#{i}かつお", email: "hoge#{i}@com", password: "hogehoge")
   user.save!
+end
+
+
+(1..10).each do |i|
+  Address.create(
+    user_id: i,
+    name01: "高知#{i}",
+    name02: "土佐#{i}郎",
+    name03: "こうち#{i}",
+    name04: "とさ#{i}ろう",
+    zip: "777-7777",
+    state: "高知県",
+    city: "高知市",
+    address_line: "1-1-1",
+    tel: "000-0000-000#{i}",
+  )
+end
+
+(1..10).each do |i|
+  Creditcard.create(
+    user_id: i,
+    card_number: "****-****-****-7777",
+    expiration_month: "04",
+    expiration_year: "2018",
+    security_code: "777",
+  )
 end
 
 
 (1..50).each do |i|
   if (i % 10) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/10.jpg"),
+      name: "ルイヴィトン長財布#{i}",
+      image: File.open("./app/assets/images/010.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 1,
       brand_id: 1,
@@ -209,12 +242,12 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 1,
-      user_id: 1,
+      user_id: 3,
       )
   elsif (i % 9) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/9.jpg"),
+      name: "ps4#{i}",
+      image: File.open("./app/assets/images/09.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 2,
       brand_id: 21,
@@ -223,11 +256,11 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 2,
+      user_id: 4,
       )
   elsif (i % 8) == 0
     Item.create(
-      name: "商品#{i}",
+      name: "パンダ#{i}",
       image: File.open("./app/assets/images/8.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 3,
@@ -237,12 +270,12 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 2,
-      user_id: 3,
+      user_id: 5,
       )
   elsif (i % 7) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/7.jpg"),
+      name: "シャネルバッグ#{i}",
+      image: File.open("./app/assets/images/07.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 4,
       brand_id: 61,
@@ -251,12 +284,12 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 4,
+      user_id: 3,
       )
   elsif (i % 6) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/6.jpg"),
+      name: "NIKEナイキランニングパンツ#{i}",
+      image: File.open("./app/assets/images/06.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 5,
       brand_id: 81,
@@ -265,12 +298,12 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 5,
+      user_id: 4,
       )
   elsif (i % 5) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/5.jpg"),
+      name: "NIKE靴スニーカー#{i}",
+      image: File.open("./app/assets/images/05.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 1,
       brand_id: 2,
@@ -279,12 +312,12 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 1,
+      user_id: 5,
       )
   elsif (i % 4) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/4.jpg"),
+      name: "supremeシュプリームキャップぼうし#{i}",
+      image: File.open("./app/assets/images/04.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 2,
       brand_id: 22,
@@ -293,12 +326,12 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 2,
+      user_id: 3,
       )
   elsif (i % 3) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/3.jpg"),
+      name: "CHANELシャネル香水#{i}",
+      image: File.open("./app/assets/images/03.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 3,
       brand_id: 42,
@@ -307,12 +340,12 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 3,
+      user_id: 4,
       )
   elsif (i % 2) == 0
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/2.jpg"),
+      name: "supremeシュプリームTシャツ#{i}",
+      image: File.open("./app/assets/images/02.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 4,
       brand_id: 62,
@@ -321,12 +354,12 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 4,
+      user_id: 5,
       )
   else
     Item.create(
-      name: "商品#{i}",
-      image: File.open("./app/assets/images/sirokuma.jpg"),
+      name: "NIKEナイキTシャツ#{i}",
+      image: File.open("./app/assets/images/01.jpg"),
       text: "商品説明#{i}",
       brand_genre_id: 5,
       brand_id: 82,
@@ -335,7 +368,7 @@ end
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
       price: 1192,sale_status: 0,
-      user_id: 5,
+      user_id: 3,
       )
   end
 end

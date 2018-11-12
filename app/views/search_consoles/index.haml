@@ -1,0 +1,12 @@
+= render 'search_consoles/index-modal'
+= render 'shared/header'
+.search-bar
+  .search-bar-inner
+    %form{class: "search-form"}
+      %input{class: "search__query input-default bold", type: "text", name: "keyword", placeholder: "検索したいキーワードを入力してください"}
+      %i.material-icons search
+.search-container.bg-gray.box-shadow
+  .search-contents-wrapper
+    = render 'search_consoles/index-main'
+= render 'shared/app-banner'
+= render 'shared/footer-search'

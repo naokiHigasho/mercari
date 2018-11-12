@@ -3,5 +3,9 @@
   .creditcard-contents-wrapper
     .title
       支払い方法
-    = render 'form'
+    .creditcard-form
+      = form_for [@user, @creditcard], :url => { :controller => :creditcards, :action => :create },method: :post do |f|
+        = render partial: 'form', locals: {f: f, msg: flash[:error_messages]}
+        .actions
+          = f.submit '次へ進む', class: "submit-btn"
 = render 'shared/single_footer'

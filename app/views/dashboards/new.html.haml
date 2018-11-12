@@ -1,0 +1,10 @@
+= render 'shared/single_header'
+.container.bg-gray
+  .dashboards-contents-wrapper
+    %h1 プロフィール
+    .dashboards-form
+      = form_for [@user, @dashboard], :url => { :controller => :dashboards, :action => :create },method: :post do |f|
+        = render partial: 'form', locals: {f: f, msg: flash[:error_messages]}
+        .actions.margin40
+          = f.submit '保存する', class: "submit-btn"
+= render 'shared/single_footer'

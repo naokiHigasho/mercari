@@ -1,0 +1,8 @@
+.form-field
+  = f.label :avatar, for: "avatar" do
+    %span.file-field-btn プロフィール画像を設定する
+    = f.file_field :avatar, id: "avatar"
+.form-field.margin40
+  = f.label :background, for: "background" do
+    %span.file-field-btn マイページ背景画像を設定する
+    = f.file_field :background, id: "background"

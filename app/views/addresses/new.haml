@@ -2,5 +2,9 @@
 .container.bg-gray
   .address-contents-wrapper
     %h1 住所入力
-    = render 'form'
+    .adress-form
+      = form_for [@user, @address], :url => { :controller => :addresses, :action => :create },method: :post do |f|
+        = render partial: 'form', locals: {f: f, msg: flash[:error_messages]}
+        .actions.margin40
+          = f.submit '次へ進む', class: "submit-btn"
 = render 'shared/single_footer'

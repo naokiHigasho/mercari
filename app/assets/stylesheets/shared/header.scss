@@ -1,303 +1,136 @@
-.visible {
-  display: block;
-}
-.header {
+.main-header {
+  background: $white;
+  height: 55px;
   position: relative;
   z-index: 1001;
-  background: $white;
-  h1 {
-    display: block;
-    color: $gray-dark;
-  }
-  &-inner {
-    width: 1000px;
+  .main-header-inner {
     margin: 0 auto;
-    padding: 8px 0 0;
+    width: 1000px;
   }
-  &-form {
-    position: relative;
-    width: calc(100% - (134px + 16px));
-    .input-default {
-      width: 100%;
-      height: 36px;
-      padding: 9px 32px 9px 8px;
-      background: #fafafa;
-      font-size: 16px;
-      border-radius: 4px;
-      border: 1px solid $gray-light;
-    }
-    .material-icons {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 36px;
-      line-height: 36px;
-      cursor: pointer;
-      text-align: center;
+  .header-logo{
+    float: left;
+    text-decoration: none;
+    img{
+      height: 50px;
+      padding-top: 3px;
     }
   }
-  &-nav {
-    font-size: 0;
-    padding: 0;
-    .first-child {
-        padding: 0;
-      }
+  .header-nav {
+    float: right;
+    height: 55px;
+    margin-right: 20px;
     :hover {
         color: #0099e8;
       }
-    li {
-      position: relative;
+    .header-nav-root {
       display: inline-block;
-      padding: 0 0 0 16px;
-    }
-    h2 {
-      font-size: 14px;
-      font-weight: 400;
-    }
-    &-box {
-      margin: 8px 0 0;
-      height: 62px;
-    }
-    &-root {
-      text-decoration: none;
+      float: left;
       position: relative;
-      height: 38px;
-      line-height: 32px;
-      display: block;
-      color: $gray-dark;
       :hover {
         color: #0099e8;
       }
-    }
-    &-parent {
-      display: none;
-      width: 224px;
-      &-wrap {
-        padding: 0;
-        position: absolute;
-        top: 38px;
-        left: -34px;
-        z-index: 1000;
-        background: $white;
-        box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
-        :hover {
-          background-color: red;
-          color: white;
-        }
-      }
-      h3 {
-        font-weight: 400;
-        font-size: 14px;
-        margin: 0;
-      }
-      &-list {
-        text-decoration: none;
-        padding: 0 16px;
-        line-height: 44px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        font-size: 14px;
-        display: block;
+      &__link{
         color: $gray-dark;
-      }
-    }
-  }
-  &-user {
-    &-nav {
-      font-size: 0;
-      display: block;
-      font-size: 14px;
-      color: $gray-dark;
-      li {
-        position: relative;
         display: inline-block;
-        padding: 0 0 0 16px;
-        vertical-align: middle;
-      }
-      .sp-header-user-icon {
-        margin: 0;
-        div {
-          display: inline-block;
-          margin: 0 0 0 8px;
-          font-size: 14px;
-          vertical-align: middle;
-        }
-        figure {
-          line-height: 0;
-          display: inline-block;
-          position: relative;
-          width: 32px;
-          height: 32px;
-          margin: 0 auto;
-          vertical-align: middle;
-          div {
-            overflow: hidden;
-            border-radius: 50%;
-          }
-        }
-      }
-    }
-    &-box {
-      position: absolute;
-      top: 38px;
-      z-index: 1;
-      // display: none;
-      width: 320px;
-      background: $white;
-      box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
-      font-size: 14px;
-    }
-  }
-  &-mypage {
-    &-box {
-      left: 0;
-    }
-    &-state {
-      figure {
-        margin: 0;
-        padding: 28px 0 0;
-        height: 80px;
-        background: url(kirakira.jpg);
-        background-repeat: no-repeat;
-        background-size: 320px 80px;
-        div {
-          overflow: hidden;
-          width: 60px;
-          height: 60px;
-          margin: 0 auto;
-          border-radius: 50%;
-          box-shadow: 0 1px 1px 0 rgba(0,0,0,0.08);
-        }
-      }
-      figcaption {
-        margin: 8px 0 0;
-        padding: 0 8px;
-        font-size: 16px;
-      }
-    }
-    &-review {
-      &-listing {
-        margin: 10px 0 0;
-        padding: 8px 8px 0;
-        font-size: 0;
-        text-align: center;
-        :hover {
-          color: gray;
-        }
-        li {
-          display: inline-block;
-          font-size: 14px;
-        }
-      }
-    }
-    &-sales {
-      &-point {
-        width: 300px;
-        margin: 16px auto;
-        padding: 0;
-        background: #fafafa;
-        border: 1px solid $gray-line;
-        :hover {
-          color: gray;
-        }
-        li {
-          border-top: 1px solid $gray-line;
-          width: 280px;
-          padding: 0 8px;
-          line-height: 40px;
-        }
-        li :first-child {
-          border: 0;
-        }
-        .material-icons {
-          position: relative;
-          top: -2px;
-          font-size: 12px;
-          margin: 0;
-          color: $gray-light;
-          vertical-align: middle;
-        }
-      }
-    }
-  }
-  &-btn {
-    border-radius: 4px;
-    display: block;
-    float: left;
-    padding: 0 10px;
-    line-height: 30px;
-    margin: 0 0 0 10px;
-    text-align: center;
-    text-decoration: none;
-  }
-  &-signup {
-    border: 1px solid $blue;
-    background: $white;
-    color: $blue;
-    &:hover {
-      background: $blue;
-      color: $white;
-    }
-  }
-  &-sign {
-    border: 1px solid $red;
-    background: $white;
-    color: $red;
-    &:hover {
-      background: $red;
-      color: $white;
-    }
-  }
-}
-.mypage {
-  &-nav {
-    &-list {
-      padding: 0;
-      :hover {
-        background: #fafafa;
-      }
-      li {
-        padding: 0;
-        border-top: 1px solid $gray-line;
-      }
-      &-item {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 55px;
+        padding-right: 20px;
         text-decoration: none;
-        position: relative;
-        display: block;
-        padding: 16px;
-        background: $white;
-        color: $gray-dark;
-        width: 288px;
-        .material-icons {
-          position: relative;
-          top: -2px;
-          font-size: 25px;
-          margin: 0 0 0 8px;
-          color: $gray-light;
-          vertical-align: middle;
-        }
       }
     }
   }
-}
-
-.l-left {
-  float: left;
-}
-.l-right {
-  float: right;
-}
-.text-center {
-  text-align: center;
-}
-
-.material-icons.list {
-  font-size: 20px;
-  vertical-align: middle;
-}
-
-.link {
-  text-decoration: none;
-  color: black;
+  .header-nav-parent-wrap{
+    background: rgba($white,0.8);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.24);
+    box-sizing:border-box;
+    display: none;
+    padding: 15px 0;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    width: 180px;
+    z-index: 1000;
+    .header-nav-parent{
+      :hover {
+        background-color: $red;
+        color: $white;
+      }
+      &__list {
+        color: $gray-dark;
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 2;
+        overflow: hidden;
+        padding: 0 15px;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+    }
+  }
+  .header-user-nav {
+    float: right;
+    font-size: 14px;
+    color: $gray-dark;
+    li{
+      display: inline-block;
+    }
+    .header-btn {
+      background: $white;
+      border-radius: 4px;
+      display: block;
+      float: left;
+      height: 30px;
+      padding: 0 10px;
+      line-height: 30px;
+      margin: 12px 0 0 10px;
+      text-align: center;
+      text-decoration: none;
+    }
+    .header-signup {
+      border: 1px solid $blue;
+      color: $blue;
+      &:hover {
+        background: $blue;
+        color: $white;
+      }
+    }
+    .header-sign {
+      border: 1px solid $red;
+      color: $red;
+      &:hover {
+        background: $red;
+        color: $white;
+      }
+    }
+    .header-signout{
+      float: right;
+    }
+    .mypage-link{
+      text-decoration: none;
+    }
+    .mypage{
+      float: right;
+      height: 55px;
+      width: 120px;
+      .header-avater {
+        border-radius: 50%;
+        float: left;
+        height: 32px;
+        margin: 11px 5px 0 0;
+        object-fit: cover;
+        width: 32px;
+      }
+      .title{
+        color: $gray-dark;
+        display: inline-block;
+        float: left;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 55px;
+      }
+    }
+  }
 }

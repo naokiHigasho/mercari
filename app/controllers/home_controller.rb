@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
+
   def index
     @items = Item.order("id DESC").limit(4)
+    @like_items = Item.order("like_count DESC").limit(4)
     @category01_items = Item.where("category_genre_id = '1'").order("id DESC").limit(4)
     @category02_items = Item.where("category_genre_id = '2'").order("id DESC").limit(4)
     @category03_items = Item.where("category_genre_id = '3'").order("id DESC").limit(4)

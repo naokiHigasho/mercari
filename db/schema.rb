@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181107083637) do
+ActiveRecord::Schema.define(version: 20181110021707) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name01"
@@ -74,6 +74,14 @@ ActiveRecord::Schema.define(version: 20181107083637) do
     t.datetime "updated_at",       null: false
   end
 
+  create_table "dashboards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id"
+    t.string   "avatar"
+    t.string   "background"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
     t.string   "name"
@@ -86,6 +94,7 @@ ActiveRecord::Schema.define(version: 20181107083637) do
     t.string   "days"
     t.integer  "price"
     t.integer  "sale_status",                     default: 0
+    t.integer  "like_count",                      default: 0
     t.integer  "user_id"
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
@@ -96,12 +105,18 @@ ActiveRecord::Schema.define(version: 20181107083637) do
     t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
-  create_table "select_brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "status01",   default: 0
-    t.integer  "status02",   default: 0
-    t.integer  "status03",   default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sell_records", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
