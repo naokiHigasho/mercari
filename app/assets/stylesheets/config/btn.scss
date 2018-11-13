@@ -38,3 +38,22 @@ input {
   outline: 0;
   font-family: inherit;
 }
+.delete-btn {
+  background-color: $red;
+  border-radius: 9px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  height: 18px;
+  line-height: 18px;
+  overflow: hidden;
+  text-align: center;
+  transition: .4s;
+  vertical-align: middle;
+  width: 18px;
+
+  a {
+  color: $white;
+  text-decoration: none;
+  }
+}

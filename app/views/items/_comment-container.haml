@@ -1,0 +1,48 @@
+.comment-container
+  .comment-index
+    - @item.comments.each do |comment|
+      - if comment.item.user_id == comment.user_id
+        .comment-body.left.clearfix
+          = image_tag("noimage.png", class: "user-icon")
+          .user-name.bold
+            = comment.user.nickname
+            - if user_signed_in? && comment.item.user_id == current_user.id
+              .delete-btn.left.btn-hover-op07
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+          .user-comment.left
+            - if comment.text.present?
+              %p.comment_text_bord
+                = simple_format(comment.text)
+            - if comment.comment_image.present?
+              = image_tag comment.comment_image.url, class: "comment_image_bord"
+          .sell-user.bold
+            出品者
+
+      - else
+        .comment-body.right.clearfix
+          = image_tag("noimage.png", class: "user-icon-right")
+          .user-name-right.bold
+            = comment.user.nickname
+            - if user_signed_in? && comment.user_id == current_user.id
+              .delete-btn.left.btn-hover-op07
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+            - elsif user_signed_in? && comment.item.user_id == current_user.id
+              .delete-btn.right.btn-hover-op07
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+          .user-comment.right
+            - if comment.text.present?
+              %p.comment_text_bord
+                = simple_format(comment.text)
+            - if comment.comment_image.present?
+              = image_tag comment.comment_image.url, class: "comment_image_bord"
+
+  - if user_signed_in?
+    .comment-form
+    = form_for [@item, @comment ] do |f|
+      = f.text_area :text, class: "textarea-default"
+      = f.label :comment_image, class: 'form__mask__image' do
+        = fa_icon 'picture-o', class: 'icon'
+        = f.file_field :comment_image, class: 'hidden'
+      = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
+  - else
+    = link_to "コメントするにはログインが必要です", new_user_session_path, class: "comment-submit btn-default btn-gray btn-hover-op07"

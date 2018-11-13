@@ -11,6 +11,7 @@ class Item < ApplicationRecord
   belongs_to :category_genre
   belongs_to :category
   belongs_to :user
+  has_many :comments, dependent: :delete_all
   has_one    :sell_record
   has_many   :likes
 end

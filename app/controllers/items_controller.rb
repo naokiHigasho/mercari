@@ -17,8 +17,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @owner_items = Item.where(user_id: @item.user_id).limit(6).order("id DESC")
     @category_items = Item.where(category_id: @item.category_id).limit(6).order("id DESC")
+
   end
 
   def edit
