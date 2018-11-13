@@ -1,0 +1,75 @@
+.dashboards-show-box
+  .dashboards-header
+    = image_tag(@dashboard.background, class: "background-img")
+    = image_tag(@dashboard.avatar, class: "avatar-img")
+    .info-nickname
+      = @dashboard.user.nickname
+      さんのユーザー情報管理ページ
+  .profile-lists
+    %table
+      %thead
+        %tr
+          %th{colspan:"2"} 住所情報
+      %tbody
+        %tr
+          %td.p30.w40 お名前
+          %td
+            = current_user.address.name01
+            = current_user.address.name02
+        %tr
+          %td.p30.w40 かな
+          %td
+            = current_user.address.name03
+            = current_user.address.name04
+        %tr
+          %td.p30.w40 郵便番号
+          %td= current_user.address.zip
+        %tr
+          %td.p30.w40 住所
+          %td
+            = current_user.address.state
+            = current_user.address.city
+            = current_user.address.address_line
+        %tr
+          %td.p30.w40 電話番号
+          %td= current_user.address.tel
+        %tr
+          %td.edit{colspan: "2"}
+            = link_to "編集する", "/users/#{current_user.id}/addresses/edit"
+  .profile-lists
+    %table
+      %thead
+        %tr
+          %th{colspan: "2"} 支払い方法
+      %tbody
+        %tr
+          %td.p30.w40 カード番号
+          %td= current_user.creditcard.card_number
+        %tr
+          %td.p30.w40 有効期限
+          %td
+            = current_user.creditcard.expiration_month
+            月
+            = current_user.creditcard.expiration_year
+            年
+        %tr
+          %td.p30.w40 セキュリティーコード
+          %td= current_user.creditcard.security_code
+        %tr
+          %td.edit{:colspan => "2"}
+            = link_to "編集する", "/users/#{current_user.id}/creditcards/edit"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

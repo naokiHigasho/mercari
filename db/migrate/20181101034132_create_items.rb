@@ -12,6 +12,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string        :days
       t.integer       :price
       t.integer       :sale_status, default: 0
+      t.integer       :like_count, default: 0
       t.references    :user
       t.timestamps
     end

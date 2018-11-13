@@ -1,6 +1,7 @@
+
 class DashboardsController < ApplicationController
-  before_action :set_dashboard, only: %i[ show edit update destroy]
-  before_action :set_user, only: %i[ new edit ]
+  before_action :set_dashboard, only: %i[ show edit update destroy profile sell_record buy_record]
+  before_action :set_user, only: %i[ new edit profile sell_record buy_record]
   before_action :authenticate_user!
 
   def show
@@ -33,6 +34,18 @@ class DashboardsController < ApplicationController
   def destroy
     @dashboard.destroy
   end
+
+  def profile
+  end
+
+  def sell_record
+    @sold_items = Item.where(user_id: params[:user_id]).where(sale_status: 1)
+  end
+
+  def buy_record
+    @buy_records = SellRecord.where(user_id: params[:user_id]).order("updated_at DESC")
+  end
+
 
   private
     def set_dashboard

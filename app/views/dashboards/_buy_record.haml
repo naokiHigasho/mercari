@@ -1,0 +1,25 @@
+.dashboards-show-box
+  .dashboards-header
+    = image_tag(@dashboard.background, class: "background-img")
+    = image_tag(@dashboard.avatar, class: "avatar-img")
+    .info-nickname
+      = @dashboard.user.nickname
+      さんの購入履歴
+  .user-items-lists
+    %table
+      %thead
+        %tr
+          %th.w8
+          %th.text-center 商品名
+          %th.text-center 購入金額
+          %th.text-center 出品者
+          %th.text-center 購入日時
+
+      %tbody
+        - @buy_records.each.with_index(1)  do |buy_record, i|
+          %tr
+            %td.text-center.w8= i
+            %td= buy_record.item.name
+            %td.text-center= buy_record.item.price
+            %td.text-center= buy_record.item.user.nickname
+            %td.text-center= buy_record.updated_at.strftime("%Y.%m.%d %H:%M")

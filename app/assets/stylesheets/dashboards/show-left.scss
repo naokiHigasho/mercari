@@ -28,5 +28,15 @@
         text-decoration: none;
       }
     }
+    .hover{
+      &:hover{
+        background-color: $red;
+      }
+      a{
+        &:hover{
+          color: $white;
+        }
+      }
+    }
   }
 }

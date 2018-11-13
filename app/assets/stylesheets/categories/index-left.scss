@@ -3,6 +3,9 @@
   width: 170px;
   .tag-1st-lists{
     &__list{
+      &:hover{
+        background-color: $red;
+      }
       background-color:$white;
       border-radius: 3px;
       box-sizing:border-box;
@@ -14,6 +17,9 @@
       margin-bottom: 10px;
       width: 170px;
       a{
+        &:hover{
+          color: $white;
+        }
         color:$gray;
         display: block;
         text-align: center;

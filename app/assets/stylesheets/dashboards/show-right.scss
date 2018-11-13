@@ -5,35 +5,33 @@
   width: 800px;
 }
 .dashboards-header{
-  height: 200px;
-  margin-bottom: 40px;
+  height: 180px;
+  margin-bottom: 120px;
   position: relative;
   width: 800px;
   .background-img{
     width:800px;
-    height:200px;
+    height:180px;
     object-fit: cover;
   }
-  .info-box{
-    height: 200px;
+  .avatar-img{
+    border: 5px solid $white;
+    border-radius: 100px;
+    height:150px;
+    margin-top: 40px;
+    object-fit: cover;
     position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-    width: 800px;
-    .avatar-img{
-      border-radius: 100px;
-      height:100px;
-      margin-top: 40px;
-      object-fit: cover;
-      width:100px;
-    }
-    &__nickname{
-      color: $gray-dark;
-      font-size: 18px;
-      font-weight: bold;
-      padding-top: 20px;
-    }
+    left: 25px;
+    bottom: -75px;
+    width:150px;
+  }
+  .info-nickname{
+    color: $gray-dark;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    left: 200px;
+    bottom: -44px;
   }
 }
 .user-items-lists{
@@ -48,6 +46,8 @@
   table, th, td {
     border-collapse: collapse;
     line-height: 45px;
+    overflow: hidden;
+    white-space: nowrap;
   }
   tr{
     height: 45px;
@@ -69,6 +69,12 @@
     text-align: center;
   }
   .w8{
-    width: 8%;
+    width: 10%;
+  }
+  .wm{
+    width: 10%;
+  }
+  .wl{
+    width: 40%;
   }
 }

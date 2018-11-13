@@ -1,0 +1,23 @@
+.dashboards-show-box
+  .dashboards-header
+    = image_tag(@dashboard.background, class: "background-img")
+    = image_tag(@dashboard.avatar, class: "avatar-img")
+    .info-nickname
+      = @dashboard.user.nickname
+      さんの販売履歴
+  .user-items-lists
+    %table
+      %thead
+        %tr
+          %th.w8
+          %th.text-center 商品名
+          %th.text-center 購入者
+          %th.text-center 日時
+
+      %tbody
+        - @sold_items.each.with_index(1)  do |item, i|
+          %tr
+            %td.text-center.w8= i
+            %td= item.name
+            %td.text-center= item.sell_record.user.nickname
+            %td.text-center= item.sell_record.updated_at.strftime("%Y.%m.%d %H:%M")
