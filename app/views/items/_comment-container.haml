@@ -8,7 +8,7 @@
             = comment.user.nickname
             - if user_signed_in? && comment.item.user_id == current_user.id
               .delete-btn.left.btn-hover-op07
-                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete, data: { confirm: 'コメントを削除しますか?' }
           .user-comment.left
             - if comment.text.present?
               %p.comment_text_bord
@@ -25,10 +25,10 @@
             = comment.user.nickname
             - if user_signed_in? && comment.user_id == current_user.id
               .delete-btn.left.btn-hover-op07
-                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete, data: { confirm: 'コメントを削除しますか?' }
             - elsif user_signed_in? && comment.item.user_id == current_user.id
               .delete-btn.right.btn-hover-op07
-                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete, data: { confirm: 'コメントを削除しますか?' }
           .user-comment.right
             - if comment.text.present?
               %p.comment_text_bord
