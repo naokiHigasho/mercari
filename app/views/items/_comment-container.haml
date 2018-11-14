@@ -38,11 +38,11 @@
 
   - if user_signed_in?
     .comment-form
-    = form_for [@item, @comment ] do |f|
-      = f.text_area :text, class: "textarea-default"
-      = f.label :comment_image, class: 'form__mask__image' do
-        = fa_icon 'picture-o', class: 'icon'
-        = f.file_field :comment_image, class: 'hidden'
-      = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
+      = form_for [@item, @comment ] do |f|
+        = f.text_area :text, class: "textarea-default"
+        = f.label :comment_image, for: "comment_image" do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :comment_image, class: 'comment_image', id: "comment_image"
+        = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
   - else
     = link_to "コメントするにはログインが必要です", new_user_session_path, class: "comment-submit btn-default btn-gray btn-hover-op07"
