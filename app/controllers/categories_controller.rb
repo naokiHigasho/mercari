@@ -14,6 +14,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @items = Item.where(category_id: params[:id]).page(params[:page]).per(20).order("id DESC")
   end
 
   def new

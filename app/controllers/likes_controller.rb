@@ -1,16 +1,24 @@
 class LikesController < ApplicationController
-  def like
-    like = Like.new
-    like.item_id = params[:item_id]
-    like.user_id = params[:user_id]
-    if like.save
-      item = Item.find(params[:item_id])
-      item.like_count = item.like_count + 1
-      item.save!
-      redirect_to item
-    else
-      item = Item.find(params[:item_id])
-      redirect_to item
+
+  def create
+    @like = Like.create(user_id: current_user.id, item_id: params[:item_id])
+    @likes = Like.where(item_id: params[:item_id])
+    @items = Item.all
+    respond_to do |format|
+      format.html
+      format.js{render :create => @likes, @like, @items}
     end
   end
+
+  def destroy
+    like = Like.find_by(user_id: current_user.id, item_id: params[:item_id])
+    like.destroy
+    @likes = Like.where(item_id: params[:item_id])
+    @items = Item.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
 end

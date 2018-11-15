@@ -3,12 +3,9 @@
   .users-show-contents-wrapper
     .user-show-header
       = image_tag(User.find(params[:id]).dashboard.background, class: "background-img")
-      .info-box
-        = image_tag(User.find(params[:id]).dashboard.avatar, class: "avatar-img")
-        %p.info-box__nickname
-          = User.find(params[:id]).nickname
-    .users-show-main
+      = image_tag(User.find(params[:id]).dashboard.avatar, class: "avatar-img")
       %h2 #{User.find(params[:id]).nickname}さんの商品一覧
+    .users-show-main
       .users-show-items.clearfix
         - @items.each do |item|
           .users-show-item-card
@@ -32,5 +29,7 @@
                     = fa_icon "heart"
                     %span 7
                 %p.item-tax (税込)
+    .user-paginate-box.clearfix
+      = paginate @items
 = render 'shared/app-banner'
 = render 'shared/footer'

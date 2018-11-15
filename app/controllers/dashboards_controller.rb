@@ -3,6 +3,7 @@ class DashboardsController < ApplicationController
   before_action :set_dashboard, only: %i[ show edit update destroy profile sell_record buy_record]
   before_action :set_user, only: %i[ new edit profile sell_record buy_record]
   before_action :authenticate_user!
+  before_action :user_location, only: %i[show]
 
   def show
   end
@@ -58,5 +59,9 @@ class DashboardsController < ApplicationController
 
     def dashboard_params
       params.require(:dashboard).permit(:avatar, :background).merge(user_id: current_user.id)
+    end
+
+    def user_location
+      session[:return_to] = request.url
     end
 end

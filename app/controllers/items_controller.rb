@@ -17,8 +17,10 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @owner_items = Item.where(user_id: @item.user_id).limit(6).order("id DESC")
     @category_items = Item.where(category_id: @item.category_id).limit(6).order("id DESC")
+
   end
 
   def edit
@@ -26,7 +28,9 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
-    redirect_to user_dashboards_path(current_user.id)
+    redirect_to(session[:return_to] || root_path)
+    session.delete(:return_to)
+    # redirect_to user_dashboards_path(current_user.id)
   end
 
   def destroy

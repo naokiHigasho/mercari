@@ -43,7 +43,7 @@
   padding-right: 30px;
   text-align: right;
   a{
-    background-color: #3f3f3f;
+    background-color: darken($blue, 15%);
     border-radius: 3px;
     color: $white;
     display: inline-block;

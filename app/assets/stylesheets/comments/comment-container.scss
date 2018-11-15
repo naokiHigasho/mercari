@@ -1,0 +1,143 @@
+.comment-container {
+  background-color: $white;
+  padding:24px;
+  margin-bottom: 64px;
+
+  .comment-index{
+    .comment-body {
+      margin-bottom: 20px;
+      overflow-wrap : break-word;
+    }
+    .user-icon {
+      height: 40px;
+      width: 40px;
+      background-color: $yellow;
+      float: left;
+      border-radius: 20px;
+      margin-bottom: 5px;
+    }
+    .user-name {
+      padding-left: 70px;
+      margin-bottom: 6px;
+      p{
+        font-size: 14px;
+      }
+    }
+    .user-comment {
+      position: relative;
+      display: inline-block;
+      padding: 15px;
+      min-height: 80px;
+      width:600px;
+      border-radius: 20px;
+      box-sizing: border-box;
+      p {
+      margin-bottom: 8px;
+      }
+      .comment_text_bord {
+        text-align: justify;
+      }
+    }
+    .user-comment.left {
+      background: $blue-c;
+      float: right;
+    }
+    .user-comment.left:before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 3px;
+      left: -23px;
+      border: 8px solid transparent;
+      border-right: 22px solid $blue-c;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(35deg);
+    }
+    .sell-user {
+      display: inline-block;
+      background-color: $blue-c;
+    }
+    .user-comment.right {
+      background-color: $yellow;
+      float: left;
+    }
+    .user-name-right {
+      text-align: right;
+      padding-right: 70px;
+      margin-bottom: 6px;
+      p{
+        font-size: 14px;
+      }
+    }
+    .user-icon-right {
+      float: right;
+      height: 40px;
+      width: 40px;
+      background-color: $yellow;
+      border-radius: 20px;
+    }
+    .user-comment.right:before{
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 3px;
+      right: -23px;
+      border: 8px solid transparent;
+      border-right: 22px solid $yellow;
+      -ms-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      transform: rotate(150deg);
+    }
+  }
+  .comment-form {
+    p{
+      background-color:$yellow;
+      padding: 8px;
+      size: 7x;
+    }
+    #comment_image{
+      display: none;
+    }
+    .comment_image_btn{
+      background-color: $gray;
+      color: $white;
+      float: right;
+      font-size: 18px;
+      font-weight: bold;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      width: 200px;
+    }
+  }
+  .comment_image_bord {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    float: left;
+  }
+  .textarea-default {
+    border: 1px solid $gray-light;
+    min-height: 100px;
+    margin: 8px 0 0;
+    padding:10px;
+    overflow: auto;
+    resize: vertical;
+    width: calc(700px - 68px);
+  }
+  .btn-box{
+    width: 600px;
+  }
+  .c-submit{
+    background-color: $gray;
+    color: $white;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 200px;
+  }
+}

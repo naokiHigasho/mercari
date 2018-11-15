@@ -13,6 +13,12 @@ Rails.application.routes.draw do
   end
   resources :brands
   resources :categories
+  resources :creditcards
+  resources :items do
+    resources :comments
+  end
+  resources :select_brands
+  resources :users, only: %i[show]
   resources :items do
     resource :sell_records do
       member do
@@ -22,6 +28,7 @@ Rails.application.routes.draw do
     resource :likes do
       member do
         post 'like'
+        delete 'unlike'
       end
     end
   end

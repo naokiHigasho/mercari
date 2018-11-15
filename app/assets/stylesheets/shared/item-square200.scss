@@ -1,0 +1,113 @@
+.item-square200{
+  &:hover{
+    .middle-layer{
+      visibility:visible;
+    }
+    .item-img{
+      opacity: 0.8;
+      transition:0.3s;
+      transform: scale(-1, 1);
+    }
+  }
+  float: left;
+  height: 200px;
+  position: relative;
+  width: 200px;
+  .top-layer{
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    right : 10px;
+    z-index: 1000;
+  }
+  .middle-layer{
+    background-color: rgba($white,0.7);
+    box-sizing:border-box;
+    color:$gray-dark;
+    visibility:hidden;
+    height: 100%;
+    width: 100%;
+    padding: 15% 10% 0;
+    position: absolute;
+    top : 0;
+    left: 0;
+    text-decoration: none;
+    z-index: 100;
+    .item-name{
+      box-sizing:border-box;
+      font-size: 20px;
+      font-weight: bold;
+      height: 60%;
+      line-height: 1.4;
+      overflow: hidden;
+      text-align: justify;
+      width: 90%;
+      word-break: break-all;
+    }
+    .item-info{
+      font-size: 24px;
+      font-weight: bold;
+      &__price{
+        float: left;
+      }
+    }
+    .item-tax{
+      font-size: 10px;
+      padding-left: 15px;
+    }
+  }
+  .bottom-layer{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top : 0;
+    left: 0;
+    z-index: 10;
+  }
+  .item-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top : 0;
+    left: 0;
+    z-index: 1;
+  }
+  .item-info-box{
+    background-color: rgba($white, 0.5);
+    box-sizing:border-box;
+    color:$gray-dark;
+    height: 100%;
+    padding: 40% 5% 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility:hidden;
+    width: 100%;
+  }
+  .mark{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 80px 80px 0 0;
+  }
+  .status-text{
+    color:white;
+    font-size: 18px;
+    font-weight: bold;
+    transform:rotate(-45deg);
+    position: absolute;
+    top:18px;
+    left:2px;
+  }
+  .sold{
+    border-color: red transparent transparent transparent;
+  }
+  .reserved{
+    border-color: gray transparent transparent transparent;
+  }
+}

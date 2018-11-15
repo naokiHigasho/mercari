@@ -1,0 +1,22 @@
+.item-square220
+  .top-layer
+    #like-buttons
+      = render partial: 'shared/like', locals: {item: item}
+  = link_to item, class: "middle-layer" do
+    .item-name
+      = item.name
+    .item-info.clearfix
+      .item-info__price
+        ¥
+        = item.price
+    %p.item-tax (税込)
+  .bottom-layer
+    - case item.sale_status
+    - when 1
+      .mark.sold
+      %p.status-text SOLD
+    - when 2
+      .mark.reserved
+      %p.status-text 予約済
+  = image_tag(item.image, class: "item-img")
+
