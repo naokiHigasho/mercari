@@ -42,10 +42,12 @@
   - if user_signed_in?
     .comment-form
       = form_for [@item, @comment ] do |f|
-        = f.text_area :text, class: "textarea-default", placeholder: "＊相手のことを考え丁寧なコメントを心がけましょう。\n袖の長さを教えていただけますか？\n裏側の画像を見せてもらえませんか？\nバック内側のポケットの数を教えてください。"
-        = f.label :comment_image, for: "comment_image" do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :comment_image, class: 'comment_image', id: "comment_image"
-        = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
+        = f.text_area :text, class: "textarea-default", placeholder: "◇質問したいことなどを入力してください\n＊相手のことを考え丁寧なコメントを心がけましょう。\n（記入例）「袖の長さを教えていただけますか？」　「裏側の画像を見せてもらえませんか？」"
+        .comment-btn
+          = f.label :comment_image, for: "comment_image" do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :comment_image, class: 'comment_image', id: "comment_image"
+            .fukidashi 写真をつける
+          = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
   - else
     = link_to "コメントするにはログインが必要です", new_user_session_path, class: "comment-submit btn-default btn-gray btn-hover-op07"
