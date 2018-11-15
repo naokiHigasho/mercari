@@ -5,30 +5,33 @@
         .comment-body.left.clearfix
           = image_tag("noimage.png", class: "user-icon")
           .user-name.bold
-            = comment.user.nickname
+            = link_to user_path(@item.user_id) do
+              = @item.user.nickname
+              (出品者)
+
             - if user_signed_in? && comment.item.user_id == current_user.id
               .delete-btn.left.btn-hover-op07
-                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete, data: { confirm: 'コメントを削除しますか?' }
           .user-comment.left
             - if comment.text.present?
               %p.comment_text_bord
                 = simple_format(comment.text)
             - if comment.comment_image.present?
               = image_tag comment.comment_image.url, class: "comment_image_bord"
-          .sell-user.bold
-            出品者
+
 
       - else
         .comment-body.right.clearfix
           = image_tag("noimage.png", class: "user-icon-right")
           .user-name-right.bold
-            = comment.user.nickname
+            = link_to user_path(comment.user_id) do
+              = comment.user.nickname
             - if user_signed_in? && comment.user_id == current_user.id
               .delete-btn.left.btn-hover-op07
-                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete, data: { confirm: 'コメントを削除しますか?' }
             - elsif user_signed_in? && comment.item.user_id == current_user.id
               .delete-btn.right.btn-hover-op07
-                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete
+                = link_to "×", "/items/#{comment.item.id}/comments/#{comment.id}", method: :delete, data: { confirm: 'コメントを削除しますか?' }
           .user-comment.right
             - if comment.text.present?
               %p.comment_text_bord
@@ -38,11 +41,13 @@
 
   - if user_signed_in?
     .comment-form
-    = form_for [@item, @comment ] do |f|
-      = f.text_area :text, class: "textarea-default"
-      = f.label :comment_image, class: 'form__mask__image' do
-        = fa_icon 'picture-o', class: 'icon'
-        = f.file_field :comment_image, class: 'hidden'
-      = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
+      = form_for [@item, @comment ] do |f|
+        = f.text_area :text, class: "textarea-default", placeholder: "◇質問したいことなどを入力してください\n＊相手のことを考え丁寧なコメントを心がけましょう。\n（記入例）「袖の長さを教えていただけますか？」　「裏側の画像を見せてもらえませんか？」"
+        .comment-btn
+          = f.label :comment_image, for: "comment_image" do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :comment_image, class: 'comment_image', id: "comment_image"
+            .fukidashi 写真をつける
+          = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
   - else
     = link_to "コメントするにはログインが必要です", new_user_session_path, class: "comment-submit btn-default btn-gray btn-hover-op07"
