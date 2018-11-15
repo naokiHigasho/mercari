@@ -40,7 +40,7 @@ $(function() {
               data-item-days="${item.days}"
               data-item-text="${item.text}"
               data-item-like_count="${item.like_count}" >
-          <div class="item-card-square">
+          <div class="search-item-card-square">
             ${status}
             <img src ="${item.image}", class="item-img">
             <div class="item-info-box">

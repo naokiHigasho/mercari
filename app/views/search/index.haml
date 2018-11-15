@@ -1,13 +1,13 @@
 .search-show-modal
 = render 'shared/header'
-.search-bar
+.search-bar.header-shadow
   .search-bar-inner
     %form{class: "search-form"}
       %input{class: "search__query input-default bold", type: "text", name: "keyword", placeholder: "検索したいキーワードを入力してください"}
       %i.material-icons search
       .result-box
         %h2.search-result-head
-.search-container.bg-gray.box-shadow
+.search-container.bg-gray
   .search-contents-wrapper
     = render 'search/index-main'
 = render 'shared/app-banner'
