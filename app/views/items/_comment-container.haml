@@ -7,6 +7,7 @@
           .user-name.bold
             = link_to user_path(@item.user_id) do
               = @item.user.nickname
+              (出品者)
 
             - if user_signed_in? && comment.item.user_id == current_user.id
               .delete-btn.left.btn-hover-op07
@@ -17,8 +18,7 @@
                 = simple_format(comment.text)
             - if comment.comment_image.present?
               = image_tag comment.comment_image.url, class: "comment_image_bord"
-          .sell-user.bold
-            出品者
+
 
       - else
         .comment-body.right.clearfix
@@ -42,7 +42,7 @@
   - if user_signed_in?
     .comment-form
       = form_for [@item, @comment ] do |f|
-        = f.text_area :text, class: "textarea-default"
+        = f.text_area :text, class: "textarea-default", placeholder: "＊相手のことを考え丁寧なコメントを心がけましょう。\n袖の長さを教えていただけますか？\n裏側の画像を見せてもらえませんか？\nバック内側のポケットの数を教えてください。"
         = f.label :comment_image, for: "comment_image" do
           = fa_icon 'picture-o', class: 'icon'
           = f.file_field :comment_image, class: 'comment_image', id: "comment_image"

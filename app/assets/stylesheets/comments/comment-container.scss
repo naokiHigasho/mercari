@@ -17,8 +17,8 @@
       margin-bottom: 5px;
     }
     .user-name {
-      padding-left: 70px;
-      margin-bottom: 6px;
+      padding-left: 80px;
+      margin: 0 0 6px 10px;
       a {
         text-decoration: none;
         font-size: 14px;
@@ -63,19 +63,13 @@
       -webkit-transform: rotate(35deg);
       transform: rotate(35deg);
     }
-    .sell-user {
-      display: inline-block;
-      background-color: $blue-c;
-      text-align: center;
-      width: 80px;
-    }
     .user-comment.right {
       background-color: $yellow;
       float: left;
     }
     .user-name-right {
       text-align: right;
-      padding-right: 70px;
+      padding-right: 95px;
       margin-bottom: 6px;
       a {
         text-decoration: none;
@@ -133,10 +127,10 @@
     width: calc(700px - 68px);
   }
   .icon {
-    font-size: 40px;
+    font-size: 50px;
     color: $white;
     width: 100px;
-    height: 40px;
+    height: 50px;
     border-radius: 10px;
     background-color: $red;
     line-height: 1em;
