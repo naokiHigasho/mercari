@@ -71,7 +71,8 @@ $(function() {
     $(".search-result-head").append(html);
   }
 
-  $(".search__query").on("keyup", function() {
+  $(".search__query").on("keyup", function(e) {
+    if (e.which != 13) {
     var input = $(".search__query").val();
 
     $.ajax({
@@ -94,9 +95,10 @@ $(function() {
         appendNoProduct("0hit...");
       }
     })
-    .fail(function() {
+    .fail(function(data) {
       alert('商品検索に失敗しました');
     })
+    }
   });
 
 
