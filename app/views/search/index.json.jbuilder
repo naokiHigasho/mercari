@@ -11,4 +11,5 @@ json.array! @items do |item|
   json.quality_status   item.quality_status
   json.days             item.days
   json.text             item.text
+  json.like_count       item.like_count
 end
