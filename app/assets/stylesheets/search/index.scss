@@ -1,15 +1,9 @@
 .search {
   position: relative;
 }
-.search-index-right {
-  border-radius: 3px;
-  float: right;
-  max-height: 700px;
-  width: 800px;
+.search-contents-wrapper {
+  height: calc(100vh - 100px);
   overflow-y: scroll;
-  .items {
-    width: 800px;
-  }
 }
 .search-form {
   position: relative;
