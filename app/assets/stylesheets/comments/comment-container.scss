@@ -117,6 +117,11 @@
     float: left;
     border-radius: 4px;
   }
+  .video_bord {
+    width: 350px;
+    height: 250px;
+
+  }
   .textarea-default {
     border: 1px solid $gray-light;
     min-height: 100px;
@@ -170,8 +175,50 @@
   .comment_image:hover + .fukidashi {
     display: block;
   }
+  .video-icon {
+    font-size: 40px;
+    color: $red;
+    border: 2px solid $red;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: $white;
+    line-height: 50px;
+    text-align: center;
+    margin: 8px 0px 0 4px;
+    box-sizing: border-box;
+  }
+  .fukidashi2 {
+    display: none;
+    position: absolute;
+    font-size: 18px;
+    left: -20px;
+    bottom: 60px;
+    border-radius: 10px;
+    background-color: $red;
+    color: $white;
+    font-weight: bold;
+    padding: 14px;
+    }
+  .fukidashi2:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: "";
+    display: inline-block;
+    top: 46px;
+    right: -17px;
+    border: 8px solid transparent;
+    border-right: 25px solid $red;
+    -ms-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    transform: rotate(230deg);
+  }
+  .video:hover + .fukidashi2 {
+    display: block;
+  }
   .comment-submit{
-    width: 500px;
+    width: 400px;
     margin: 8px 25px 0 0;
     font-size: 20px;
     float:right;

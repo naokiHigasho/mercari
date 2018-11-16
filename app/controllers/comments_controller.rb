@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:text, :comment_image).merge(item_id: params[:item_id], user_id: current_user.id)
+    params.require(:comment).permit(:text, :comment_image, :video).merge(item_id: params[:item_id], user_id: current_user.id)
   end
 
   def set_comment

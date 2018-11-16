@@ -18,7 +18,8 @@
                 = simple_format(comment.text)
             - if comment.comment_image.present?
               = image_tag comment.comment_image.url, class: "comment_image_bord"
-
+            - if comment.video.present?
+              = video_tag comment.video.url, class: "video_bord", controls: true
 
       - else
         .comment-body.right.clearfix
@@ -38,6 +39,8 @@
                 = simple_format(comment.text)
             - if comment.comment_image.present?
               = image_tag comment.comment_image.url, class: "comment_image_bord"
+            - if comment.video.present?
+              = video_tag comment.video.url, class: "video_bord", controls: true
 
   - if user_signed_in?
     .comment-form
@@ -48,6 +51,10 @@
             = fa_icon 'picture-o', class: 'icon'
             = f.file_field :comment_image, class: 'comment_image', id: "comment_image"
             .fukidashi 写真をつける
+          = f.label :video, for: "video" do
+            = fa_icon 'video-camera', class: 'video-icon'
+            = f.file_field :video, class: 'video', id: "video"
+            .fukidashi2 動画をつける
           = f.submit 'コメントする', class: "comment-submit btn-default btn-gray btn-hover-op07"
   - else
     = link_to "コメントするにはログインが必要です", new_user_session_path, class: "comment-submit btn-default btn-gray btn-hover-op07"
