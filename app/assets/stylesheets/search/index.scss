@@ -137,3 +137,43 @@
   // border-radius:3px;
   background:#333;
 }
+
+.search-bar-inner {
+  position: relative;
+}
+
+.hit-icon {
+  z-index: 100000;
+  position: absolute;
+  top: -60px;
+  left: -80px;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 0;
+  padding: 0 5px;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  vertical-align: middle;
+  text-align: center;
+  color: #FFF;
+  font-size: 14px;
+  font-weight: bold;
+  background: #ff8e9d;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+
+.hit-icon:before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #ff8e9d;
+  z-index: 0;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
