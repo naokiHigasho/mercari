@@ -1,6 +1,4 @@
 .global-footer {
-  // position: fixed;
-  // bottom: 0;
   width: 100%;
   padding: 60px 0;
   text-align: center;
@@ -54,6 +52,16 @@
 }
 
 .sel-btn{
+  &:hover{
+    background-color: lighten($red, 10%);
+    position: fixed;
+    bottom: 70px;
+    right: 50px;
+    .heart{
+      visibility: visible;
+      transition:0.3s;
+    }
+  }
   background-color: $red;
   border-radius: 80px;
   height: 160px;
@@ -63,13 +71,23 @@
   text-align: center;
   text-decoration: none;
   width:  160px;
+  z-index:10000;
   &__text{
     color:$white;
     font-size: 24px;
     margin: 30px 0 10px 0;
   }
-  .fa{
+  .camera{
     color: $white;
     font-size: 60px;
+  }
+  .heart{
+    visibility: hidden;
+    color: $red;
+    font-size: 40px;
+    position: fixed;
+    bottom: 215px;
+    right: 40px;
+    transform:rotate(30deg);
   }
 }

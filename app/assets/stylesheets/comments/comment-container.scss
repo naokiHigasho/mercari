@@ -109,6 +109,20 @@
     .comment_image {
       display: none;
     }
+    #comment_image{
+      display: none;
+    }
+    .comment_image_btn{
+      background-color: $gray;
+      color: $white;
+      float: right;
+      font-size: 18px;
+      font-weight: bold;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      width: 200px;
+    }
   }
   .comment_image_bord {
     width: 200px;

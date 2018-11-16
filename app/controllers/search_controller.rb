@@ -1,5 +1,4 @@
 class SearchController < ApplicationController
-
   def index
     @items = Item.none
     if params[:keyword]
@@ -10,7 +9,11 @@ class SearchController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.json
+      if params[:view_num].present?
+        format.js{ render :view }
+      else
+        format.json
+      end
     end
   end
 

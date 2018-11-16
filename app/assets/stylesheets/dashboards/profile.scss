@@ -1,0 +1,55 @@
+
+.profile-lists{
+  margin-bottom: 40px;
+  table{
+    color: $gray-dark;
+    font-size: 16px;
+    width: 800px;
+  }
+  table, th, td {
+    border-collapse: collapse;
+    line-height: 45px;
+  }
+  tr{
+    height: 45px;
+  }
+  th {
+    background: #3f3f3f;
+    color: $white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: top;
+  }
+  td {
+    border-bottom: 1px solid #ccc;
+    vertical-align: top;
+  }
+  tr:nth-child(even) {
+    background: #d9d9d9;
+  }
+  .text-center{
+    text-align: center;
+  }
+  .p30{
+    padding-left: 30px;
+  }
+  .w40{
+    width: 40%;
+  }
+}
+.edit{
+  background-color: $white;
+  padding-right: 30px;
+  text-align: right;
+  a{
+    background-color: darken($blue, 15%);
+    border-radius: 3px;
+    color: $white;
+    display: inline-block;
+    height: 26px;
+    line-height: 26px;
+    padding: 0 10px;
+    text-decoration: none;
+  }
+}

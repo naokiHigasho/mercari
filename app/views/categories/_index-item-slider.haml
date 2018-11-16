@@ -2,18 +2,4 @@
   .categories-item-slider
     - @items.each do |item|
       %div
-        .item-card-simple
-          = link_to item do
-            -case item.sale_status
-            - when 1
-              .mark.sold
-              %p.status-text SOLD
-            - when 2
-              .mark.reserved
-              %p.status-text 予約済
-            = image_tag(item.image, class: "item-img lazyloaded")
-            .item-info
-              .item-info__price.font-5
-                ¥
-                = item.price
-                %span (税込)
+        = render partial: 'shared/item-square-200', locals: {item: item}

@@ -15,5 +15,4 @@ class User < ApplicationRecord
   has_one  :dashboard,  dependent: :destroy
   has_many :sell_records
   has_many :likes,      dependent: :destroy
-
 end

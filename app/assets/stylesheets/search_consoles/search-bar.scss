@@ -9,23 +9,41 @@
     padding: 4px 0 9px;
     width: 1000px;
   }
-  .search-form {
+  .search-box {
+    background-color: $gray-bg;
+    border-radius: 16px;
+    box-sizing:border-box;
+    font-size: 16px;
+    height: 32px;
     position: relative;
-    .input-default {
+    width: 1000px;
+    .search-input {
       background-color: $gray-bg;
       border: none;
-      border-radius: 16px;
-      box-sizing:border-box;
-      font-size: 14px;
       height: 32px;
-      width: 1000px;
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 700px;
     }
     .material-icons {
       font-size: 28px;
       line-height: 1;
       position: absolute;
       top: 2px;
-      right: 0;
+      right: 20px;
+    }
+    .result-box{
+      height: 32px;
+      position: absolute;
+      top: 0;
+      right: 60px;
+      text-align: right;
+      width: 200px;
+      .search-result-head{
+        color:$red;
+        line-height: 32px;
+      }
     }
   }
 }

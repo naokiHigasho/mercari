@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @items = User.find(params[:id]).items
+    @items = Item.where(user_id: params[:id]).page(params[:page]).per(20).order("id DESC")
   end
 end

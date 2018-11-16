@@ -9,6 +9,7 @@
       .category-box
         %p.category-box__title
           = CategoryGenre.find("#{i}").name
+        %hr
         %ul.category-box__lists.clearfix
           - eval("@genre#{i}_categories").each do |category|
             %li.category-box__list

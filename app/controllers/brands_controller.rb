@@ -12,6 +12,7 @@ class BrandsController < ApplicationController
   # GET /brands/1
   # GET /brands/1.json
   def show
+    @items = Item.where(brand_id: params[:id]).page(params[:page]).per(20).order("id DESC")
   end
 
   # GET /brands/new

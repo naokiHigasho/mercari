@@ -28,7 +28,9 @@ class ItemsController < ApplicationController
 
   def update
     @item.update(item_params)
-    redirect_to user_dashboards_path(current_user.id)
+    redirect_to(session[:return_to] || root_path)
+    session.delete(:return_to)
+    # redirect_to user_dashboards_path(current_user.id)
   end
 
   def destroy

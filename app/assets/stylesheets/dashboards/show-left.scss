@@ -3,7 +3,7 @@
   width: 170px;
   .setting-box{
     .title{
-      background-color:$gray;
+      background-color: darken($blue, 15%);
       color: $white;
       text-align: center;
     }
@@ -26,6 +26,16 @@
         display: block;
         text-align: center;
         text-decoration: none;
+      }
+    }
+    .hover{
+      &:hover{
+        background-color: $red;
+      }
+      a{
+        &:hover{
+          color: $white;
+        }
       }
     }
   }

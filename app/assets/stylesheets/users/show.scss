@@ -2,47 +2,39 @@
   background-color: $white;
   box-sizing: border-box;
   margin: auto ;
+  padding-bottom: 60px;
   width: 1000px;
 }
 .user-show-header{
-  height: 320px;
+  height: 200px;
   position: relative;
   width: 1000px;
   .background-img{
     width:1000px;
-    height:320px;
+    height:200px;
     object-fit: cover;
   }
-  .info-box{
-    height: 320px;
+  .avatar-img{
+    border:5px solid $white;
+    border-radius: 100px;
+    height:180px;
+    object-fit: cover;
     position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-    width: 1000px;
-    .avatar-img{
-      border-radius: 100px;
-      height:200px;
-      margin-top: 50px;
-      object-fit: cover;
-      width:200px;
-    }
-    &__nickname{
-      color: $gray-dark;
-      font-size: 18px;
-      font-weight: bold;
-      padding-top: 20px;
-    }
+    bottom: -90px;
+    left: 100px;
+    width:180px;
   }
-}
-.users-show-main{
-  margin-top: 40px;
-  width: 1000px;
   h2{
     font-size: 24px;
     font-weight: bold;
-    margin-bottom: 20px;
+    position: absolute;
+    bottom: -50px;
+    left: 330px;
   }
+}
+.users-show-main{
+  margin-top: 120px;
+  width: 1000px;
   a{
     text-decoration: none;
   }
@@ -104,6 +96,56 @@
     .item-tax{
       font-size: 10px;
       padding-left: 15px;
+    }
+  }
+}
+.user-paginate-box{
+  box-sizing:border-box;
+  margin-top: 60px;
+  padding: 0 30px;
+  .pagination{
+    text-align: center;
+    a{
+      color: $gray;
+      display: block;
+      text-decoration: none;
+    }
+    .page{
+      background-color:$white;
+      border: 1px solid $gray-dark;
+      border-radius: 4px;
+      box-sizing:border-box;
+      color: $gray-dark;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      width: 40px;
+    }
+    .first, .prev, .next, .last{
+      background-color:$white;
+      border: 1px solid $gray-dark;
+      border-radius: 4px;
+      box-sizing:border-box;
+      color: $gray-dark;
+      display: inline-block;
+      font-size: 30px;
+      height: 40px;
+      line-height: 35px;
+      text-align: center;
+      width: 40px;
+    }
+    .first, .prev,{
+      float: left;
+      margin-right: 3px;
+    }
+    .next, .last{
+      float: right;
+      margin-left: 3px;
+    }
+    .current{
+      background-color: $red;
+      color: $white;
     }
   }
 }

@@ -37,6 +37,7 @@
 @import "./dashboards/index-items";
 @import "./dashboards/show-right";
 @import "./dashboards/new";
+@import "./dashboards/profile";
 @import "./devise_user/form";
 @import "./addresses/new";
 @import "./sell_records/show";
@@ -48,9 +49,13 @@
 @import "./shared/header";
 @import "./shared/single_footer";
 @import "./shared/single_header";
+@import "./shared/item-square200";
+@import "./shared/item-square220";
 @import "./shared/app_banner";
 @import "./users/show";
+@import "./presents/presents";
 @import "font-awesome";
 @import "material_icons";
 @import 'slick';
 @import 'slick-theme';
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i|Caveat:400,700|Comfortaa:300,400,700|Courgette|Montserrat:100,300,400,600,700,800,900');
