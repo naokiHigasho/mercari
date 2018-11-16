@@ -9,15 +9,15 @@
     %table
       %thead
         %tr
-          %th.w8
+          %th.w40
           %th.text-center 商品名
-          %th.text-center 購入者
-          %th.text-center 日時
+          %th.text-center.w100 購入者
+          %th.text-center.w100 日時
 
       %tbody
         - @sold_items.each.with_index(1)  do |item, i|
           %tr
-            %td.text-center.w8= i
-            %td= item.name
-            %td.text-center= item.sell_record.user.nickname
-            %td.text-center= item.sell_record.updated_at.strftime("%Y.%m.%d %H:%M")
+            %td.text-center.w40= i
+            %td.w-name= item.name
+            %td.text-center.w200= item.sell_record.user.nickname
+            %td.text-center.w200= item.sell_record.updated_at.strftime("%Y.%m.%d %H:%M")

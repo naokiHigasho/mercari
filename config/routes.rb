@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :home, only: %i[index] do
     collection do
       get 'signup_select'
+      get 'presents01'
+      get 'presents02'
     end
   end
   resources :brands

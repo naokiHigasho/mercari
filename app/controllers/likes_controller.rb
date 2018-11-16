@@ -1,24 +1,15 @@
 class LikesController < ApplicationController
 
-  def create
-    @like = Like.create(user_id: current_user.id, item_id: params[:item_id])
-    @likes = Like.where(item_id: params[:item_id])
+  def like
+    like = Like.new
+    like.item_id = params[:item_id]
+    like.user_id = params[:user_id]
+    like.save
     @items = Item.all
+    @item = Item.find(params[:item_id])
     respond_to do |format|
       format.html
-      format.js{render :create => @likes, @like, @items}
+      format.js{ render :like => @item }
     end
   end
-
-  def destroy
-    like = Like.find_by(user_id: current_user.id, item_id: params[:item_id])
-    like.destroy
-    @likes = Like.where(item_id: params[:item_id])
-    @items = Item.all
-    respond_to do |format|
-      format.html
-      format.js
-    end
-  end
-
 end

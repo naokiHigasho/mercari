@@ -1,0 +1,80 @@
+.pre-wrapper{
+  // font-family: 'Caveat', cursive;
+  // font-family: 'Comfortaa', cursive;
+  background-color: black;
+  color: $gray;
+  height: 100vh;
+  width: 100vw;
+  letter-spacing: -0.2em;
+  font-feature-settings: "palt";
+  .presents-slider{
+    height: 100vh;
+    width: 100vw;
+  }
+  .contents{
+    height: 100vh;
+    width: 100vw;
+  }
+  #title{
+    display: none;
+    font-size: 70px;
+    font-style: italic;
+    text-align: center;
+    line-height: 1;
+    padding-top: 33vh;
+    span{
+      font-family: 'Playfair Display', serif;
+      font-size: 140px;
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
+  .contents-name{
+    height: 100vh;
+    width: 100vw;
+    padding-top: 150px;
+  }
+  .name-box{
+    width: 700px;
+    margin: 0 auto;
+  }
+  .name{
+    font-size: 80px;
+    font-weight: bold;
+    padding-bottom: 30px;
+  }
+  .slider-arrow-left, .slider-arrow-right{
+    display: block;
+    color: $gray-dark;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    height: 100px;
+    width: 40px;
+    z-index: 10;
+  }
+  .slider-arrow-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+  .slider-arrow-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  .contents-project{
+    height: 100vh;
+    padding-top: 200px;
+    width: 100vw;
+  }
+  .main-title{
+    color: $gray;
+    text-decoration: none;
+    font-size: 140px;
+    font-weight: bold
+  }
+  .sub-title{
+    font-size: 70px;
+  }
+}

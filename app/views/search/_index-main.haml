@@ -1,23 +1,2 @@
-.search
-  .items-index-main
-    %form{class: "search-form"}
-      %input{class: "search__query input-default bold", type: "text", name: "keyword", placeholder: "検索したいキーワードを入力してください"}
-      %i.material-icons search
-
-    .search-index-right
-      #item_list
-        = render 'search/view'
-  - if params[:keyword].present?
-    = link_to_next_page @items, next_icon, class: "page-arrow left-arrow", remote: true, :params => {:view_num => 1,:keyword => params[:keyword]}
-    = link_to_prev_page @items, prev_icon, class: "page-arrow right-arrow", remote: true, :params => {:view_num => 1,:keyword => params[:keyword]}
-  - else
-    = link_to_next_page @items, next_icon, class: "page-arrow left-arrow", remote: true, :params => {:view_num => 1}
-    = link_to_prev_page @items, prev_icon, class: "page-arrow right-arrow", remote: true, :params => {:view_num => 1}
-
-
-
-
-
-
-
-
+.search-contents-wrapper
+  .search-items.clearfix{id: "scrollbar"}

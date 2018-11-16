@@ -1,7 +1,11 @@
 .item-square220
   .top-layer
-    #like-buttons
-      = render partial: 'shared/like', locals: {item: item}
+    - if item.like_count != 0
+      = fa_icon "heart", class: "red"
+      %span.red= item.like_count
+    - else
+      = fa_icon "heart", class: "gray"
+      %span.gray= item.like_count
   = link_to item, class: "middle-layer" do
     .item-name
       = item.name

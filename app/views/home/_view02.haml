@@ -1,5 +1,5 @@
 .items.clearfix
   - @items02.each do |item|
     = render partial: 'shared/item-square200', locals: {item: item}
-  = link_to_next_page @items02, next_icon, class: "page-arrow left-arrow", remote: true, :params => {:view_num => 2}
-  = link_to_prev_page @items02, prev_icon, class: "page-arrow right-arrow", remote: true, :params => {:view_num => 2}
+  = link_to_prev_page @items02, next_icon, class: "page-arrow left-arrow", remote: true, :params => {:view_num => 2}
+  = link_to_next_page @items02, prev_icon, class: "page-arrow right-arrow", remote: true, :params => {:view_num => 2}

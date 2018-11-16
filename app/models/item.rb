@@ -1,9 +1,9 @@
 class Item < ApplicationRecord
 
-  def like_user(user_id)
-   likes.find_by(user_id: user_id)
+  after_create do
+    sell_record = SellRecord.new(item_id: self.id, user_id: 1)
+    sell_record.save!
   end
-
 
   mount_uploader :image, ImageUploader
   belongs_to :brand_genre

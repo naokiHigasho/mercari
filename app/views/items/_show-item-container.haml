@@ -64,8 +64,8 @@
     = @item.text
   .item-footer.clearfix
     .btn-box
-      #like-btn-show
-        = render partial: 'shared/like-show'
+      #like-count
+        = render 'shared/like'
       = link_to "#", class: "item-footer-btn" do
         = fa_icon "flag"
         不適切な商品を報告

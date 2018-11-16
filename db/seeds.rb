@@ -39,29 +39,6 @@ Category.create([
 
 
 Category.create([
-  {category_genre_id: 1, name: "トップス"},
-  {category_genre_id: 1, name: "ジャケット/アウター"},
-  {category_genre_id: 1, name: "パンツ"},
-  {category_genre_id: 1, name: "スカート"},
-  {category_genre_id: 1, name: "ワンピース"},
-  {category_genre_id: 1, name: "靴"},
-  {category_genre_id: 1, name: "ルームウェア"},
-  {category_genre_id: 1, name: "レッグウェア"},
-  {category_genre_id: 1, name: "帽子"},
-  {category_genre_id: 1, name: "アクセサリー"},
-  {category_genre_id: 1, name: "ヘアアクセサリー"},
-  {category_genre_id: 1, name: "小物"},
-  {category_genre_id: 1, name: "時計"},
-  {category_genre_id: 1, name: "ウィッグ/エクステ"},
-  {category_genre_id: 1, name: "浴衣/水着"},
-  {category_genre_id: 1, name: "スーツ"},
-  {category_genre_id: 1, name: "フォーマル"},
-  {category_genre_id: 1, name: "ドレス"},
-  {category_genre_id: 1, name: "マタニティ"},
-  {category_genre_id: 1, name: "その他"},
-  ])
-
-Category.create([
   {category_genre_id: 2, name: "トップス"},
   {category_genre_id: 2, name: "ジャケット/アウター"},
   {category_genre_id: 2, name: "パンツ"},
@@ -449,6 +426,19 @@ end
   )
 end
 
+Item.create(
+  name: "シャネル シャネル ボーダー ニット ツイード トップス",
+  image: File.open("./app/assets/images/01.jpg"),
+  text: "シャネルのボーダーニットです。サイズ38。カシミア100パーセントです。",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 1,
+  quality_status: "目立った傷や汚れなし",
+  days:"２〜３日で発送",
+  price: 70300,sale_status: 0,
+  user_id: 5,
+  )
 
 # アイテム追加 カテゴリ レディース 1-5
 Item.create(
@@ -2690,7 +2680,7 @@ Item.create(
       category_id: 106,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 898000,sale_status: 0,
+      price: 898000,sale_status: 2,
       user_id: 8,
 )
 Item.create(
@@ -2756,7 +2746,7 @@ Item.create(
       category_id: 124,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 15000,sale_status: 0,
+      price: 15000,sale_status: 1,
       user_id: 8,
 )
 Item.create(
@@ -2808,7 +2798,7 @@ Item.create(
       category_id: 123,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 6999,sale_status: 0,
+      price: 6999,sale_status: 2,
       user_id: 6,
 )
 Item.create(
@@ -2834,7 +2824,7 @@ Item.create(
       category_id: 124,
       quality_status: "新品、未使用",
       days:"１〜２日で発送",
-      price: 7500,sale_status: 0,
+      price: 7500,sale_status: 1,
       user_id: 4,
 )
 Item.create(
@@ -2849,4 +2839,56 @@ Item.create(
       days:"１〜２日で発送",
       price: 3500,sale_status: 0,
       user_id: 4,
+)
+
+
+
+Comment.create(
+  text: "素敵なお品ですね。
+おいくらまででしたらお値引きは可能でしょうか？
+失礼なコメントをして申し訳ございません(>_<)",
+  item_id: 1,
+  user_id: 8,
+)
+Comment.create(
+  text: "ありがとうございます。即決でしたら一万円のお値引きさせていただきます^_^
+  ご検討よろしくお願いします。",
+  item_id: 1,
+  user_id: 5,
+)
+Comment.create(
+  text: "ご返答ありがとうございます。
+  また、お値引きの件もありがとうございます。
+  確認させていただきたいのですが、着姿やロゴの画像を見せていただくことは可能でしょうか？",
+  item_id: 1,
+  user_id: 8,
+)
+Comment.create(
+  text: "ご質問ありがとうございます。とりあえず着姿を撮影しました。よろしくお願いします。",
+  item_id: 1,
+  user_id: 5,
+  comment_image: File.open("./app/assets/images/01_02.jpg")
+)
+Comment.create(
+  text: "チャームポイントのロゴボタンです。よろしくお願いします。",
+  item_id: 1,
+  user_id: 5,
+  comment_image: File.open("./app/assets/images/01_03.jpg")
+)
+Comment.create(
+  text: "ご丁寧にありがとうございます。
+購入を検討しておりますが、6万円にして頂くことは厳しいでしょうか？
+大変不躾なお願いをして申し訳ございません(>_<)",
+  item_id: 1,
+  user_id: 8,
+)
+Comment.create(
+  text: "こんにちは^_^まだ手元に置いておきたい気持ちと、悩みながら本日限りで6万円にさせていただきます。ご検討よろしくお願いします。",
+  item_id: 1,
+  user_id: 5,
+)
+Comment.create(
+  text: "お値引きありがとうございます！さっそく購入させていただきました。よろしくお願いします！",
+  item_id: 1,
+  user_id: 8,
 )
