@@ -65,13 +65,24 @@ $(function() {
     $(".search-items").append(html);
   }
 
-  function appendNoProduct(item) {
+  function appendHitNum(item) {
     var html = `
-      <h4 class='search-result-head'>${ item }</div>`
-    $(".search-result-head").append(html);
+      <div class="hit-icon">
+        ${ item }
+      </div>`
+    $(".hit-icon-box").append(html);
   }
 
-  $(".search__query").on("keyup", function() {
+  function appendNoProduct(item) {
+    var html = `
+      <div class="hit-icon">
+        ${ item }
+      </div>`
+    $(".hit-icon-box").append(html);
+  }
+
+  $(".search__query").on("keyup", function(e) {
+    if (e.which != 13) {
     var input = $(".search__query").val();
 
     $.ajax({
@@ -82,21 +93,22 @@ $(function() {
     })
     .done(function(items) {
       $(".search-items").empty();
-      $(".search-result-head").empty();
+      $(".hit-icon").empty();
       if (items.length !== 0) {
         items.forEach(function(item){
           appendProduct(item);
         });
-        hitNum = items.length + " hit!";
-        $(".search-result-head").append(hitNum);
+        hitNum = items.length + "hit!";
+        appendHitNum(hitNum);
       }
       else {
         appendNoProduct("0hit...");
       }
     })
-    .fail(function() {
+    .fail(function(data) {
       alert('商品検索に失敗しました');
     })
+    }
   });
 
 
