@@ -112,6 +112,9 @@
     #comment_image{
       display: none;
     }
+    .video {
+      display: none;
+    }
     .comment_image_btn{
       background-color: $gray;
       color: $white;
@@ -159,6 +162,7 @@
     line-height: 50px;
     text-align: center;
     margin: 8px 0px 0 4px;
+    box-sizing: border-box;
   }
   .fukidashi {
     display: none;
