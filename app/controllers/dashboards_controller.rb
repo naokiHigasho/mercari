@@ -1,7 +1,9 @@
+
 class DashboardsController < ApplicationController
-  before_action :set_dashboard, only: %i[ show edit update destroy]
-  before_action :set_user, only: %i[ new edit ]
+  before_action :set_dashboard, only: %i[ show edit update destroy profile sell_record buy_record]
+  before_action :set_user, only: %i[ new edit profile sell_record buy_record]
   before_action :authenticate_user!
+  before_action :user_location, only: %i[show]
 
   def show
   end
@@ -34,6 +36,18 @@ class DashboardsController < ApplicationController
     @dashboard.destroy
   end
 
+  def profile
+  end
+
+  def sell_record
+    @sold_items = Item.where(user_id: params[:user_id]).where(sale_status: 1)
+  end
+
+  def buy_record
+    @buy_records = SellRecord.where(user_id: params[:user_id]).order("updated_at DESC")
+  end
+
+
   private
     def set_dashboard
       @dashboard = Dashboard.find_by(user_id: params[:user_id])
@@ -45,5 +59,9 @@ class DashboardsController < ApplicationController
 
     def dashboard_params
       params.require(:dashboard).permit(:avatar, :background).merge(user_id: current_user.id)
+    end
+
+    def user_location
+      session[:return_to] = request.url
     end
 end

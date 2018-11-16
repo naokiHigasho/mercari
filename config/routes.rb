@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :home, only: %i[index] do
     collection do
       get 'signup_select'
+      get 'presents01'
+      get 'presents02'
     end
   end
   resources :brands
@@ -28,6 +30,7 @@ Rails.application.routes.draw do
     resource :likes do
       member do
         post 'like'
+        delete 'unlike'
       end
     end
   end
@@ -36,6 +39,12 @@ Rails.application.routes.draw do
   resources :users, only: %i[show] do
     resource :addresses
     resource :creditcards
-    resource :dashboards
+    resource :dashboards do
+      collection do
+        get 'profile'
+        get 'sell_record'
+        get 'buy_record'
+      end
+    end
   end
 end

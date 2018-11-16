@@ -1,0 +1,16 @@
+- if user_signed_in?
+  = link_to like_item_likes_path(params[:id],item_id: @item.id, user_id: current_user.id), method: :post, class: "item-footer-btn",remote: true do
+    - if @item.likes.length != 0
+      = fa_icon "heart", class: "red"
+      %span.red= @item.likes.length
+    - else
+      = fa_icon "heart", class: "gray"
+      %span.gray= @item.likes.length
+- else
+  = link_to "#", class: "item-footer-btn" do
+    - if @item.likes.length != 0
+      = fa_icon "heart", class: "red"
+      %span.red= @item.likes.length
+    - else
+      = fa_icon "heart", class: "gray"
+      %span.gray= @item.likes.length

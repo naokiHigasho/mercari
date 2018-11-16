@@ -13,4 +13,3 @@ class ApplicationController < ActionController::Base
     @brand_genres = BrandGenre.all
   end
 end
-

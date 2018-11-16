@@ -4,21 +4,8 @@
       = params[:brand_genre_id].present? ? BrandGenre.find(params[:brand_genre_id]).name : "ブランド一覧"
   .brands-index-items.clearfix
     - @items.each do |item|
-      .item-card-simple
-        = link_to item do
-          -case item.sale_status
-          - when 1
-            .mark.sold
-            %p.status-text SOLD
-          - when 2
-            .mark.reserved
-            %p.status-text 予約済
-          = image_tag(item.image, class: "item-img lazyloaded")
-          .item-info
-            .item-info__price.font-5
-              ¥
-              = item.price
-              %span (税込)
+      = render partial: 'shared/item-square-200', locals: {item: item}
+
   %ul.tag-lists.clearfix
     - @brands.each do |brand|
       %li.tag-lists__list

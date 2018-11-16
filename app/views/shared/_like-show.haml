@@ -1,0 +1,12 @@
+- if user_signed_in?
+  - if current_user.likes.find_by(item_id: @item.id)
+    = button_to "/items/#{@item.id}/likes/unlike", user_id: current_user.id, item_id: @item.id, remote: true do
+      = fa_icon "heart",class: "red"
+      %span= @item.like_count
+  - else
+    = button_to "/items/#{@item.id}/likes/like", user_id: current_user.id, item_id: @item.id, method: :post, remote: true do
+      = fa_icon "heart"
+      %span= @item.like_count
+- else
+  = fa_icon "heart",class: "red"
+  %span= @item.like_count

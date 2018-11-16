@@ -1,11 +1,19 @@
 class SearchController < ApplicationController
-
   def index
-    @items = Item.where('name LIKE(?)', "%#{params[:keyword]}%")
-
+    @items = Item.none
+    if params[:keyword]
+      keywords = params[:keyword].split(/( |　)/)
+      keywords.each do |keyword|
+        @items = @items.or(Item.where('name LIKE(?)', "%#{keyword}%"))
+      end
+    end
     respond_to do |format|
       format.html
-      format.json
+      if params[:view_num].present?
+        format.js{ render :view }
+      else
+        format.json
+      end
     end
   end
 
