@@ -60,8 +60,9 @@ ActiveRecord::Schema.define(version: 20181110021707) do
     t.integer  "item_id"
     t.integer  "user_id"
     t.string   "comment_image"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.binary   "video",         limit: 16777215
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

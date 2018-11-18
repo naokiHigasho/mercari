@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.integer :item_id
       t.integer :user_id
       t.string :comment_image
+      t.mediumblob :video
       t.timestamps
     end
   end
