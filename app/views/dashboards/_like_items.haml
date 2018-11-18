@@ -1,0 +1,11 @@
+.dashboards-show-box
+  .dashboards-header
+    = image_tag(@dashboard.background, class: "background-img")
+    = image_tag(@dashboard.avatar, class: "avatar-img")
+    .info-nickname
+      = @dashboard.user.nickname
+      さんのお気に入りアイテム
+  .like-items.clearfix
+    - @likes.each do |like|
+      - item = like.item
+      = render partial: 'shared/item-square-200', locals: {item: item}

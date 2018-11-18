@@ -9,6 +9,7 @@
   }
   .header-logo{
     float: left;
+    margin-right: 5%;
     text-decoration: none;
     img{
       height: 50px;
@@ -16,9 +17,8 @@
     }
   }
   .header-nav {
-    float: right;
+    float: left;
     height: 55px;
-    margin-right: 110px;
     :hover {
         color: #0099e8;
       }
@@ -35,7 +35,7 @@
         font-size: 14px;
         font-weight: bold;
         line-height: 55px;
-        padding-right: 20px;
+        padding-right: 30px;
         text-decoration: none;
       }
     }
@@ -111,26 +111,13 @@
     .mypage-link{
       text-decoration: none;
     }
-    .mypage{
+    .header-avater {
+      border-radius: 50%;
       float: right;
-      height: 55px;
-      width: 120px;
-      .header-avater {
-        border-radius: 50%;
-        float: left;
-        height: 32px;
-        margin: 11px 5px 0 0;
-        object-fit: cover;
-        width: 32px;
-      }
-      .title{
-        color: $gray-dark;
-        display: inline-block;
-        float: left;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 55px;
-      }
+      height: 32px;
+      margin: 11px 5px 0 0;
+      object-fit: cover;
+      width: 32px;
     }
   }
 }

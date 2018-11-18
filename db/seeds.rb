@@ -392,13 +392,33 @@ end
 user = User.new(nickname: "admin", email: "admin@admin", password: "password")
 user.save!
 
-user = User.new(nickname: "hoge", email: "hoge@hoge", password: "hogehoge")
+user = User.new(nickname: "龍馬", email: "hoge@hoge", password: "hogehoge")
 user.save!
 
-(3..10).each do |i|
-  user = User.new(nickname: "高知#{i}かつお", email: "hoge#{i}@com", password: "hogehoge")
-  user.save!
-end
+user = User.new(nickname: "半平太", email: "1@1", password: "hogehoge")
+user.save!
+
+user = User.new(nickname: "以蔵", email: "2@2", password: "hogehoge")
+user.save!
+
+user = User.new(nickname: "万次郎", email: "3@3", password: "hogehoge")
+user.save!
+
+user = User.new(nickname: "おりょう", email: "4@4", password: "hogehoge")
+user.save!
+
+user = User.new(nickname: "慎太郎", email: "5@5", password: "hogehoge")
+user.save!
+
+user = User.new(nickname: "乙女姉ちゃん", email: "6@6", password: "hogehoge")
+user.save!
+
+user = User.new(nickname: "弥太郎", email: "7@7", password: "hogehoge")
+user.save!
+
+user = User.new(nickname: "退助", email: "8@8", password: "hogehoge")
+user.save!
+
 
 
 (1..10).each do |i|
@@ -427,13 +447,13 @@ end
 end
 
 Item.create(
-  name: "シャネル シャネル ボーダー ニット ツイード トップス",
+  name: "シャネル エルメス 水筒",
   image: File.open("./app/assets/images/01.jpg"),
-  text: "シャネルのボーダーニットです。サイズ38。カシミア100パーセントです。",
+  text: "シャネルの水筒です。表参道の本店で去年購入しました。学生の頃から、十年ほどつかっていますが、まだまだ使えるお品です^^",
   brand_genre_id: 1,
   brand_id: 2,
-  category_genre_id: 1,
-  category_id: 1,
+  category_genre_id: 4,
+  category_id: 64,
   quality_status: "目立った傷や汚れなし",
   days:"２〜３日で発送",
   price: 70300,sale_status: 0,
@@ -1864,6 +1884,204 @@ Item.create(
   user_id: 5,
   )
 
+# 川原追加
+Item.create(
+  name: "デニム風パンツ",
+  image: File.open("./app/assets/images/pan001.jpg"),
+  text: "デニム風パンツ デニム風パンツ デニム風パンツ",
+  brand_genre_id: 3,
+  brand_id: 20,
+  category_genre_id: 3,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 700,
+  sale_status: 0,
+  user_id: 3,
+)
+
+Item.create(
+  name: "ラルフローレン レギンス パンツ",
+  image: File.open("./app/assets/images/pan002.jpg"),
+  text: "ラルフローレン レギンス パンツ ラルフローレン レギンス パンツ ラルフローレン レギンス パンツ",
+  brand_genre_id: 1,
+  brand_id: 20,
+  category_genre_id: 3,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 1300,
+  sale_status: 0,
+  user_id: 3,
+)
+
+Item.create(
+  name: "パンツ 花柄 レギンス",
+  image: File.open("./app/assets/images/pan003.jpg"),
+  text: "パンツ 花柄 レギンス パンツ 花柄 レギンス パンツ 花柄 レギンス",
+  brand_genre_id: 1,
+  brand_id: 20,
+  category_genre_id: 1,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 7000,
+  sale_status: 0,
+  user_id: 3,
+)
+
+Item.create(
+  name: "パンツ ナナナナサーカ リメイクデニム",
+  image: File.open("./app/assets/images/pan004.jpg"),
+  text: "パンツ ナナナナサーカ リメイクデニム",
+  brand_genre_id: 2,
+  brand_id: 20,
+  category_genre_id: 2,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 8000,
+  sale_status: 0,
+  user_id: 9,
+)
+
+Item.create(
+  name: "パンツ rodeo crowns デニム",
+  image: File.open("./app/assets/images/pan005.jpg"),
+  text: "パンツ rodeo crowns デニム パンツ rodeo crowns デニム",
+  brand_genre_id: 1,
+  brand_id: 20,
+  category_genre_id: 1,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 3600,
+  sale_status: 0,
+  user_id: 2,
+)
+
+Item.create(
+  name: "GANRYU サルエルデニムパンツ ガンリュウ コムデギャルソン",
+  image: File.open("./app/assets/images/pan006.jpg"),
+  text: "GANRYU サルエルデニムパンツ ガンリュウ コムデギャルソン",
+  brand_genre_id: 2,
+  brand_id: 20,
+  category_genre_id: 2,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 8000,
+  sale_status: 0,
+  user_id: 3,
+)
+
+Item.create(
+  name: "pumpkin デニム ダメージフリンジスキニーパンツ ホワイト",
+  image: File.open("./app/assets/images/pan007.jpg"),
+  text: "pumpkin デニム ダメージフリンジスキニーパンツ ホワイト",
+  brand_genre_id: 1,
+  brand_id: 20,
+  category_genre_id: 1,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 1000,
+  sale_status: 0,
+  user_id: 4,
+)
+
+Item.create(
+  name: "EGOIST ダメージデニム パンツ",
+  image: File.open("./app/assets/images/pan008.jpg"),
+  text: "EGOIST ダメージデニム パンツ EGOIST ダメージデニム パンツ EGOIST ダメージデニム パンツ",
+  brand_genre_id: 1,
+  brand_id: 20,
+  category_genre_id: 1,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 1500,
+  sale_status: 0,
+  user_id: 5,
+)
+
+Item.create(
+  name: "adidas アディダス プラクティスパンツ",
+  image: File.open("./app/assets/images/pan009.jpg"),
+  text: "adidas アディダス プラクティスパンツ adidas アディダス プラクティスパンツ",
+  brand_genre_id: 3,
+  brand_id: 20,
+  category_genre_id: 3,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 2100,
+  sale_status: 0,
+  user_id: 6,
+)
+
+Item.create(
+  name: "ショートパンツ earth music&ecology red label",
+  image: File.open("./app/assets/images/pan010.jpg"),
+  text: "ショートパンツ earth music&ecology red label ショートパンツ earth music&ecology red label",
+  brand_genre_id: 1,
+  brand_id: 20,
+  category_genre_id: 1,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 666,
+  sale_status: 0,
+  user_id: 7,
+)
+
+Item.create(
+  name: "さらに値下げしたしniko andのデニム！！今月で売れなければ出品やめます！！パンツ!!",
+  image: File.open("./app/assets/images/pan011.jpg"),
+  text: "さらに値下げしたしniko andのデニム！！今月で売れなければ出品やめます！！パンツ!!",
+  brand_genre_id: 1,
+  brand_id: 20,
+  category_genre_id: 1,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 1600,
+  sale_status: 0,
+  user_id: 8,
+)
+
+Item.create(
+  name: "KBF レギンスパンツ",
+  image: File.open("./app/assets/images/pan012.jpg"),
+  text: "KBF レギンスパンツ KBF レギンスパンツ",
+  brand_genre_id: 1,
+  brand_id: 20,
+  category_genre_id: 1,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 1100,
+  sale_status: 0,
+  user_id: 9,
+)
+
+Item.create(
+  name: "デニム パンツ",
+  image: File.open("./app/assets/images/pan013.jpg"),
+  text: "デニム パンツ デニム パンツ",
+  brand_genre_id: 2,
+  brand_id: 20,
+  category_genre_id: 2,
+  category_id: 3,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 2900,
+  sale_status: 0,
+  user_id: 10,
+)
+
+
+# メンズアイテム
 Item.create(
       name: "ビームス トップス",
       image: File.open("./app/assets/images/002021001.jpg"),
@@ -2841,54 +3059,651 @@ Item.create(
       user_id: 4,
 )
 
-
+Item.create(
+  name: "CHANEL シャネル ブラン",
+  image: File.open("./app/assets/images/chanel001.jpg"),
+  text: "CHANEL シャネル ブラン CHANEL シャネル ブラン CHANEL シャネル ブラン",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 1200,
+  sale_status: 0,
+  user_id: 3,
+)
+Item.create(
+  name: "CHANEL シャネル サングラス",
+  image: File.open("./app/assets/images/chanel002.jpg"),
+  text: "CHANEL シャネル サングラス CHANEL シャネル サングラス CHANEL シャネル サングラス",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 33333,
+  sale_status: 0,
+  user_id: 3,
+)
+Item.create(
+  name: "CHANEL シャネル マトラッセ チェーンバッグ",
+  image: File.open("./app/assets/images/chanel003.jpg"),
+  text: "CHANEL シャネル マトラッセ チェーンバッグ CHANEL シャネル マトラッセ チェーンバッグ CHANEL シャネル マトラッセ チェーンバッグ",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 160000,
+  sale_status: 2,
+  user_id: 7,
+)
+Item.create(
+  name: "CHANEL シャネル スカート",
+  image: File.open("./app/assets/images/chanel004.jpg"),
+  text: "CHANEL シャネル スカート CHANEL シャネル スカート CHANEL シャネル スカート",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 4,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 30000,
+  sale_status: 0,
+  user_id: 2,
+)
+Item.create(
+  name: "CHANEL シャネル vintage イヤリング",
+  image: File.open("./app/assets/images/chanel005.jpg"),
+  text: "CHANEL シャネル vintage イヤリング CHANEL シャネル vintage イヤリング CHANEL シャネル vintage イヤリング",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 11,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 8500,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "CHANEL シャネル ブーツ 黒",
+  image: File.open("./app/assets/images/chanel006.jpg"),
+  text: "CHANEL シャネル ブーツ 黒 CHANEL シャネル ブーツ 黒 CHANEL シャネル ブーツ 黒",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 6,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 63500,
+  sale_status: 1,
+  user_id: 8,
+)
+Item.create(
+  name: "CHANEL シャネル 化粧ブラシセット",
+  image: File.open("./app/assets/images/chanel007.jpg"),
+  text: "CHANEL シャネル 化粧ブラシセット CHANEL シャネル 化粧ブラシセット CHANEL シャネル 化粧ブラシセット",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 7,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 2800,
+  sale_status: 2,
+  user_id: 8,
+)
+Item.create(
+  name: "CHANEL シャネル 口紅 7本セット",
+  image: File.open("./app/assets/images/chanel008.jpg"),
+  text: "CHANEL シャネル 口紅 7本セット CHANEL シャネル 口紅 7本セット CHANEL シャネル 口紅 7本セット",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 7,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 3000,
+  sale_status: 0,
+  user_id: 9,
+)
+Item.create(
+  name: "CHANEL シャネル ノベルティポーチ",
+  image: File.open("./app/assets/images/chanel009.jpg"),
+  text: "CHANEL シャネル ノベルティポーチ CHANEL シャネル ノベルティポーチ CHANEL シャネル ノベルティポーチ",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 2000,
+  sale_status: 0,
+  user_id: 9,
+)
+Item.create(
+  name: "CHANEL シャネル パンプス",
+  image: File.open("./app/assets/images/chanel010.jpg"),
+  text: "CHANEL シャネル パンプス CHANEL シャネル パンプス CHANEL シャネル パンプス",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 6,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 18000,
+  sale_status: 0,
+  user_id: 9,
+)
+Item.create(
+  name: "CHANEL シャネル ネクタイ",
+  image: File.open("./app/assets/images/chanel011.jpg"),
+  text: "CHANEL シャネル ネクタイ CHANEL シャネル ネクタイ CHANEL シャネル ネクタイ",
+  brand_genre_id: 2,
+  brand_id: 2,
+  category_genre_id: 2,
+  category_id: 28,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 2950,
+  sale_status: 0,
+  user_id: 4,
+)
+Item.create(
+  name: "CHANEL シャネル サングラス",
+  image: File.open("./app/assets/images/chanel012.jpg"),
+  text: "CHANEL シャネル サングラス CHANEL シャネル サングラス CHANEL シャネル サングラス",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 1,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 2900,
+  sale_status: 0,
+  user_id: 4,
+)
+Item.create(
+  name: "CHANEL シャネル No.5 LEAU",
+  image: File.open("./app/assets/images/chanel013.jpg"),
+  text: "CHANEL シャネル No.5 LEAU CHANEL シャネル No.5 LEAU CHANEL シャネル No.5 LEAU",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 6200,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "CHANEL シャネル ショップ袋",
+  image: File.open("./app/assets/images/chanel014.jpg"),
+  text: "CHANEL シャネル ショップ袋 CHANEL シャネル ショップ袋 CHANEL シャネル ショップ袋",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 900,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "CHANEL シャネル フェイクパールイヤリング",
+  image: File.open("./app/assets/images/chanel015.jpg"),
+  text: "CHANEL シャネル フェイクパールイヤリング CHANEL シャネル フェイクパールイヤリング CHANEL シャネル フェイクパールイヤリング",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 10,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 28000,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "CHANEL シャネル 長財布 キャビアスキン ココマーク",
+  image: File.open("./app/assets/images/chanel016.jpg"),
+  text: "CHANEL シャネル 長財布 キャビアスキン ココマーク CHANEL シャネル 長財布 キャビアスキン ココマーク CHANEL シャネル 長財布 キャビアスキン ココマーク",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 20,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 10000,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "CHANEL シャネル ヘアアクセサリー ヘアゴム カンボンライン レア 非売品",
+  image: File.open("./app/assets/images/chanel017.jpg"),
+  text: "CHANEL シャネル ヘアアクセサリー ヘアゴム カンボンライン レア 非売品CHANEL シャネル ヘアアクセサリー ヘアゴム カンボンライン レア 非売品CHANEL シャネル ヘアアクセサリー ヘアゴム カンボンライン レア 非売品",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 11,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 4400,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "CHANEL シャネル ココマークラインストーンネックレス",
+  image: File.open("./app/assets/images/chanel018.jpg"),
+  text: "CHANEL シャネル ココマークラインストーンネックレス CHANEL シャネル ココマークラインストーンネックレス CHANEL シャネル ココマークラインストーンネックレス",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 10,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 32000,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "CHANEL シャネル ローファー シューズ",
+  image: File.open("./app/assets/images/chanel019.jpg"),
+  text: "CHANEL シャネル ローファー シューズ CHANEL シャネル ローファー シューズ CHANEL シャネル ローファー シューズ",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 6,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 28000,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "CHANEL シャネル ネックレス",
+  image: File.open("./app/assets/images/chanel020.jpg"),
+  text: "CHANEL シャネル ネックレス CHANEL シャネル ネックレス CHANEL シャネル ネックレス",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 11,
+  quality_status: "新品、未使用",
+  days:"１〜２日で発送",
+  price: 19999,
+  sale_status: 0,
+  user_id: 10,
+)
+Item.create(
+  name: "シャネル ココボタン　バック レディース",
+  image: File.open("./app/assets/images/chanel100.jpg"),
+  text: "シャネル ココボタンシリーズのピンク色のバックです。２回ほど使用しましたがお値打ちだと思います。",
+  brand_genre_id: 1,
+  brand_id: 2,
+  category_genre_id: 1,
+  category_id: 20,
+  quality_status: "未使用に近い",
+  days:"２〜３日で発送",
+  price: 48000,
+  sale_status: 0,
+  user_id: 8,
+)
+2.times do
+  Item.create(
+    name: "シャネル Chanel 二つ折り財布 財布 コンパクトサイズ ブラック×ゴールド ココボタン レディース",
+    image: File.open("./app/assets/images/chanel101.jpg"),
+    text: "シャネル Chanel 二つ折り財布 財布 コンパクトサイズ ブラック×ゴールド ココボタン レディース",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 12,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 22000,
+    sale_status: 0,
+    user_id: 10,
+  )
+  Item.create(
+    name: "シャネル CHANEL バニティ ハンドバッグ ニュートラベルライン イエロー キャンバス×レザー",
+    image: File.open("./app/assets/images/chanel102.jpg"),
+    text: "シャネル CHANEL バニティ ハンドバッグ ニュートラベルライン イエロー キャンバス×レザー",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 16800,
+    sale_status: 0,
+    user_id: 5,
+  )
+  Item.create(
+    name: "シャネル CHANEL トートバッグ ショルダーバッグ レディース ロゴ入り チョコバー ベージュ×オレンジ ビニール",
+    image: File.open("./app/assets/images/chanel103.jpg"),
+    text: "シャネル CHANEL トートバッグ ショルダーバッグ レディース ロゴ入り チョコバー ベージュ×オレンジ ビニール",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 38000,
+    sale_status: 1,
+    user_id: 2,
+  )
+  Item.create(
+    name: "シャネル CHANEL ハンドバッグ ニュートラベルライン ベージュ キャンバス×レザー",
+    image: File.open("./app/assets/images/chanel104.jpg"),
+    text: "シャネル CHANEL ハンドバッグ ニュートラベルライン ベージュ キャンバス×レザー",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 32800,
+    sale_status: 0,
+    user_id: 4,
+  )
+  Item.create(
+    name: "シャネル CHANEL トートバッグ バッチワーク ベージュ×ブルー ビニール",
+    image: File.open("./app/assets/images/chanel105.jpg"),
+    text: "シャネル CHANEL トートバッグ バッチワーク ベージュ×ブルー ビニール",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 31800,
+    sale_status: 2,
+    user_id: 6,
+  )
+  Item.create(
+    name: "シャネル CHANEL ショルダーバッグ チェーンショルダー レディース マトラッセ ブラック×ゴールド レザー",
+    image: File.open("./app/assets/images/chanel106.jpg"),
+    text: "シャネル CHANEL ショルダーバッグ チェーンショルダー レディース マトラッセ ブラック×ゴールド レザー",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 99800,
+    sale_status: 0,
+    user_id: 6,
+  )
+  Item.create(
+    name: "CHANEL シャネル ピアス",
+    image: File.open("./app/assets/images/chanel107.jpg"),
+    text: "CHANEL シャネル ピアス",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 10,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 25700,
+    sale_status: 0,
+    user_id: 3,
+  )
+  Item.create(
+    name: "シャネル CHANEL サンプル 美容液 クリーム",
+    image: File.open("./app/assets/images/chanel108.jpg"),
+    text: "シャネル CHANEL サンプル 美容液 クリーム",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 2500,
+    sale_status: 0,
+    user_id: 7,
+  )
+  Item.create(
+    name: "シャネル CHANEL ビンテージイヤリング",
+    image: File.open("./app/assets/images/chanel109.jpg"),
+    text: "シャネル CHANEL ビンテージイヤリング",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 10,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 11500,
+    sale_status: 1,
+    user_id: 3,
+  )
+  Item.create(
+    name: "海外限定品 CHANEL シャネル メイクパレット",
+    image: File.open("./app/assets/images/chanel110.jpg"),
+    text: "海外限定品 CHANEL シャネル メイクパレット",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 1850,
+    sale_status: 1,
+    user_id: 7,
+  )
+  Item.create(
+    name: "シャネル CHANEL ポーチ",
+    image: File.open("./app/assets/images/chanel111.jpg"),
+    text: "シャネル CHANEL ポーチ",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 5550,
+    sale_status: 0,
+    user_id: 5,
+  )
+  Item.create(
+    name: "VD26 シャネル ココマークイヤリング スイング ターンロック ラインストーン",
+    image: File.open("./app/assets/images/chanel112.jpg"),
+    text: "VD26 シャネル ココマークイヤリング スイング ターンロック ラインストーン",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 10,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 19550,
+    sale_status: 0,
+    user_id: 3,
+  )
+  Item.create(
+    name: "CHANEL シャネル ピアス",
+    image: File.open("./app/assets/images/chanel113.jpg"),
+    text: "CHANEL シャネル ピアス",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 10,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 21550,
+    sale_status: 2,
+    user_id: 7,
+  )
+  Item.create(
+    name: "CHANEL シャネル がま口 ダブルチェーンショルダーバッグ ハンドバッグ",
+    image: File.open("./app/assets/images/chanel114.jpg"),
+    text: "CHANEL シャネル がま口 ダブルチェーンショルダーバッグ ハンドバッグ",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 80000,
+    sale_status: 0,
+    user_id: 7,
+  )
+  Item.create(
+    name: "CHANEL シャネル カメリア 長財布",
+    image: File.open("./app/assets/images/chanel115.jpg"),
+    text: "CHANEL シャネル カメリア 長財布",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 18000,
+    sale_status: 0,
+    user_id: 4,
+  )
+  Item.create(
+    name: "限定お値下げ正規品！美品！CHANELシャネル サンダル",
+    image: File.open("./app/assets/images/chanel116.jpg"),
+    text: "限定お値下げ正規品！美品！CHANELシャネル サンダル",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 21800,
+    sale_status: 0,
+    user_id: 7,
+  )
+  Item.create(
+    name: "リップ柄、デカマトラッセ CHANELシャネル",
+    image: File.open("./app/assets/images/chanel117.jpg"),
+    text: "リップ柄、デカマトラッセ CHANELシャネル",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 121800,
+    sale_status: 2,
+    user_id: 5,
+  )
+  Item.create(
+    name: "正規品 美品 シャネル ショルダー ストラップ スポーツ  CHANEL",
+    image: File.open("./app/assets/images/chanel118.jpg"),
+    text: "正規品 美品 シャネル ショルダー ストラップ スポーツ  CHANEL",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 121800,
+    sale_status: 0,
+    user_id: 3,
+  )
+  Item.create(
+    name: "シャネル 衣装カバー CHANEL",
+    image: File.open("./app/assets/images/chanel119.jpg"),
+    text: "正規品 中古 黒ナイロン製 CHANEL",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 20,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 2800,
+    sale_status: 1,
+    user_id: 2,
+  )
+  Item.create(
+    name: "シャネル ココマークラインストーンネックレス CHANEL",
+    image: File.open("./app/assets/images/chanel120.jpg"),
+    text: "購入時に試着してますが、付けて外出はしてません。",
+    brand_genre_id: 1,
+    brand_id: 2,
+    category_genre_id: 1,
+    category_id: 10,
+    quality_status: "未使用に近い",
+    days:"２〜３日で発送",
+    price: 32000,
+    sale_status: 0,
+    user_id: 10,
+  )
+end
 
 Comment.create(
-  text: "素敵なお品ですね。
+ text: "素敵なお品ですね。
 おいくらまででしたらお値引きは可能でしょうか？
-失礼なコメントをして申し訳ございません(>_<)",
-  item_id: 1,
-  user_id: 8,
+失礼なコメントをして申し訳ございません >_< ",
+ item_id: 1,
+ user_id: 8,
 )
 Comment.create(
-  text: "ありがとうございます。即決でしたら一万円のお値引きさせていただきます^_^
-  ご検討よろしくお願いします。",
-  item_id: 1,
-  user_id: 5,
+ text: "ありがとうございます。即決でしたら一万円のお値引きさせていただきます^_^
+ ご検討よろしくお願いします。",
+ item_id: 1,
+ user_id: 5,
 )
 Comment.create(
-  text: "ご返答ありがとうございます。
-  また、お値引きの件もありがとうございます。
-  確認させていただきたいのですが、着姿やロゴの画像を見せていただくことは可能でしょうか？",
-  item_id: 1,
-  user_id: 8,
+ text: "ご返答ありがとうございます。
+ また、お値引きの件もありがとうございます。
+ 確認させていただきたいのですが、水筒の底や背面の画像を見せていただくことは可能でしょうか？",
+ item_id: 1,
+ user_id: 8,
 )
 Comment.create(
-  text: "ご質問ありがとうございます。とりあえず着姿を撮影しました。よろしくお願いします。",
-  item_id: 1,
-  user_id: 5,
-  comment_image: File.open("./app/assets/images/01_02.jpg")
+ text: "ご質問ありがとうございます。
+ とりあえず背面を撮影しました。
+ よろしくお願いします。",
+ item_id: 1,
+ user_id: 5,
+ comment_image: File.open("./app/assets/images/01_02.jpg")
 )
 Comment.create(
-  text: "チャームポイントのロゴボタンです。よろしくお願いします。",
-  item_id: 1,
-  user_id: 5,
-  comment_image: File.open("./app/assets/images/01_03.jpg")
+ text: "ユーズド品のため、底には小さな傷があります。
+ よろしくお願いします。",
+ item_id: 1,
+ user_id: 5,
+ comment_image: File.open("./app/assets/images/01_03.jpg")
 )
 Comment.create(
-  text: "ご丁寧にありがとうございます。
+ text: "ご丁寧にありがとうございます。
+購入を検討しておりますが、フタの開閉については問題ないでしょうか？
+質問ばかりで申し訳ございません　>_< ",
+ item_id: 1,
+ user_id: 8,
+)
+Comment.create(
+ text: "ご質問ありがとうございます。
+ フタの開閉を動画で撮影しました！
+ ご検討よろしくお願いします。",
+ item_id: 1,
+ user_id: 5,
+ video: File.open("./app/assets/images/video01.MOV")
+)
+Comment.create(
+ text: "ご丁寧にありがとうございます。
 購入を検討しておりますが、6万円にして頂くことは厳しいでしょうか？
-大変不躾なお願いをして申し訳ございません(>_<)",
-  item_id: 1,
-  user_id: 8,
+大変不躾なお願いをして申し訳ございません　>_< ",
+ item_id: 1,
+ user_id: 8,
 )
 Comment.create(
-  text: "こんにちは^_^まだ手元に置いておきたい気持ちと、悩みながら本日限りで6万円にさせていただきます。ご検討よろしくお願いします。",
-  item_id: 1,
-  user_id: 5,
+ text: "こんにちは^_^
+ まだ手元に置いておきたい気持ちと、悩みながら本日限りで6万円にさせていただきます。
+ ご検討よろしくお願いします。",
+ item_id: 1,
+ user_id: 5,
 )
 Comment.create(
-  text: "お値引きありがとうございます！さっそく購入させていただきました。よろしくお願いします！",
-  item_id: 1,
-  user_id: 8,
+ text: "お値引きありがとうございます！
+ さっそく購入させていただきました。
+ よろしくお願いします！",
+ item_id: 1,
+ user_id: 8,
 )

@@ -1,0 +1,1 @@
+ <%= javascript_include_tag "/javascripts/flowplayer.min.js" %>

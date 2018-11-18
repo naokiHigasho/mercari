@@ -7,25 +7,23 @@
         - if user_signed_in?
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-signout header-btn header-sign bold"
           = link_to user_dashboards_path(current_user.id), class: "mypage-link" do
-            .mypage.clearfix
-              = image_tag(current_user.dashboard.avatar, class: "header-avater")
-              %p.title マイページ
+            = image_tag(current_user.dashboard.avatar, class: "header-avater")
         - else
           = link_to "新規会員登録", signup_select_home_index_path, class: "header-btn header-signup"
           = link_to "ログイン", new_user_session_path, class: "header-btn header-sign bold"
       %ul.header-nav
         %li.header-nav-root
-          = link_to "カテゴリーから探す", categories_path, class: "header-nav-root__link"
+          = link_to "カテゴリー検索", categories_path, class: "header-nav-root__link"
           %ul.header-nav-parent-wrap
             - @category_genres.each.with_index(1)  do |category_genre, i|
               %li.header-nav-parent
                 = link_to category_genre.name, categories_path(category_genre_id: i), class: "header-nav-parent__list"
         %li.header-nav-root
-          = link_to "ブランドから探す", brands_path, class: "header-nav-root__link"
+          = link_to "ブランド検索", brands_path, class: "header-nav-root__link"
           %ul.header-nav-parent-wrap
             - @brand_genres.each.with_index(1)  do |brand_genre, i|
               %li.header-nav-parent
                 %h3
                   = link_to brand_genre.name, brands_path(brand_genre_id: i), class: "header-nav-parent__list"
         %li.header-nav-root
-          = link_to "商品を検索する", search_index_path, class: "header-nav-root__link"
+          = link_to "商品名検索", search_index_path, class: "header-nav-root__link"

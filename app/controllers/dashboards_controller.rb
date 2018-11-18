@@ -1,6 +1,6 @@
 
 class DashboardsController < ApplicationController
-  before_action :set_dashboard, only: %i[ show edit update destroy profile sell_record buy_record]
+  before_action :set_dashboard, only: %i[ show edit update destroy profile sell_record buy_record like_items]
   before_action :set_user, only: %i[ new edit profile sell_record buy_record]
   before_action :authenticate_user!
   before_action :user_location, only: %i[show]
@@ -45,6 +45,10 @@ class DashboardsController < ApplicationController
 
   def buy_record
     @buy_records = SellRecord.where(user_id: params[:user_id]).order("updated_at DESC")
+  end
+
+  def like_items
+    @likes = Like.where(user_id: params[:user_id]).order("updated_at DESC")
   end
 
 

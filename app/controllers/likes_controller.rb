@@ -1,11 +1,6 @@
 class LikesController < ApplicationController
-
   def like
-    like = Like.new
-    like.item_id = params[:item_id]
-    like.user_id = params[:user_id]
-    like.save
-    @items = Item.all
+    Like.create( item_id: params[:item_id], user_id: params[:user_id])
     @item = Item.find(params[:item_id])
     respond_to do |format|
       format.html

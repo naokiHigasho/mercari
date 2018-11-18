@@ -15,6 +15,7 @@
       float: left;
       border-radius: 40px;
       margin-bottom: 5px;
+      object-fit: cover;
     }
     .user-name {
       padding-left: 80px;
@@ -48,7 +49,7 @@
       }
     }
     .user-comment.left {
-      background: $blue-c;
+      background: darken($blue-c, 20%);
       float: right;
     }
     .user-comment.left:before {
@@ -58,13 +59,13 @@
       top: 22px;
       left: -23px;
       border: 8px solid transparent;
-      border-right: 22px solid $blue-c;
+      border-right: 22px solid darken($blue-c, 20%);
       -ms-transform: rotate(35deg);
       -webkit-transform: rotate(35deg);
       transform: rotate(35deg);
     }
     .user-comment.right {
-      background-color: $yellow;
+      background-color: darken($yellow, 20%);
       float: left;
     }
     .user-name-right {
@@ -87,6 +88,7 @@
       height: 80px;
       width: 80px;
       border-radius: 40px;
+      object-fit: cover;
     }
     .user-comment.right:before{
       content: "";
@@ -95,7 +97,7 @@
       top: 22px;
       right: -23px;
       border: 8px solid transparent;
-      border-right: 22px solid $yellow;
+      border-right: 22px solid darken($yellow, 20%);
       -ms-transform: rotate(35deg);
       -webkit-transform: rotate(35deg);
       transform: rotate(150deg);
@@ -110,6 +112,9 @@
       display: none;
     }
     #comment_image{
+      display: none;
+    }
+    .video {
       display: none;
     }
     .comment_image_btn{
@@ -130,6 +135,11 @@
     object-fit: cover;
     float: left;
     border-radius: 4px;
+  }
+  .video_bord {
+    width: 350px;
+    height: 250px;
+
   }
   .textarea-default {
     border: 1px solid $gray-light;
@@ -154,6 +164,7 @@
     line-height: 50px;
     text-align: center;
     margin: 8px 0px 0 4px;
+    box-sizing: border-box;
   }
   .fukidashi {
     display: none;
@@ -184,8 +195,50 @@
   .comment_image:hover + .fukidashi {
     display: block;
   }
+  .video-icon {
+    font-size: 40px;
+    color: $red;
+    border: 2px solid $red;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: $white;
+    line-height: 50px;
+    text-align: center;
+    margin: 8px 0px 0 4px;
+    box-sizing: border-box;
+  }
+  .fukidashi2 {
+    display: none;
+    position: absolute;
+    font-size: 18px;
+    left: -20px;
+    bottom: 60px;
+    border-radius: 10px;
+    background-color: $red;
+    color: $white;
+    font-weight: bold;
+    padding: 14px;
+    }
+  .fukidashi2:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    content: "";
+    display: inline-block;
+    top: 46px;
+    right: -17px;
+    border: 8px solid transparent;
+    border-right: 25px solid $red;
+    -ms-transform: rotate(35deg);
+    -webkit-transform: rotate(35deg);
+    transform: rotate(230deg);
+  }
+  .video:hover + .fukidashi2 {
+    display: block;
+  }
   .comment-submit{
-    width: 500px;
+    width: 400px;
     margin: 8px 25px 0 0;
     font-size: 20px;
     float:right;

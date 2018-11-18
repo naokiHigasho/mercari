@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   after_create do
-    dashboard = Dashboard.new(avatar: File.open("./app/assets/images/noimage.png"), background: File.open("./app/assets/images/noimage.png"), user_id: self.id)
+    dashboard = Dashboard.new(avatar: File.open("./app/assets/images/user1.jpg"), background: File.open("./app/assets/images/kirakira.jpg"), user_id: self.id)
     dashboard.save!
   end
   # Include default devise modules. Others available are:

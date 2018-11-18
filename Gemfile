@@ -60,3 +60,4 @@ gem 'jquery-slick-rails'
 gem 'material_icons'
 gem "mini_magick"
 gem "kaminari"
+gem 'flowplayer'
