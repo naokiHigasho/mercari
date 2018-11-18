@@ -3,7 +3,7 @@
     - @item.comments.each do |comment|
       - if comment.item.user_id == comment.user_id
         .comment-body.left.clearfix
-          = image_tag("noimage.png", class: "user-icon")
+          = image_tag(@item.user.dashboard.avatar, class: "user-icon")
           .user-name.bold
             = link_to user_path(@item.user_id) do
               = @item.user.nickname
@@ -23,7 +23,7 @@
 
       - else
         .comment-body.right.clearfix
-          = image_tag("noimage.png", class: "user-icon-right")
+          = image_tag(comment.user.dashboard.avatar, class: "user-icon-right")
           .user-name-right.bold
             = link_to user_path(comment.user_id) do
               = comment.user.nickname

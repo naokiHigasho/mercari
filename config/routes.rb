@@ -30,7 +30,6 @@ Rails.application.routes.draw do
     resource :likes do
       member do
         post 'like'
-        delete 'unlike'
       end
     end
   end
@@ -44,6 +43,7 @@ Rails.application.routes.draw do
         get 'profile'
         get 'sell_record'
         get 'buy_record'
+        get 'like_items'
       end
     end
   end

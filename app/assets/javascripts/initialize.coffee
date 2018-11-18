@@ -29,3 +29,12 @@ jQuery(window).on 'load', ->
     prevArrow: '<div class="slider-arrow-left fa fa-angle-left"></div>',
     nextArrow: '<div class="slider-arrow-right fa fa-angle-right"></div>',
   })
+
+jQuery(window).on 'load', ->
+  $('.home-main-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    accessibility: true,
+    prevArrow: '<div class="slider-arrow-left fa fa-angle-left"></div>',
+    nextArrow: '<div class="slider-arrow-right fa fa-angle-right"></div>',
+  })
